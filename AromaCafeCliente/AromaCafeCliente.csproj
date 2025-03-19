@@ -251,6 +251,12 @@
   <ItemGroup>
     <Resource Include="Multimedia\Status.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_AgregarProducto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverRegister.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
