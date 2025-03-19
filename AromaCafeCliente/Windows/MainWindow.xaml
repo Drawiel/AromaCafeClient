@@ -5,8 +5,113 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AromaCafeCliente"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_IniciarTurno.png"/>
+    </Window.Background>
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1590*"/>
+            <ColumnDefinition Width="1320*"/>
+            <ColumnDefinition Width="260*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            x:Name="ValidationPopup"
+            Width="1000"
+            Height="500"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Visibility="Hidden"
+            Panel.ZIndex="2"
+            Margin="460,0,0,0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://application:,,,/Multimedia/Fondo.png"/>
+            </Grid.Background>
+            <TextBox
+                Padding="35,0,0,0"
+                HorizontalAlignment="Left" 
+                Margin="342,220,0,0" 
+                TextWrapping="Wrap" 
+                Text="TextB" 
+                VerticalAlignment="Top" 
+                Width="550" Height="57"
+                FontSize="40"
+                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
+
+
+        </Grid>
+
+        <Viewbox
+            Grid.Column="1"
+            Grid.Row="0">
+            <Grid
+                Width="1320"
+                Height="1680">
+
+                <TextBox 
+                    materialDesign:HintAssist.HelperTextFontSize="80"
+                    materialDesign:HintAssist.Hint="Num. Empleado"
+                    HorizontalAlignment="Left" 
+                    Margin="162,697,0,0" 
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    TextWrapping="Wrap" 
+                    Text=""
+                    FontSize="80"
+                    VerticalAlignment="Top" 
+                    VerticalContentAlignment="Center"
+                    Width="971" 
+                    Height="161" 
+                    Background="Transparent"
+                    TextChanged="TextBox_TextChanged">
+                </TextBox>
+
+                <PasswordBox
+                    materialDesign:HintAssist.HelperTextFontSize="80"
+                    materialDesign:HintAssist.Hint="Clave de acceso"
+                     HorizontalAlignment="Left" 
+                     Margin="162,951,0,0" 
+                     FontFamily="pack://application:,,,/Font/#Architects Daughter" 
+                     FontSize="80"
+                     VerticalAlignment="Top" 
+                     VerticalContentAlignment="Center"
+                     Width="971" 
+                     Height="161" 
+                     Background="Transparent">
+                </PasswordBox>
+
+                <Button
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    FontWeight="Bold"
+                    Content="Cancelar" 
+                    HorizontalAlignment="Left" 
+                    Margin="162,1407,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="145"
+                    FontSize="80"
+                    Width="443"
+                    Background="Transparent"/>
+
+                <Button
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    FontWeight="Bold"
+                    Content="Aceptar" 
+                    HorizontalAlignment="Left" 
+                    Margin="692,1407,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="145"
+                    FontSize="80"
+                    Width="442"
+                    Background="Transparent"/>
+
+            </Grid>
+
+        </Viewbox>
     </Grid>
 </Window>

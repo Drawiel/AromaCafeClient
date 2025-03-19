@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -170,6 +175,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Font\ArchitectsDaughter-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,7 +189,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logic\" />
-    <Folder Include="Multimedia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\Clave de acceso.png" />
+    <Resource Include="Multimedia\Fondo.png" />
+    <Resource Include="Multimedia\GUI_AgregarEmpleado.png" />
+    <Resource Include="Multimedia\GUI_IniciarTurno.png" />
+    <Resource Include="Multimedia\HoverAccept.png" />
+    <Resource Include="Multimedia\HoverCancel.png" />
+    <Resource Include="Multimedia\HoverHome.png" />
+    <Resource Include="Multimedia\HoverLogOut.png" />
+    <Resource Include="Multimedia\HoverProducts.png" />
+    <Resource Include="Multimedia\HoverReports.png" />
+    <Resource Include="Multimedia\HoverUsers.png" />
+    <Resource Include="Multimedia\Num. Empleado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
