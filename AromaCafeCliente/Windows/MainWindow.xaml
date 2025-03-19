@@ -68,8 +68,7 @@
                     VerticalContentAlignment="Center"
                     Width="971" 
                     Height="161" 
-                    Background="Transparent"
-                    TextChanged="TextBox_TextChanged">
+                    Background="Transparent">
                 </TextBox>
 
                 <PasswordBox
