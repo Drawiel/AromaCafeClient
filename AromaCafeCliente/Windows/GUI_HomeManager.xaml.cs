@@ -17,7 +17,7 @@ namespace AromaCafeCliente.Windows {
     /// <summary>
     /// Interaction logic for GUI_HomeManager.xaml
     /// </summary>
-    public partial class GUI_HomeManager : Page {
+    public partial class GUI_HomeManager : Window {
         public GUI_HomeManager() {
             InitializeComponent();
         }

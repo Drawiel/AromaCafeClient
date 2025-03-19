@@ -39,11 +39,71 @@
                 HorizontalAlignment="Left" 
                 Margin="342,220,0,0" 
                 TextWrapping="Wrap" 
-                Text="TextB" 
+                Text="" 
                 VerticalAlignment="Top" 
                 Width="550" Height="57"
                 FontSize="40"
                 FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
+
+            <Button 
+                x:Name="btnAccept"
+                HorizontalAlignment="Left" 
+                Margin="830,405,0,0" 
+                VerticalAlignment="Top" 
+                Height="55" 
+                Width="136">    
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <!-- Fondo normal -->
+                            <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <!-- Cambiar fondo cuando el mouse esté encima -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBackground" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button 
+                x:Name="btnCancel"
+                HorizontalAlignment="Left" 
+                Margin="830,405,0,0" 
+                VerticalAlignment="Top" 
+                Height="55" 
+                Width="136">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <!-- Fondo normal -->
+                            <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <!-- Cambiar fondo cuando el mouse esté encima -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBackground" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
 
 
         </Grid>

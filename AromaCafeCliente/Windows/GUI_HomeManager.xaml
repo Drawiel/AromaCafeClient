@@ -1,4 +1,4 @@
-﻿<Page x:Class="AromaCafeCliente.Windows.GUI_HomeManager"
+﻿<Window x:Class="AromaCafeCliente.Windows.GUI_HomeManager"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,225 @@
       xmlns:local="clr-namespace:AromaCafeCliente.Windows"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="GUI_HomeManager">
+      Title="GUI_HomeManager" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_InicioGerente.png"/>
+    </Window.Background>
+
 
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="323*"/>
+            <ColumnDefinition Width="1597*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid
+                Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="373*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="291*"/>
+                <RowDefinition Height="85*"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="1"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="67"
+                Width="258"
+                Background="Transparent">
+                <Button
+                    Grid.Row="1"
+                    x:Name="Home" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="67"
+                    Width="258">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverHome.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="2"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="67"
+                Width="258"
+                Background="Transparent">
+                <Button
+                    Grid.Row="1"
+                    x:Name="Users" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="67"
+                    Width="258">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverUsers.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="3"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="67"
+                Width="258"
+                Background="Transparent">
+                <Button
+                    Grid.Row="1"
+                    x:Name="Report" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="67"
+                    Width="258">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverReports.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="4"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="67"
+                Width="258"
+                Background="Transparent">
+                <Button
+                    Grid.Row="1"
+                    x:Name="Products" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="67"
+                    Width="258">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverProducts.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </Grid>
+
+
+            <Grid
+                Grid.Row="6"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="67"
+                Width="258"
+                Background="Transparent">
+                <Button
+                    Grid.Row="1"
+                    x:Name="LogOut" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="67"
+                    Width="258">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverLogOut.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </Grid>
+
+
+        </Grid>
     </Grid>
-</Page>
+</Window>

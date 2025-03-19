@@ -17,7 +17,7 @@ namespace AromaCafeCliente.Windows {
     /// <summary>
     /// Interaction logic for GUI_EmployeeRegistration.xaml
     /// </summary>
-    public partial class GUI_EmployeeRegistration : Page {
+    public partial class GUI_EmployeeRegistration : Window {
         public GUI_EmployeeRegistration() {
             InitializeComponent();
         }
