@@ -78,7 +78,7 @@
             <Button 
                 x:Name="btnCancel"
                 HorizontalAlignment="Left" 
-                Margin="830,405,0,0" 
+                Margin="673,405,0,0" 
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136">

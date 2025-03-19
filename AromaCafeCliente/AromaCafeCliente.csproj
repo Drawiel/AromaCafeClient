@@ -240,6 +240,17 @@
   <ItemGroup>
     <Resource Include="Multimedia\GUI_InicioGerente.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_EditarEmpleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverEdit.png" />
+    <Resource Include="Multimedia\HoverSave.png" />
+    <Resource Include="Multimedia\HoverStatus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\Status.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
