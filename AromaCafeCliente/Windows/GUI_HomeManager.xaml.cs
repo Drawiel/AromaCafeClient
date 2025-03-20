@@ -21,5 +21,28 @@ namespace AromaCafeCliente.Windows {
         public GUI_HomeManager() {
             InitializeComponent();
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        {
+            string password = pswdBoxEmployeePassword.Password;
+            if (password == string.Empty)
+            {
+
+            }
+            else
+            {
+                //Alert
+            }
+        }
+
+        private void HideLogOut(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Hidden;
+        }
     }
 }

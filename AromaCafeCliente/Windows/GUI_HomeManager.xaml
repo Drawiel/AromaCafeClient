@@ -26,18 +26,17 @@
             Height="500"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Visibility="Hidden"
+            Visibility="Visible"
             Panel.ZIndex="2"
             Margin="460,0,0,0" Grid.ColumnSpan="2">
             <Grid.Background>
                 <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpCerrarSesión.png"/>
             </Grid.Background>
-            <TextBox
+            <PasswordBox
+                Name="pswdBoxEmployeePassword"
                 Padding="10,10,0,0"
                 HorizontalAlignment="Left" 
                 Margin="342,220,0,0" 
-                TextWrapping="Wrap" 
-                Text="" 
                 VerticalAlignment="Top" 
                 Width="550" Height="57"
                 FontSize="40"
@@ -49,7 +48,8 @@
                 Margin="830,405,0,0" 
                 VerticalAlignment="Top" 
                 Height="55" 
-                Width="136">
+                Width="136"
+                Click="ValidateUserLogOut">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -79,7 +79,8 @@
                 Margin="673,405,0,0" 
                 VerticalAlignment="Top" 
                 Height="55" 
-                Width="136">
+                Width="136"
+                Click="HideLogOut">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -285,7 +286,8 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258"
+                    Click="LogOut_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
