@@ -28,6 +28,7 @@ namespace AromaCafeCliente.Windows {
 
         public GUI_EmployeeUpdate() {
             InitializeComponent();
+            LoadEmployeeData();
             radioButtonCashier.Checked += RadioButtonCheckedChanged;
             radioButtonWaitress.Checked += RadioButtonCheckedChanged;
             radioButtonManager.Checked += RadioButtonCheckedChanged;
@@ -129,7 +130,7 @@ namespace AromaCafeCliente.Windows {
 
         private void LoadEmployeeData() {
             employeeManagerClient = new EmployeeManagerClient();
-            Employee employee = employeeManagerClient.GetEmployeeInformation(2);
+            Employee employee = employeeManagerClient.GetEmployeeInformation(1);
             try {
                 txtBoxName.Text = employee.Name;
                 txtBoxLastName.Text = employee.LastName;
