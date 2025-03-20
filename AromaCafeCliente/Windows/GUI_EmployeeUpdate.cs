@@ -18,7 +18,8 @@ namespace AromaCafeCliente.Windows {
     /// <summary>
     /// Interaction logic for GUI_EmployeeUpdate.xaml
     /// </summary>
-    public partial class GUI_EmployeeUpdate : Window {
+    public partial class GUI_EmployeeUpdate : Page
+    {
 
         private string employeType = " ";
 
