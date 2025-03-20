@@ -503,7 +503,7 @@
                         Margin="1255,846,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="159">
+                        Width="159" Click="BtnSaveClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -564,7 +564,7 @@
                         Margin="1249,55,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="154">
+                        Width="154" Click="BtnEditClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -618,13 +618,15 @@
 
                     </Button>
 
-                    <CheckBox 
-                        x:Name="chkBoxWaitress"
+                    <RadioButton 
+                        x:Name="radioButtonWaitress"
                         HorizontalAlignment="Left" 
                         Margin="387,809,0,0" 
-                        VerticalAlignment="Top">
-                        <CheckBox.Template>
-                            <ControlTemplate TargetType="CheckBox">
+                        VerticalAlignment="Top"
+                        IsEnabled="False"
+                        Tag="Waitress">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
                                 <StackPanel Orientation="Horizontal">
                                     <Border x:Name="Circle"
                                         Width="41"
@@ -646,16 +648,18 @@
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
-                        </CheckBox.Template>
-                    </CheckBox>
+                        </RadioButton.Template>
+                    </RadioButton>
 
-                    <CheckBox 
-                        x:Name="chkBoxCashier"
+                    <RadioButton 
+                        x:Name="radioButtonCashier"
                         HorizontalAlignment="Left" 
                         Margin="609,809,0,0" 
-                        VerticalAlignment="Top">
-                        <CheckBox.Template>
-                            <ControlTemplate TargetType="CheckBox">
+                        VerticalAlignment="Top"
+                        IsEnabled="False"
+                        Tag="Cajero">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
                                 <StackPanel Orientation="Horizontal">
                                     <Border x:Name="Circle"
                                         Width="41"
@@ -677,16 +681,18 @@
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
-                        </CheckBox.Template>
-                    </CheckBox>
+                        </RadioButton.Template>
+                    </RadioButton>
 
-                    <CheckBox 
-                        x:Name="chkBoxManager"
+                    <RadioButton 
+                        x:Name="radioButtonManager"
                         HorizontalAlignment="Left" 
                         Margin="812,809,0,0" 
-                        VerticalAlignment="Top">
-                        <CheckBox.Template>
-                            <ControlTemplate TargetType="CheckBox">
+                        VerticalAlignment="Top"
+                        IsEnabled="False"
+                        Tag="Gerente">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
                                 <StackPanel Orientation="Horizontal">
                                     <Border x:Name="Circle"
                                         Width="41"
@@ -708,8 +714,8 @@
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
-                        </CheckBox.Template>
-                    </CheckBox>
+                        </RadioButton.Template>
+                    </RadioButton>
 
 
 
