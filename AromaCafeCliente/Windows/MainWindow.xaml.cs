@@ -58,5 +58,11 @@ namespace AromaCafeCliente {
                 }
             }
         }
+
+        private void CleanFields(object sender, RoutedEventArgs e)
+        {
+            this.txtBoxEmployeeNumber.Text = string.Empty;
+            this.txtBoxEmployeePassword.Password = string.Empty;
+        }
     }
 }

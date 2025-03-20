@@ -157,7 +157,8 @@
                     Height="145"
                     FontSize="80"
                     Width="443"
-                    Background="Transparent"/>
+                    Background="Transparent"
+                    Click="CleanFields"/>
 
                 <Button
                     FontFamily="pack://application:,,,/Font/#Architects Daughter"
