@@ -20,12 +20,12 @@
         </Grid.ColumnDefinitions>
 
         <Grid
-            x:Name="ValidationPopup"
+            x:Name="validationPopup"
             Width="1000"
             Height="500"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Visibility="Hidden"
+            Visibility="Collapsed"
             Panel.ZIndex="2"
             Margin="460,0,0,0" Grid.ColumnSpan="2" Cursor="">
 
@@ -53,7 +53,8 @@
                 Margin="830,426,0,0" 
                 VerticalAlignment="Top" 
                 Height="48" 
-                Width="136">
+                Width="136"
+                Click="BtnAcceptClick">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -111,7 +112,11 @@
                 Margin="270,131,0,0" 
                 VerticalAlignment="Top" 
                 Width="696" 
-                Height="49"/>
+                Height="49"
+                x:Name="comboBoxStatus">
+                <ComboBoxItem Content="Deshabilitado"/>
+                <ComboBoxItem Content="Habilitado"/>
+            </ComboBox>
 
 
         </Grid>
@@ -337,7 +342,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
                     <TextBox
-                            x:Name="TxtBoxName" 
+                            x:Name="txtBoxName" 
                             IsEnabled="False"
                             Padding="10,0,10,0"
                             FontFamily="pack://application:,,,/Font/#Architects Daughter"
@@ -594,7 +599,7 @@
                         Margin="1072,55,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="155">
+                        Width="155" Click="BtnStatusClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
