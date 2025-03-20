@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AromaCafeCliente.AromaCafeService;
 
 namespace AromaCafeCliente.Windows {
     /// <summary>
@@ -21,7 +22,8 @@ namespace AromaCafeCliente.Windows {
     /// </summary>
     public partial class GUI_Employees : Page {
         
-        //private ObservableCollection<Employee> employeesList;
+        private EmployeeManagerClient employeeManager;
+        private ObservableCollection<Employee> employeesList;
         private ICollectionView employeesView;
         
         public GUI_Employees() {
@@ -31,18 +33,15 @@ namespace AromaCafeCliente.Windows {
 
         private void LoadEmployees() {
             try {
-                /*employeeManager = new EmployeeManagerClient();
+                employeeManager = new EmployeeManagerClient();
                 Employee[] employees = employeeManager.GetAllEmployee();
-                
-                foreach (var employee in employees){
-                    dataGridUsers.Rows.Add(employee.LastName, employee.Name, employee.EmployeeType, employee.EmployeeType);
-                }
 
+                employeesList = new ObservableCollection<Employee>(employees);
                 employeesView = CollectionViewSource.GetDefaultView(employeesList);
                 employeesView.Filter = EmployeeFilter;
 
                 dataGridUser.ItemsSource = employeesView;
-                 */
+                 
             } catch (Exception){
                 MessageBox.Show("Ocurrio un error recuperando los empleados");
             }
@@ -54,16 +53,16 @@ namespace AromaCafeCliente.Windows {
             }
         }
 
-        /*private bool EmployeeFilter(object item) {
+        private bool EmployeeFilter(object item) {
             if (string.IsNullOrEmpty(txtSearchBox.Text)) return true;
 
             var employee = item as Employee;
+            if (employee == null) return false;
             string searchText = txtSearchBox.Text.ToLower();
 
             return employee.LastName.ToLower().Contains(searchText) ||
                    employee.Name.ToLower().Contains(searchText) ||
-                   employee.Type.ToLower().Contains(searchText) ||
-                   employee.Status.ToLower().Contains(searchText);
-        }*/
+                   employee.EmployeeType.ToLower().Contains(searchText);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AromaCafeCliente.AromaCafeService;
 
 namespace AromaCafeCliente.Windows {
     /// <summary>
@@ -23,8 +25,11 @@ namespace AromaCafeCliente.Windows {
 
         private string employeType = " ";
 
+        AromaCafeService.EmployeeManagerClient employeeManagerClient;
+
         public GUI_EmployeeUpdate() {
             InitializeComponent();
+            LoadEmployeeData();
             radioButtonCashier.Checked += RadioButtonCheckedChanged;
             radioButtonWaitress.Checked += RadioButtonCheckedChanged;
             radioButtonManager.Checked += RadioButtonCheckedChanged;
@@ -37,7 +42,7 @@ namespace AromaCafeCliente.Windows {
 
         private bool CheckAllFields() {
             TextBox[] textBoxes = {
-                TxtBoxName,
+                txtBoxName,
                 txtBoxLastName,
                 txtBoxEmail,
                 txtBoxUser,
@@ -57,10 +62,13 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnSaveClick(object sender, RoutedEventArgs e) {
 
-            if (CheckAllFields()) {
+            bool updatedProfile = UpdateProfile(CreateEmployee());
+            if (CheckAllFields() && updatedProfile) {
                 MessageBox.Show("Se ha actualizado correctamente la informacion del empleado");
             } else if (!CheckAllFields() || !IsValidEmail()){
                 MessageBox.Show("Se han encontrado campos vacios o invalidos, favor de revisar");
+            } else if (!updatedProfile){
+                MessageBox.Show("Hubo un error al actualizar el empleado");
             }
 
             radioButtonCashier.IsEnabled = false;
@@ -71,7 +79,7 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnEditClick(object sender, RoutedEventArgs e) {
             TextBox[] textBoxes = {
-                TxtBoxName,
+                txtBoxName,
                 txtBoxLastName,
                 txtBoxEmail,
                 txtBoxUser,
@@ -88,10 +96,11 @@ namespace AromaCafeCliente.Windows {
             btnSave.IsEnabled = true;
         }
 
-        /*private bool UpdateProfile(Employee employee) { 
+        private bool UpdateProfile(Employee employee) {
+            employeeManagerClient = new EmployeeManagerClient();
             try {
-                int profileUpdated = userManager.UpdateProfile(employee);
-                if(profileUpdates != -1){
+                int profileUpdated = employeeManagerClient.UpdateProfile(employee);
+                if(profileUpdated != -1){
                     return true;
                 } else {
                     return false;
@@ -102,8 +111,13 @@ namespace AromaCafeCliente.Windows {
         }
 
         private Employee CreateEmployee() {
+            string status = comboBoxStatus.Text;
+            if (status == "Deshabilitado") {
+                employeType = "Deshabilitado";
+            }
+
             var updatedEmployee = new Employee {
-                Name = TxtBoxName.Text,
+                Name = txtBoxName.Text,
                 LastName = txtBoxLastName.Text,
                 Email = txtBoxEmail.Text,
                 Username = txtBoxUser.Text,
@@ -111,8 +125,33 @@ namespace AromaCafeCliente.Windows {
                 EmployeeAddress = txtBoxStreet.Text + ", " + txtBoxCity.Text,
                 EmployeeType = employeType
             };
-        }*/
 
-        
+            return updatedEmployee;
+        }
+
+        private void LoadEmployeeData() {
+            employeeManagerClient = new EmployeeManagerClient();
+            Employee employee = employeeManagerClient.GetEmployeeInformation(1);
+            try {
+                txtBoxName.Text = employee.Name;
+                txtBoxLastName.Text = employee.LastName;
+                txtBoxEmail.Text = employee.Email;
+                txtBoxUser.Text = employee.Username;
+                txtBoxStreet.Text = employee.EmployeeAddress;
+                txtBoxCity.Text = employee.EmployeeAddress;
+                txtBoxCP.Text = employee.PostalCode;
+                txtBoxNumber.Text = employee.EmployeeAddress;
+            } catch (Exception) {
+
+            }
+        }
+
+        private void BtnStatusClick(object sender, RoutedEventArgs e) {
+            validationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void BtnAcceptClick(object sender, RoutedEventArgs e) {
+            validationPopup.Visibility = Visibility.Collapsed;
+        }
     }
 }
