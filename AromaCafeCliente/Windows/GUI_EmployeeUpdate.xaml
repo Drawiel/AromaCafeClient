@@ -534,12 +534,13 @@
 
                     <Button 
                         x:Name="btnCancel"
-                        IsEnabled="False"
+                        IsEnabled="True"
                         HorizontalAlignment="Left" 
                         Margin="1076,846,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="156">
+                        Width="156"
+                        Click="BtnCancelClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -553,7 +554,7 @@
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
-                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
                                             </Setter.Value>
                                         </Setter>
                                     </Trigger>

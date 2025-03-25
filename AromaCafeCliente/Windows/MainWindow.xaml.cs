@@ -48,9 +48,9 @@ namespace AromaCafeCliente {
                             this.Close();*/
                             break;
                         case "Gerente":
-                            GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
+                            /*GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
                             gUI_HomeManager.Show();
-                            this.Close();
+                            this.Close();*/
                             break;
                         default:
                             break;
