@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AromaCafeCliente.Windows"
       mc:Ignorable="d" 
 
-      Title="GUI_HomeManager" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+      Title="GUI_HomeManager" Height="1080" Width="1920">
 
     <Page.Background>
         <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_InicioGerente.png"/>
