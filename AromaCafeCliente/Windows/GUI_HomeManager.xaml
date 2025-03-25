@@ -26,7 +26,7 @@
             Height="500"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Visibility="Visible"
+            Visibility="Hidden"
             Panel.ZIndex="2"
             Margin="460,0,0,0" Grid.ColumnSpan="2">
             <Grid.Background>

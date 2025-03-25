@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AromaCafeCliente.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,9 +31,16 @@ namespace AromaCafeCliente.Windows {
         private void ValidateUserLogOut(object sender, RoutedEventArgs e)
         {
             string password = pswdBoxEmployeePassword.Password;
-            if (password == string.Empty)
+            if (password != string.Empty)
             {
-
+                if (EmployeeManager.LogOut(password) == 1)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
             }
             else
             {

@@ -430,6 +430,12 @@ namespace AromaCafeCliente.AromaCafeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogInManager/OpenTurn", ReplyAction="http://tempuri.org/ILogInManager/OpenTurnResponse")]
         System.Threading.Tasks.Task<int> OpenTurnAsync(string username);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogInManager/CloseTurn", ReplyAction="http://tempuri.org/ILogInManager/CloseTurnResponse")]
+        int CloseTurn(string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogInManager/CloseTurn", ReplyAction="http://tempuri.org/ILogInManager/CloseTurnResponse")]
+        System.Threading.Tasks.Task<int> CloseTurnAsync(string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogInManager/CheckTurnOpened", ReplyAction="http://tempuri.org/ILogInManager/CheckTurnOpenedResponse")]
         int CheckTurnOpened(string username);
         
@@ -478,6 +484,14 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<int> OpenTurnAsync(string username) {
             return base.Channel.OpenTurnAsync(username);
+        }
+        
+        public int CloseTurn(string password) {
+            return base.Channel.CloseTurn(password);
+        }
+        
+        public System.Threading.Tasks.Task<int> CloseTurnAsync(string password) {
+            return base.Channel.CloseTurnAsync(password);
         }
         
         public int CheckTurnOpened(string username) {

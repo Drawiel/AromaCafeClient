@@ -136,6 +136,12 @@
   <wsdl:message name="ILogInManager_OpenTurn_OutputMessage">
     <wsdl:part name="parameters" element="tns:OpenTurnResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogInManager_CloseTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseTurn" />
+  </wsdl:message>
+  <wsdl:message name="ILogInManager_CloseTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseTurnResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogInManager_CheckTurnOpened_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckTurnOpened" />
   </wsdl:message>
@@ -190,6 +196,10 @@
     <wsdl:operation name="OpenTurn">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/OpenTurn" message="tns:ILogInManager_OpenTurn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogInManager/OpenTurnResponse" message="tns:ILogInManager_OpenTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/CloseTurn" message="tns:ILogInManager_CloseTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogInManager/CloseTurnResponse" message="tns:ILogInManager_CloseTurn_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CheckTurnOpened">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/CheckTurnOpened" message="tns:ILogInManager_CheckTurnOpened_InputMessage" />
@@ -273,6 +283,15 @@
     </wsdl:operation>
     <wsdl:operation name="OpenTurn">
       <soap12:operation soapAction="http://tempuri.org/ILogInManager/OpenTurn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseTurn">
+      <soap12:operation soapAction="http://tempuri.org/ILogInManager/CloseTurn" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
