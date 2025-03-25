@@ -1,16 +1,16 @@
-﻿<Window x:Class="AromaCafeCliente.Windows.GUI_EmployeeUpdate"
+﻿<Page x:Class="AromaCafeCliente.Windows.GUI_EmployeeUpdate"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AromaCafeCliente.Windows"
       mc:Ignorable="d" 
-      Title="GUI_EmployeeUpdate" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+      Title="GUI_EmployeeUpdate" Height="1080" Width="1920" >
 
 
-    <Window.Background>
+    <Page.Background>
         <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_EditarEmpleado.png"/>
-    </Window.Background>
+    </Page.Background>
 
     <Grid>
 
@@ -534,12 +534,13 @@
 
                     <Button 
                         x:Name="btnCancel"
-                        IsEnabled="False"
+                        IsEnabled="True"
                         HorizontalAlignment="Left" 
                         Margin="1076,846,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="156">
+                        Width="156"
+                        Click="BtnCancelClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -553,7 +554,7 @@
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
-                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
                                             </Setter.Value>
                                         </Setter>
                                     </Trigger>
@@ -733,4 +734,4 @@
 
 
     </Grid>
-</Window>
+</Page>

@@ -20,15 +20,16 @@ namespace AromaCafeCliente.Windows {
     /// <summary>
     /// Interaction logic for GUI_EmployeeUpdate.xaml
     /// </summary>
-    public partial class GUI_EmployeeUpdate : Window {
+    public partial class GUI_EmployeeUpdate : Page
+    {
 
         private string employeType = " ";
 
         AromaCafeService.EmployeeManagerClient employeeManagerClient;
 
-        public GUI_EmployeeUpdate() {
+        public GUI_EmployeeUpdate(int employeeId) {
             InitializeComponent();
-            LoadEmployeeData();
+            LoadEmployeeData(employeeId);
             radioButtonCashier.Checked += RadioButtonCheckedChanged;
             radioButtonWaitress.Checked += RadioButtonCheckedChanged;
             radioButtonManager.Checked += RadioButtonCheckedChanged;
@@ -55,7 +56,7 @@ namespace AromaCafeCliente.Windows {
         }
 
         private bool IsValidEmail() {
-            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s+$";
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(emailPattern, txtBoxEmail.Text);
         }
 
@@ -128,9 +129,9 @@ namespace AromaCafeCliente.Windows {
             return updatedEmployee;
         }
 
-        private void LoadEmployeeData() {
+        private void LoadEmployeeData(int employeeId) {
             employeeManagerClient = new EmployeeManagerClient();
-            Employee employee = employeeManagerClient.GetEmployeeInformation(1);
+            Employee employee = employeeManagerClient.GetEmployeeInformation(employeeId);
             try {
                 txtBoxName.Text = employee.Name;
                 txtBoxLastName.Text = employee.LastName;
@@ -143,6 +144,16 @@ namespace AromaCafeCliente.Windows {
             } catch (Exception) {
 
             }
+
+            if(employee.EmployeeType == "Gerente") {
+                radioButtonManager.IsChecked = true;
+            } else if (employee.EmployeeType == "Cajero") {
+                radioButtonCashier.IsChecked = true;
+            } else if (employee.EmployeeType == "Mesero") {
+                radioButtonWaitress.IsChecked = true;
+            } else if (employee.EmployeeType == "Inhabilitado") {
+
+            }
         }
 
         private void BtnStatusClick(object sender, RoutedEventArgs e) {
@@ -151,6 +162,10 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnAcceptClick(object sender, RoutedEventArgs e) {
             validationPopup.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnCancelClick(object sender, RoutedEventArgs e) {
+            this.NavigationService.Navigate(new GUI_Employees());
         }
     }
 }

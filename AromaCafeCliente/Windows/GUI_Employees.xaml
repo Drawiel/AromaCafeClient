@@ -322,21 +322,29 @@
 
                     <DataGrid 
                         x:Name="dataGridUser"
-                      AutoGenerateColumns="False"
-                      CanUserAddRows="False"
-                      ItemsSource="{Binding Users}"
-                      ScrollViewer.CanContentScroll="True"
-                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        ItemsSource="{Binding Users}"
+                        ScrollViewer.CanContentScroll="True"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
                         ColumnHeaderHeight="61" 
                         GridLinesVisibility="All"
                         Background="Transparent"
-                      Margin="10">
+                        Margin="10"
+                        SelectionUnit="FullRow"
+                        SelectionMode="Single"
+                        SelectionChanged="DataGridUserSelectionChanged"
+                        Foreground="Black"
+                        FontSize="25"
+                        
+                        >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="" Binding="{Binding LastName}" Width="400" />
-                            <DataGridTextColumn Header="" Binding="{Binding Name}" Width="400" />
-                            <DataGridTextColumn Header="" Binding="{Binding EmployeeType}" Width="270" />
-                            <DataGridTextColumn Header="" Binding="{Binding Status}" Width="*" />
+                            <DataGridTextColumn Header="" Binding="{Binding LastName}" Width="400" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Name}" Width="400" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding EmployeeType}" Width="270" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Status}" Width="*" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding EmployeeId}" Width="*" IsReadOnly="True" Visibility="Collapsed"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
