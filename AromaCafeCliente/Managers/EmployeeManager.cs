@@ -59,5 +59,30 @@ namespace AromaCafeCliente.Managers
             }
             return loggedOut;
         }
+
+        public static string RegisterEmployee(Employee employee)
+        {
+            string registered;
+            try
+            {
+                using (var proxy = new AromaCafeService.EmployeeManagerClient())
+                {
+                    registered = proxy.RegisterEmployee(employee);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return registered;
+        }
     }
 }

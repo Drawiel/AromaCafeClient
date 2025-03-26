@@ -32,6 +32,14 @@ namespace AromaCafeCliente.Windows {
             LoadEmployees();
         }
 
+        private void NavigateEmployeeRegistration(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_EmployeeRegistration());
+            }
+        }
+
         private void LoadEmployees() {
             try {
                 employeeManager = new EmployeeManagerClient();

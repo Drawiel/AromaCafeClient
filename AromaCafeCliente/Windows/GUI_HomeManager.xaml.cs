@@ -35,11 +35,14 @@ namespace AromaCafeCliente.Windows {
             {
                 if (EmployeeManager.LogOut(password) == 1)
                 {
-                    
+                    if (this.NavigationService != null)
+                    {
+                        this.NavigationService.Navigate(new GUI_LogIn());
+                    }
                 }
                 else
                 {
-                    
+                    //Alert
                 }
             }
             else

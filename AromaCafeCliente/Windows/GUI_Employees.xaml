@@ -249,7 +249,8 @@
                         Margin="1404,92,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" 
-                        Width="65">
+                        Width="65"
+                        Click="NavigateEmployeeRegistration">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
