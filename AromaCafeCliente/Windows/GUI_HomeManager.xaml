@@ -247,7 +247,8 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258"
+                    Click="GoProductList">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
