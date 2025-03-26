@@ -79,6 +79,7 @@ namespace AromaCafeCliente.Windows {
                 Email = txtBoxEmail.Text,
                 PostalCode = txtBoxNumber.Text,
                 Username = txtBoxUser.Text,
+                EmployeeAddress = txtBoxStreet.Text,
                 EmployeeType = chkBoxWaitress.IsChecked ?? false ? "Mesero" :
                    chkBoxCashier.IsChecked ?? false ? "Cajero" :
                    chkBoxManager.IsChecked ?? false ? "Gerente" : "Desconocido"
@@ -92,6 +93,46 @@ namespace AromaCafeCliente.Windows {
             {
                 this.NavigationService.Navigate(new GUI_Employees());
             }
+        }
+
+        private void NavigateProductList(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                NavigationService.Navigate(new GUI_ProductList());
+            }
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        {
+            string password = pswdBoxEmployeePassword.Password;
+            if (password != string.Empty)
+            {
+                if (EmployeeManager.LogOut(password) == 1)
+                {
+                    if (this.NavigationService != null)
+                    {
+                        this.NavigationService.Navigate(new GUI_LogIn());
+                    }
+                }
+                else
+                {
+                    //Alert
+                }
+            }
+            else
+            {
+                //Alert
+            }
+        }
+        private void HideLogOut(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Hidden;
         }
     }
 }

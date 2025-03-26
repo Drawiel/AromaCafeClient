@@ -80,12 +80,13 @@ namespace AromaCafeCliente.Windows {
         private bool EmployeeFilter(object item) {
             if (string.IsNullOrEmpty(txtSearchBox.Text)) return true;
 
-            var employee = item as Employee;
+            var employee = item as EmployeeWithStatus;
             if (employee == null) return false;
             string searchText = txtSearchBox.Text.ToLower();
 
             return employee.LastName.ToLower().Contains(searchText) ||
                    employee.Name.ToLower().Contains(searchText) ||
+                   employee.Status.ToLower().Contains(searchText) ||
                    employee.EmployeeType.ToLower().Contains(searchText);
         }
 
@@ -94,6 +95,14 @@ namespace AromaCafeCliente.Windows {
 
             if (employeesView != null) {
                 this.NavigationService.Navigate(new GUI_EmployeeUpdate(selectedEmployee.EmployeeId));
+            }
+        }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                NavigationService.GoBack();
             }
         }
 
