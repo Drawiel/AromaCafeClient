@@ -89,6 +89,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
+      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Stock.xaml.cs">
       <DependentUpon>GUI_PopUp_Stock.xaml</DependentUpon>
     </Compile>
@@ -148,9 +151,6 @@
     </Compile>
     <Compile Include="Windows\GUI_Employees.xaml.cs">
       <DependentUpon>GUI_Employees.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\GUI_EmployeeUpdate.cs">
-      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GUI_HomeCashier.xaml.cs">
       <DependentUpon>GUI_HomeCashier.xaml</DependentUpon>
