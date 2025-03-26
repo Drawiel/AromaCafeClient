@@ -543,7 +543,7 @@
                         VerticalAlignment="Top" 
                         Height="59" 
                         Width="454"
-                        Click="BtnCancelClick">
+                        Click="BtnChangeAccessCodeClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">

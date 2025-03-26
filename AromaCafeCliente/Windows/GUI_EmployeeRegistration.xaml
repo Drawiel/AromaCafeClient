@@ -372,7 +372,8 @@
                         Margin="1253,846,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="155">
+                        Width="155"
+                        Click="RegistrateNewEmployee">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -402,7 +403,8 @@
                         Margin="1054,846,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="155">
+                        Width="155"
+                        Click="NavigateEmployees">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">

@@ -322,10 +322,10 @@ namespace AromaCafeCliente.AromaCafeService {
         System.Threading.Tasks.Task<int> UpdateProfileAsync(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/RegisterEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/RegisterEmployeeResponse")]
-        int RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
+        string RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/RegisterEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/RegisterEmployeeResponse")]
-        System.Threading.Tasks.Task<int> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee);
+        System.Threading.Tasks.Task<string> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/DisableEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/DisableEmployeeResponse")]
         int DisableEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
@@ -344,6 +344,12 @@ namespace AromaCafeCliente.AromaCafeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/GetEmployeeInformation", ReplyAction="http://tempuri.org/IEmployeeManager/GetEmployeeInformationResponse")]
         System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.Employee> GetEmployeeInformationAsync(int employeeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile", ReplyAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfileResponse")]
+        string UpdateAccessCodeProfile(AromaCafeCliente.AromaCafeService.Employee employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile", ReplyAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfileResponse")]
+        System.Threading.Tasks.Task<string> UpdateAccessCodeProfileAsync(AromaCafeCliente.AromaCafeService.Employee employee);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -381,11 +387,11 @@ namespace AromaCafeCliente.AromaCafeService {
             return base.Channel.UpdateProfileAsync(employee);
         }
         
-        public int RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee) {
+        public string RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee) {
             return base.Channel.RegisterEmployee(employee);
         }
         
-        public System.Threading.Tasks.Task<int> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee) {
+        public System.Threading.Tasks.Task<string> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee) {
             return base.Channel.RegisterEmployeeAsync(employee);
         }
         
@@ -411,6 +417,14 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.Employee> GetEmployeeInformationAsync(int employeeId) {
             return base.Channel.GetEmployeeInformationAsync(employeeId);
+        }
+        
+        public string UpdateAccessCodeProfile(AromaCafeCliente.AromaCafeService.Employee employee) {
+            return base.Channel.UpdateAccessCodeProfile(employee);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateAccessCodeProfileAsync(AromaCafeCliente.AromaCafeService.Employee employee) {
+            return base.Channel.UpdateAccessCodeProfileAsync(employee);
         }
     }
     

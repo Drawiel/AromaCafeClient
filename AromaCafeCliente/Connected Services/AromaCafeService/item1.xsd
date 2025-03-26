@@ -25,7 +25,7 @@
   <xs:element name="RegisterEmployeeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="RegisterEmployeeResult" type="xs:int" />
+        <xs:element minOccurs="0" name="RegisterEmployeeResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,6 +69,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateAccessCodeProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="employee" nillable="true" type="q6:Employee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccessCodeProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAccessCodeProfileResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ValidateCredentials">
     <xs:complexType>
       <xs:sequence>
@@ -80,7 +94,7 @@
   <xs:element name="ValidateCredentialsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="ValidateCredentialsResult" nillable="true" type="q6:Employee" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="ValidateCredentialsResult" nillable="true" type="q7:Employee" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -134,14 +148,14 @@
   <xs:element name="GetAllProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetAllProductsResult" nillable="true" type="q7:ArrayOfProduct" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetAllProductsResult" nillable="true" type="q8:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="newProduct" nillable="true" type="q8:Product" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="newProduct" nillable="true" type="q9:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

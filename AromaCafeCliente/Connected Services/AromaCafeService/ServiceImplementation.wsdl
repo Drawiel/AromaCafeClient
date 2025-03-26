@@ -124,6 +124,12 @@
   <wsdl:message name="IEmployeeManager_GetEmployeeInformation_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeeInformationResponse" />
   </wsdl:message>
+  <wsdl:message name="IEmployeeManager_UpdateAccessCodeProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccessCodeProfile" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeManager_UpdateAccessCodeProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccessCodeProfileResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogInManager_ValidateCredentials_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidateCredentials" />
   </wsdl:message>
@@ -186,6 +192,10 @@
     <wsdl:operation name="GetEmployeeInformation">
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/GetEmployeeInformation" message="tns:IEmployeeManager_GetEmployeeInformation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeManager/GetEmployeeInformationResponse" message="tns:IEmployeeManager_GetEmployeeInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccessCodeProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" message="tns:IEmployeeManager_UpdateAccessCodeProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfileResponse" message="tns:IEmployeeManager_UpdateAccessCodeProfile_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ILogInManager">
@@ -261,6 +271,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetEmployeeInformation">
       <soap12:operation soapAction="http://tempuri.org/IEmployeeManager/GetEmployeeInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccessCodeProfile">
+      <soap12:operation soapAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -387,6 +406,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateAccessCodeProfile">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IEmployeeManager" binding="tns:NetTcpBinding_IEmployeeManager">
@@ -394,7 +422,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>ZAIDPC\zaido</Upn>
+          <Upn>VICTUS-DUAA\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -403,7 +431,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>ZAIDPC\zaido</Upn>
+          <Upn>VICTUS-DUAA\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -412,7 +440,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>ZAIDPC\zaido</Upn>
+          <Upn>VICTUS-DUAA\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

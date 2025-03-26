@@ -26,6 +26,7 @@ namespace AromaCafeCliente.Windows {
 
         private string employeeType = " ";
         private int employeeId = 0;
+        private string newAccessCode = " ";
 
         AromaCafeService.EmployeeManagerClient employeeManagerClient;
 
@@ -178,18 +179,10 @@ namespace AromaCafeCliente.Windows {
             this.NavigationService.Navigate(new GUI_Employees());
         }
 
-        //Eliminar mas adelante cuanto tengamos el helper
-        public static string HashPassword(string password) {
-            using (SHA256 sha256 = SHA256.Create()) {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(bytes);
-            }
-        }
-
         private void BtnChangeAccessCodeClick(object sender, RoutedEventArgs e) {
             bool updatedAccessCodeProfile = UpdateAccessCodeProfile(CreateNewAccessCode());
             if (updatedAccessCodeProfile) {
-                MessageBox.Show("Se ha creado correctamente la nueva clave de acceso");
+                MessageBox.Show("Se ha creado correctamente la nueva clave de acceso: "+ newAccessCode);
             } else if (!updatedAccessCodeProfile) {
                 MessageBox.Show("Hubo un error al crear el codigo de acceso del empleado");
             }
@@ -198,13 +191,13 @@ namespace AromaCafeCliente.Windows {
         private bool UpdateAccessCodeProfile(Employee employee) {
             employeeManagerClient = new EmployeeManagerClient();
             try {
-                //int profileUpdated = employeeManagerClient.UpdateAccessCodeProfile(employee);
-                /*if (profileUpdated != -1) {
+                string password = employeeManagerClient.UpdateAccessCodeProfile(employee);
+                if (password != "Error") {
+                    newAccessCode = password;
                     return true;
                 } else {
                     return false;
-                }*/
-                return true;
+                }
             } catch (Exception) {
                 return false;
             }
@@ -213,7 +206,6 @@ namespace AromaCafeCliente.Windows {
         private Employee CreateNewAccessCode() {
             SetEmployeeType();
             var updatedEmployee = new Employee {
-                Password = "1234",
                 EmployeeId = employeeId
             };
 

@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
     <Compile Include="Managers\ProductManager.cs" />
     <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
