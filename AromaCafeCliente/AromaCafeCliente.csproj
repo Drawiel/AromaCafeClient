@@ -63,6 +63,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -81,6 +83,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\AromaCafeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\EmployeeManager.cs" />
     <Compile Include="Windows\UserControllers\GUI_PopUp_Stock.xaml.cs">
       <DependentUpon>GUI_PopUp_Stock.xaml</DependentUpon>
     </Compile>
@@ -199,6 +207,22 @@
     <Resource Include="Font\ArchitectsDaughter-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Employee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AromaCafeService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AromaCafeService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AromaCafeService\ServiceImplementation.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,7 +300,28 @@
     <Resource Include="Multimedia\HoverBack.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Multimedia\popUpCerrarSesión.png" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AromaCafeService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AromaCafeService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AromaCafeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AromaCafeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AromaCafeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverChangeAccessKey.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
