@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using AromaCafeCliente.AromaCafeService;
 
 namespace AromaCafeCliente.Windows {
@@ -23,7 +24,7 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_Employees : Page {
         
         private EmployeeManagerClient employeeManager;
-        private ObservableCollection<Employee> employeesList;
+        private ObservableCollection<EmployeeWithStatus> employeesList;
         private ICollectionView employeesView;
         
         public GUI_Employees() {
@@ -35,8 +36,23 @@ namespace AromaCafeCliente.Windows {
             try {
                 employeeManager = new EmployeeManagerClient();
                 Employee[] employees = employeeManager.GetAllEmployee();
+                List<EmployeeWithStatus> employeesWithStatus = new List<EmployeeWithStatus>(); 
 
-                employeesList = new ObservableCollection<Employee>(employees);
+                foreach (Employee employee in employees) {
+
+                    var eWithStatus = new EmployeeWithStatus {
+                        EmployeeId = employee.EmployeeId,
+                        Name = employee.Name,
+                        LastName = employee.LastName,
+                        EmployeeType = employee.EmployeeType,
+                        Status = (employee.EmployeeType == "Gerente" || employee.EmployeeType == "Cajero" || employee.EmployeeType == "Mesero")
+                    ? "Habilitado"
+                    : "Inhabilitado"
+                    };
+                    employeesWithStatus.Add(eWithStatus);
+                }
+
+                employeesList = new ObservableCollection<EmployeeWithStatus>(employeesWithStatus);
                 employeesView = CollectionViewSource.GetDefaultView(employeesList);
                 employeesView.Filter = EmployeeFilter;
 
@@ -63,6 +79,22 @@ namespace AromaCafeCliente.Windows {
             return employee.LastName.ToLower().Contains(searchText) ||
                    employee.Name.ToLower().Contains(searchText) ||
                    employee.EmployeeType.ToLower().Contains(searchText);
+        }
+
+        private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var selectedEmployee = dataGridUser.SelectedItem as EmployeeWithStatus;
+
+            if (employeesView != null) {
+                this.NavigationService.Navigate(new GUI_EmployeeUpdate(selectedEmployee.EmployeeId));
+            }
+        }
+
+        private class EmployeeWithStatus {
+            public int EmployeeId { get; set;}
+            public string Name { get ; set ; }
+            public string LastName { get; set; }
+            public string EmployeeType { get ; set ; }
+            public string Status { get ; set ; }
         }
     }
 }
