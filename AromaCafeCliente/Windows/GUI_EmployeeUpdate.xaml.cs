@@ -47,7 +47,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail,
                 txtBoxUser,
                 txtBoxStreet,
-                txtBoxCity,
                 txtBoxCP,
                 txtBoxNumber,
             };
@@ -84,7 +83,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail,
                 txtBoxUser,
                 txtBoxStreet,
-                txtBoxCity,
                 txtBoxCP,
                 txtBoxNumber,
             };
@@ -122,7 +120,7 @@ namespace AromaCafeCliente.Windows {
                 Email = txtBoxEmail.Text,
                 Username = txtBoxUser.Text,
                 PostalCode = txtBoxCP.Text,
-                EmployeeAddress = txtBoxStreet.Text + ", " + txtBoxCity.Text,
+                EmployeeAddress = txtBoxStreet.Text + ", ",
                 EmployeeType = employeType
             };
 
@@ -138,7 +136,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail.Text = employee.Email;
                 txtBoxUser.Text = employee.Username;
                 txtBoxStreet.Text = employee.EmployeeAddress;
-                txtBoxCity.Text = employee.EmployeeAddress;
                 txtBoxCP.Text = employee.PostalCode;
                 txtBoxNumber.Text = employee.EmployeeAddress;
             } catch (Exception) {

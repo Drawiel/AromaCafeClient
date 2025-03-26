@@ -322,10 +322,10 @@ namespace AromaCafeCliente.AromaCafeService {
         System.Threading.Tasks.Task<int> UpdateProfileAsync(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/RegisterEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/RegisterEmployeeResponse")]
-        int RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
+        string RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/RegisterEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/RegisterEmployeeResponse")]
-        System.Threading.Tasks.Task<int> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee);
+        System.Threading.Tasks.Task<string> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeManager/DisableEmployee", ReplyAction="http://tempuri.org/IEmployeeManager/DisableEmployeeResponse")]
         int DisableEmployee(AromaCafeCliente.AromaCafeService.Employee employee);
@@ -381,11 +381,11 @@ namespace AromaCafeCliente.AromaCafeService {
             return base.Channel.UpdateProfileAsync(employee);
         }
         
-        public int RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee) {
+        public string RegisterEmployee(AromaCafeCliente.AromaCafeService.Employee employee) {
             return base.Channel.RegisterEmployee(employee);
         }
         
-        public System.Threading.Tasks.Task<int> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee) {
+        public System.Threading.Tasks.Task<string> RegisterEmployeeAsync(AromaCafeCliente.AromaCafeService.Employee employee) {
             return base.Channel.RegisterEmployeeAsync(employee);
         }
         
