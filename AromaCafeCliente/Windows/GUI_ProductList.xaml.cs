@@ -43,5 +43,19 @@ namespace AromaCafeCliente.Windows {
                 MessageBox.Show("Ocurrio un error recuperando los empleados");
             }
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NavigateEmployees(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                NavigationService.Navigate(new GUI_Employees());
+            }
+        }
+
     }
 }

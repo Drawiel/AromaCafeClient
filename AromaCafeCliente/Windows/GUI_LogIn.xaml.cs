@@ -30,7 +30,7 @@ namespace AromaCafeCliente {
             string employeeNumber = this.txtBoxEmployeeNumber.Text;
             string employeePassword = this.txtBoxEmployeePassword.Password;
 
-            if (employeeNumber != null && employeePassword != null)
+            if (!string.IsNullOrEmpty(employeeNumber) && !string.IsNullOrEmpty(employeePassword))
             {
                 Employee employee = EmployeeManager.ValidateCredentials(employeeNumber, employeePassword);
                 if (employee.EmployeeId > 0)
