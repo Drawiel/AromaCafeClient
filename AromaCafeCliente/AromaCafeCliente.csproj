@@ -89,6 +89,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
+      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>

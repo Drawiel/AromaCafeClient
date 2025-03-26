@@ -445,28 +445,7 @@
                         Height="60"/>
 
                     </Grid>
-
-                    <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-                        <TextBox
-                        x:Name="txtBoxNumber"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="310,619,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="398" 
-                        Height="60"/>
-
-                    </Grid>
-
+                    
                     <Grid
                     Width="1530"
                     Height="955"
@@ -479,11 +458,11 @@
                         FontFamily="pack://application:,,,/Font/#Architects Daughter"
                         HorizontalAlignment="Left"
                         FontSize="40"
-                        Margin="1010,619,0,0" 
+                        Margin="309,619,0,0" 
                         TextWrapping="Wrap" 
                         Text="" 
                         VerticalAlignment="Top" 
-                        Width="398" 
+                        Width="1099" 
                         Height="60"/>
 
                     </Grid>

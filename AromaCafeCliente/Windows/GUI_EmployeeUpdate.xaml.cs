@@ -50,9 +50,7 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail,
                 txtBoxUser,
                 txtBoxStreet,
-                txtBoxCity,
                 txtBoxCP,
-                txtBoxNumber,
             };
 
             return textBoxes.All(tb => !string.IsNullOrWhiteSpace(tb.Text));
@@ -87,9 +85,7 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail,
                 txtBoxUser,
                 txtBoxStreet,
-                txtBoxCity,
                 txtBoxCP,
-                txtBoxNumber,
             };
 
             textBoxes.All(tb => tb.IsEnabled=true);
@@ -103,7 +99,6 @@ namespace AromaCafeCliente.Windows {
             employeeManagerClient = new EmployeeManagerClient();
             try {
                 int profileUpdated = employeeManagerClient.UpdateProfile(employee);
-                Console.WriteLine(profileUpdated);
                 if(profileUpdated != -1){
                     return true;
                 } else {
@@ -122,7 +117,7 @@ namespace AromaCafeCliente.Windows {
                 Email = txtBoxEmail.Text,
                 Username = txtBoxUser.Text,
                 PostalCode = txtBoxCP.Text,
-                EmployeeAddress = txtBoxStreet.Text + ", " + txtBoxCity.Text,
+                EmployeeAddress = txtBoxStreet.Text,
                 EmployeeType = employeeType,
                 EmployeeId = employeeId
             };
@@ -139,9 +134,7 @@ namespace AromaCafeCliente.Windows {
                 txtBoxEmail.Text = employee.Email;
                 txtBoxUser.Text = employee.Username;
                 txtBoxStreet.Text = employee.EmployeeAddress;
-                txtBoxCity.Text = employee.EmployeeAddress;
                 txtBoxCP.Text = employee.PostalCode;
-                txtBoxNumber.Text = employee.EmployeeAddress;
             } catch (Exception) {
 
             }
@@ -158,14 +151,14 @@ namespace AromaCafeCliente.Windows {
         }
 
         private void SetEmployeeType() {
-            if (radioButtonManager.IsChecked == true) {
-                employeeType = "Gerente";
+            if (comboBoxStatus.Text == "Deshabilitado") {
+                employeeType = "Deshabilitado";
             } else if (radioButtonCashier.IsChecked == true) {
                 employeeType = "Cajero";
             } else if (radioButtonWaitress.IsChecked == true) {
                 employeeType = "Mesero";
-            } else if (comboBoxStatus.Text == "Inhabilitado") {
-                employeeType = "Inhabilitado";
+            } else if (radioButtonManager.IsChecked == true) {
+                employeeType = "Gerente";
             }
         }
 
@@ -191,6 +184,40 @@ namespace AromaCafeCliente.Windows {
                 byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return Convert.ToBase64String(bytes);
             }
+        }
+
+        private void BtnChangeAccessCodeClick(object sender, RoutedEventArgs e) {
+            bool updatedAccessCodeProfile = UpdateAccessCodeProfile(CreateNewAccessCode());
+            if (updatedAccessCodeProfile) {
+                MessageBox.Show("Se ha creado correctamente la nueva clave de acceso");
+            } else if (!updatedAccessCodeProfile) {
+                MessageBox.Show("Hubo un error al crear el codigo de acceso del empleado");
+            }
+        }
+
+        private bool UpdateAccessCodeProfile(Employee employee) {
+            employeeManagerClient = new EmployeeManagerClient();
+            try {
+                //int profileUpdated = employeeManagerClient.UpdateAccessCodeProfile(employee);
+                /*if (profileUpdated != -1) {
+                    return true;
+                } else {
+                    return false;
+                }*/
+                return true;
+            } catch (Exception) {
+                return false;
+            }
+        }
+
+        private Employee CreateNewAccessCode() {
+            SetEmployeeType();
+            var updatedEmployee = new Employee {
+                Password = "1234",
+                EmployeeId = employeeId
+            };
+
+            return updatedEmployee;
         }
     }
 }
