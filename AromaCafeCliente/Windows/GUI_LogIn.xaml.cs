@@ -38,19 +38,22 @@ namespace AromaCafeCliente {
                     switch (employee.EmployeeType)
                     {
                         case "Mesero":
-                            /*GUI_Employees gUI_Employees = new GUI_Employees();
-                            gUI_Employees.Show();
-                            this.Close();*/
+                            if (this.NavigationService != null)
+                            {
+                                this.NavigationService.Navigate(new GUI_Employees());
+                            }
                             break;
                         case "Cajero":
-                            /*GUI_HomeCashier gUI_HomeCashier = new GUI_HomeCashier();
-                            gUI_HomeCashier.Show();
-                            this.Close();*/
+                            if (this.NavigationService != null)
+                            {
+                                this.NavigationService.Navigate(new GUI_HomeCashier());
+                            }
                             break;
                         case "Gerente":
-                            /*GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
-                            gUI_HomeManager.Show();
-                            this.Close();*/
+                            if (this.NavigationService != null)
+                            {
+                                this.NavigationService.Navigate(new GUI_HomeManager());
+                            }
                             break;
                         default:
                             break;
