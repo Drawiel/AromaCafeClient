@@ -20,8 +20,8 @@ namespace AromaCafeCliente {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class GUI_LogIn : Page {
+        public GUI_LogIn() {
             InitializeComponent();
         }
 
@@ -60,6 +60,12 @@ namespace AromaCafeCliente {
                     }
                 }
             }
+        }
+
+        private void CleanFields(object sender, RoutedEventArgs e)
+        {
+            this.txtBoxEmployeeNumber.Text = string.Empty;
+            this.txtBoxEmployeePassword.Password = string.Empty;
         }
     }
 }
