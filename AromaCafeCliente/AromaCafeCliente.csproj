@@ -90,6 +90,10 @@
     </Compile>
     <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Managers\ProductManager.cs" />
+    <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
+      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
@@ -152,9 +156,6 @@
     </Compile>
     <Compile Include="Windows\GUI_Employees.xaml.cs">
       <DependentUpon>GUI_Employees.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
-      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GUI_HomeCashier.xaml.cs">
       <DependentUpon>GUI_HomeCashier.xaml</DependentUpon>

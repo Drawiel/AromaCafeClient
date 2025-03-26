@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,13 +24,16 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_EmployeeUpdate : Page
     {
 
-        private string employeType = " ";
+        private string employeeType = " ";
+        private int employeeId = 0;
+        private string newAccessCode = " ";
 
         AromaCafeService.EmployeeManagerClient employeeManagerClient;
 
         public GUI_EmployeeUpdate(int employeeId) {
             InitializeComponent();
             LoadEmployeeData(employeeId);
+            this.employeeId = employeeId;
             radioButtonCashier.Checked += RadioButtonCheckedChanged;
             radioButtonWaitress.Checked += RadioButtonCheckedChanged;
             radioButtonManager.Checked += RadioButtonCheckedChanged;
@@ -37,7 +41,7 @@ namespace AromaCafeCliente.Windows {
 
         private void RadioButtonCheckedChanged(object sender, EventArgs e) {
             RadioButton radioButton = sender as RadioButton;
-            employeType = radioButton.Tag.ToString();
+            employeeType = radioButton.Tag.ToString();
         }
 
         private bool CheckAllFields() {
@@ -48,7 +52,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxUser,
                 txtBoxStreet,
                 txtBoxCP,
-                txtBoxNumber,
             };
 
             return textBoxes.All(tb => !string.IsNullOrWhiteSpace(tb.Text));
@@ -84,7 +87,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxUser,
                 txtBoxStreet,
                 txtBoxCP,
-                txtBoxNumber,
             };
 
             textBoxes.All(tb => tb.IsEnabled=true);
@@ -109,19 +111,16 @@ namespace AromaCafeCliente.Windows {
         }
 
         private Employee CreateEmployee() {
-            string status = comboBoxStatus.Text;
-            if (status == "Deshabilitado") {
-                employeType = "Deshabilitado";
-            }
-
+            SetEmployeeType();
             var updatedEmployee = new Employee {
                 Name = txtBoxName.Text,
                 LastName = txtBoxLastName.Text,
                 Email = txtBoxEmail.Text,
                 Username = txtBoxUser.Text,
                 PostalCode = txtBoxCP.Text,
-                EmployeeAddress = txtBoxStreet.Text + ", ",
-                EmployeeType = employeType
+                EmployeeAddress = txtBoxStreet.Text,
+                EmployeeType = employeeType,
+                EmployeeId = employeeId
             };
 
             return updatedEmployee;
@@ -137,7 +136,6 @@ namespace AromaCafeCliente.Windows {
                 txtBoxUser.Text = employee.Username;
                 txtBoxStreet.Text = employee.EmployeeAddress;
                 txtBoxCP.Text = employee.PostalCode;
-                txtBoxNumber.Text = employee.EmployeeAddress;
             } catch (Exception) {
 
             }
@@ -153,8 +151,24 @@ namespace AromaCafeCliente.Windows {
             }
         }
 
+        private void SetEmployeeType() {
+            if (comboBoxStatus.Text == "Deshabilitado") {
+                employeeType = "Deshabilitado";
+            } else if (radioButtonCashier.IsChecked == true) {
+                employeeType = "Cajero";
+            } else if (radioButtonWaitress.IsChecked == true) {
+                employeeType = "Mesero";
+            } else if (radioButtonManager.IsChecked == true) {
+                employeeType = "Gerente";
+            }
+        }
+
         private void BtnStatusClick(object sender, RoutedEventArgs e) {
             validationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void BtnStatusCancelClick(object sender, RoutedEventArgs e) {
+            validationPopup.Visibility = Visibility.Collapsed;
         }
 
         private void BtnAcceptClick(object sender, RoutedEventArgs e) {
@@ -163,6 +177,39 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnCancelClick(object sender, RoutedEventArgs e) {
             this.NavigationService.Navigate(new GUI_Employees());
+        }
+
+        private void BtnChangeAccessCodeClick(object sender, RoutedEventArgs e) {
+            bool updatedAccessCodeProfile = UpdateAccessCodeProfile(CreateNewAccessCode());
+            if (updatedAccessCodeProfile) {
+                MessageBox.Show("Se ha creado correctamente la nueva clave de acceso: "+ newAccessCode);
+            } else if (!updatedAccessCodeProfile) {
+                MessageBox.Show("Hubo un error al crear el codigo de acceso del empleado");
+            }
+        }
+
+        private bool UpdateAccessCodeProfile(Employee employee) {
+            employeeManagerClient = new EmployeeManagerClient();
+            try {
+                string password = employeeManagerClient.UpdateAccessCodeProfile(employee);
+                if (password != "Error") {
+                    newAccessCode = password;
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (Exception) {
+                return false;
+            }
+        }
+
+        private Employee CreateNewAccessCode() {
+            SetEmployeeType();
+            var updatedEmployee = new Employee {
+                EmployeeId = employeeId
+            };
+
+            return updatedEmployee;
         }
     }
 }
