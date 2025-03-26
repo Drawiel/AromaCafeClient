@@ -48,8 +48,11 @@ namespace AromaCafeCliente {
                             this.Close();*/
                             break;
                         case "Gerente":
-                            GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
-                            gUI_HomeManager.Show();
+                            NavigationWindow navWindow = new NavigationWindow();
+                            navWindow.Source = new Uri("GUI_HomeManager.xaml", UriKind.Relative);
+                            navWindow.Show();
+                            //GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
+                            //gUI_HomeManager.Show();
                             this.Close();
                             break;
                         default:
