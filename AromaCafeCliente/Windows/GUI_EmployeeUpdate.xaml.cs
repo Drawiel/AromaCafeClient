@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,13 +24,15 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_EmployeeUpdate : Page
     {
 
-        private string employeType = " ";
+        private string employeeType = " ";
+        private int employeeId = 0;
 
         AromaCafeService.EmployeeManagerClient employeeManagerClient;
 
         public GUI_EmployeeUpdate(int employeeId) {
             InitializeComponent();
             LoadEmployeeData(employeeId);
+            this.employeeId = employeeId;
             radioButtonCashier.Checked += RadioButtonCheckedChanged;
             radioButtonWaitress.Checked += RadioButtonCheckedChanged;
             radioButtonManager.Checked += RadioButtonCheckedChanged;
@@ -37,7 +40,7 @@ namespace AromaCafeCliente.Windows {
 
         private void RadioButtonCheckedChanged(object sender, EventArgs e) {
             RadioButton radioButton = sender as RadioButton;
-            employeType = radioButton.Tag.ToString();
+            employeeType = radioButton.Tag.ToString();
         }
 
         private bool CheckAllFields() {
@@ -100,6 +103,7 @@ namespace AromaCafeCliente.Windows {
             employeeManagerClient = new EmployeeManagerClient();
             try {
                 int profileUpdated = employeeManagerClient.UpdateProfile(employee);
+                Console.WriteLine(profileUpdated);
                 if(profileUpdated != -1){
                     return true;
                 } else {
@@ -111,11 +115,7 @@ namespace AromaCafeCliente.Windows {
         }
 
         private Employee CreateEmployee() {
-            string status = comboBoxStatus.Text;
-            if (status == "Deshabilitado") {
-                employeType = "Deshabilitado";
-            }
-
+            SetEmployeeType();
             var updatedEmployee = new Employee {
                 Name = txtBoxName.Text,
                 LastName = txtBoxLastName.Text,
@@ -123,7 +123,8 @@ namespace AromaCafeCliente.Windows {
                 Username = txtBoxUser.Text,
                 PostalCode = txtBoxCP.Text,
                 EmployeeAddress = txtBoxStreet.Text + ", " + txtBoxCity.Text,
-                EmployeeType = employeType
+                EmployeeType = employeeType,
+                EmployeeId = employeeId
             };
 
             return updatedEmployee;
@@ -156,8 +157,24 @@ namespace AromaCafeCliente.Windows {
             }
         }
 
+        private void SetEmployeeType() {
+            if (radioButtonManager.IsChecked == true) {
+                employeeType = "Gerente";
+            } else if (radioButtonCashier.IsChecked == true) {
+                employeeType = "Cajero";
+            } else if (radioButtonWaitress.IsChecked == true) {
+                employeeType = "Mesero";
+            } else if (comboBoxStatus.Text == "Inhabilitado") {
+                employeeType = "Inhabilitado";
+            }
+        }
+
         private void BtnStatusClick(object sender, RoutedEventArgs e) {
             validationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void BtnStatusCancelClick(object sender, RoutedEventArgs e) {
+            validationPopup.Visibility = Visibility.Collapsed;
         }
 
         private void BtnAcceptClick(object sender, RoutedEventArgs e) {
@@ -166,6 +183,14 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnCancelClick(object sender, RoutedEventArgs e) {
             this.NavigationService.Navigate(new GUI_Employees());
+        }
+
+        //Eliminar mas adelante cuanto tengamos el helper
+        public static string HashPassword(string password) {
+            using (SHA256 sha256 = SHA256.Create()) {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(bytes);
+            }
         }
     }
 }

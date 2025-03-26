@@ -149,9 +149,6 @@
     <Compile Include="Windows\GUI_Employees.xaml.cs">
       <DependentUpon>GUI_Employees.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\GUI_EmployeeUpdate.cs">
-      <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\GUI_HomeCashier.xaml.cs">
       <DependentUpon>GUI_HomeCashier.xaml</DependentUpon>
     </Compile>
