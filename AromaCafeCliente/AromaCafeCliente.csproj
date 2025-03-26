@@ -89,6 +89,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Windows\GUI_HomeWaitress.xaml.cs">
+      <DependentUpon>GUI_HomeWaitress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Stock.xaml.cs">
       <DependentUpon>GUI_PopUp_Stock.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\GUI_HomeManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GUI_HomeWaitress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -322,6 +329,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Multimedia\HoverChangeAccessKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverBills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverCashOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverTables.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_InicioMesero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverNewMesero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverNewTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverBefore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverNext.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

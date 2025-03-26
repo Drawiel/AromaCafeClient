@@ -1,0 +1,735 @@
+﻿<Page x:Class="AromaCafeCliente.Windows.GUI_HomeWaitress"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AromaCafeCliente.Windows"
+      mc:Ignorable="d" 
+      Title="GUI_HomeWaitress">
+    <Page.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_InicioMesero.png"/>
+    </Page.Background>
+
+    <Viewbox
+        Stretch="Uniform">
+
+        <Grid
+        Height="1080"
+        Width="1920">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="323*"/>
+                <ColumnDefinition Width="1597*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid
+                Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="373*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="291*"/>
+                    <RowDefinition Height="85*"/>
+                </Grid.RowDefinitions>
+
+                <Grid
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Height="85"
+                Width="323"
+                Background="Transparent">
+                    <Button
+                    Grid.Row="1"
+                    x:Name="Home"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Height="85"
+                    Width="323">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <!-- Fondo normal -->
+                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <!-- Cambiar fondo cuando el mouse esté encima -->
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="ButtonBackground" Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverHome.png" Stretch="UniformToFill"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+
+                <Grid
+                Grid.Row="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Height="85"
+                Width="323"
+                Background="Transparent">
+                    <Button
+                    Grid.Row="1"
+                    x:Name="Users"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Height="85"
+                    Width="323">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <!-- Fondo normal -->
+                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <!-- Cambiar fondo cuando el mouse esté encima -->
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="ButtonBackground" Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverNewTable.png" Stretch="UniformToFill"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+
+                <Grid
+                Grid.Row="3"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Height="85"
+                Width="323"
+                Background="Transparent">
+                    <Button
+                    Grid.Row="1"
+                    x:Name="Report"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Height="85"
+                    Width="323">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <!-- Fondo normal -->
+                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <!-- Cambiar fondo cuando el mouse esté encima -->
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="ButtonBackground" Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverNewMesero.png" Stretch="UniformToFill"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+
+                <Grid
+                    Grid.Row="6"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="LogOut"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Height="85"
+                        Width="323"
+                        Click="LogOut_Click">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <!-- Fondo normal -->
+                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <!-- Cambiar fondo cuando el mouse esté encima -->
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="ButtonBackground" Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverLogOut.png" Stretch="UniformToFill"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+            <Grid
+                Grid.Column="1">
+
+                <Button 
+                    x:Name="btnBefore"
+                    Click="BtnClickBefore"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverBefore.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable1"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable2"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable3"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable4"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable5"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable6"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable7"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable8"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable9"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable10"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable11"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable12"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable13"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnTable14"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="837,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTable.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="ButtonContent" Property="TextElement.Foreground" Value="#7B4224"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button 
+                    x:Name="btnNext"
+                    Click="BtnClickBefore"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverNext.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Page>
