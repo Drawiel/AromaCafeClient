@@ -171,7 +171,8 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258"
+                    Click="UsersClick">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

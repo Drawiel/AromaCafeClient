@@ -55,5 +55,9 @@ namespace AromaCafeCliente.Windows {
         {
             this.ValidationPopup.Visibility = Visibility.Hidden;
         }
+
+        private void UsersClick(object sender, RoutedEventArgs e) {
+            this.NavigationService.Navigate(new GUI_Employees());
+        }
     }
 }
