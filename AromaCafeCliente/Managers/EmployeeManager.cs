@@ -34,5 +34,30 @@ namespace AromaCafeCliente.Managers
             }
             return employee;
         }
+
+        public static int LogOut(string password)
+        {
+            int loggedOut = 0;
+            try
+            {
+                using (var proxy = new AromaCafeService.LogInManagerClient())
+                {
+                    loggedOut = proxy.CloseTurn(password);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return loggedOut;
+        }
     }
 }

@@ -98,6 +98,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CloseTurn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseTurnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloseTurnResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CheckTurnOpened">
     <xs:complexType>
       <xs:sequence>

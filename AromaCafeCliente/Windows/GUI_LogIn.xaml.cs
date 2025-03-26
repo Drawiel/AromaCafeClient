@@ -20,8 +20,8 @@ namespace AromaCafeCliente {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class GUI_LogIn : Page {
+        public GUI_LogIn() {
             InitializeComponent();
         }
 
@@ -43,23 +43,30 @@ namespace AromaCafeCliente {
                             this.Close();*/
                             break;
                         case "Cajero":
+                            this.NavigationService.Navigate(new GUI_Employees());
+
                             /*GUI_HomeCashier gUI_HomeCashier = new GUI_HomeCashier();
                             gUI_HomeCashier.Show();
                             this.Close();*/
                             break;
                         case "Gerente":
-                            NavigationWindow navWindow = new NavigationWindow();
-                            navWindow.Source = new Uri("GUI_HomeManager.xaml", UriKind.Relative);
-                            navWindow.Show();
+                            this.NavigationService.Navigate(new GUI_HomeManager());
+
                             //GUI_HomeManager gUI_HomeManager = new GUI_HomeManager();
                             //gUI_HomeManager.Show();
-                            this.Close();
+                            //this.Close();
                             break;
                         default:
                             break;
                     }
                 }
             }
+        }
+
+        private void CleanFields(object sender, RoutedEventArgs e)
+        {
+            this.txtBoxEmployeeNumber.Text = string.Empty;
+            this.txtBoxEmployeePassword.Password = string.Empty;
         }
     }
 }

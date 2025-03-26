@@ -92,6 +92,9 @@
     <Compile Include="Windows\GUI_EmployeeUpdate.xaml.cs">
       <DependentUpon>GUI_EmployeeUpdate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Stock.xaml.cs">
       <DependentUpon>GUI_PopUp_Stock.xaml</DependentUpon>
     </Compile>
@@ -138,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MainWindow.xaml">
+    <Page Include="Windows\GUI_LogIn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -173,10 +176,14 @@
     <Compile Include="Windows\GUI_UserProfile.xaml.cs">
       <DependentUpon>GUI_UserProfile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Windows\GUI_LogIn.xaml.cs">
+      <DependentUpon>GUI_LogIn.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\StartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\UserControllers\GUI_PopUp_Stock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -291,15 +298,6 @@
     <Resource Include="Multimedia\Stock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Multimedia\GUI_BuscarProducto.png" />
-    <Resource Include="Multimedia\GUI_Buscarusuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Multimedia\HoverAddProduct.png" />
-    <Resource Include="Multimedia\HoverAddUser.png" />
-    <Resource Include="Multimedia\HoverBack.png" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +317,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="Multimedia\GUI_BuscarProducto.png" />
+    <Resource Include="Multimedia\GUI_Buscarusuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverAddProduct.png" />
+    <Resource Include="Multimedia\HoverAddUser.png" />
+    <Resource Include="Multimedia\HoverBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\popUpCerrarSesión.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Multimedia\HoverChangeAccessKey.png" />

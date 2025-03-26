@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AromaCafeCliente.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,34 @@ namespace AromaCafeCliente.Windows {
             InitializeComponent();
         }
 
-        private void LogOut_Click(object sender, EventArgs e)
+        private void LogOut_Click(object sender, RoutedEventArgs e)
         {
+            this.ValidationPopup.Visibility = Visibility.Visible;
+        }
 
+        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        {
+            string password = pswdBoxEmployeePassword.Password;
+            if (password != string.Empty)
+            {
+                if (EmployeeManager.LogOut(password) == 1)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                //Alert
+            }
+        }
+
+        private void HideLogOut(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Hidden;
         }
     }
 }
