@@ -34,5 +34,29 @@ namespace AromaCafeCliente.Managers
             }
             return products;
         }
+        public static Product GetProduct(int productId)
+        {
+            Product product = null;
+            try
+            {
+                using (var proxy = new AromaCafeService.ProductManagerClient())
+                {
+                    product = proxy.GetProduct(productId);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return product;
+        }
     }
 }

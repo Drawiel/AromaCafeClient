@@ -124,12 +124,6 @@
   <wsdl:message name="IEmployeeManager_GetEmployeeInformation_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeeInformationResponse" />
   </wsdl:message>
-  <wsdl:message name="IEmployeeManager_UpdateAccessCodeProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateAccessCodeProfile" />
-  </wsdl:message>
-  <wsdl:message name="IEmployeeManager_UpdateAccessCodeProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateAccessCodeProfileResponse" />
-  </wsdl:message>
   <wsdl:message name="ILogInManager_ValidateCredentials_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidateCredentials" />
   </wsdl:message>
@@ -141,12 +135,6 @@
   </wsdl:message>
   <wsdl:message name="ILogInManager_OpenTurn_OutputMessage">
     <wsdl:part name="parameters" element="tns:OpenTurnResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogInManager_CloseTurn_InputMessage">
-    <wsdl:part name="parameters" element="tns:CloseTurn" />
-  </wsdl:message>
-  <wsdl:message name="ILogInManager_CloseTurn_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CloseTurnResponse" />
   </wsdl:message>
   <wsdl:message name="ILogInManager_CheckTurnOpened_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckTurnOpened" />
@@ -172,6 +160,12 @@
   <wsdl:message name="IProductManager_IncreaseStock_OutputMessage">
     <wsdl:part name="parameters" element="tns:IncreaseStockResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductManager_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductManager_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="IEmployeeManager">
     <wsdl:operation name="UpdateProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateProfile" message="tns:IEmployeeManager_UpdateProfile_InputMessage" />
@@ -193,10 +187,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/GetEmployeeInformation" message="tns:IEmployeeManager_GetEmployeeInformation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeManager/GetEmployeeInformationResponse" message="tns:IEmployeeManager_GetEmployeeInformation_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateAccessCodeProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" message="tns:IEmployeeManager_UpdateAccessCodeProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfileResponse" message="tns:IEmployeeManager_UpdateAccessCodeProfile_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ILogInManager">
     <wsdl:operation name="ValidateCredentials">
@@ -206,10 +196,6 @@
     <wsdl:operation name="OpenTurn">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/OpenTurn" message="tns:ILogInManager_OpenTurn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogInManager/OpenTurnResponse" message="tns:ILogInManager_OpenTurn_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CloseTurn">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/CloseTurn" message="tns:ILogInManager_CloseTurn_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogInManager/CloseTurnResponse" message="tns:ILogInManager_CloseTurn_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CheckTurnOpened">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogInManager/CheckTurnOpened" message="tns:ILogInManager_CheckTurnOpened_InputMessage" />
@@ -228,6 +214,10 @@
     <wsdl:operation name="IncreaseStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductManager/IncreaseStock" message="tns:IProductManager_IncreaseStock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductManager/IncreaseStockResponse" message="tns:IProductManager_IncreaseStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductManager/GetProduct" message="tns:IProductManager_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductManager/GetProductResponse" message="tns:IProductManager_GetProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IEmployeeManager" type="tns:IEmployeeManager">
@@ -278,15 +268,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateAccessCodeProfile">
-      <soap12:operation soapAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_ILogInManager" type="tns:ILogInManager">
     <wsp:PolicyReference URI="#NetTcpBinding_ILogInManager_policy" />
@@ -302,15 +283,6 @@
     </wsdl:operation>
     <wsdl:operation name="OpenTurn">
       <soap12:operation soapAction="http://tempuri.org/ILogInManager/OpenTurn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CloseTurn">
-      <soap12:operation soapAction="http://tempuri.org/ILogInManager/CloseTurn" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -351,6 +323,15 @@
     </wsdl:operation>
     <wsdl:operation name="IncreaseStock">
       <soap12:operation soapAction="http://tempuri.org/IProductManager/IncreaseStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductManager/GetProduct" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -406,15 +387,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateAccessCodeProfile">
-      <soap:operation soapAction="http://tempuri.org/IEmployeeManager/UpdateAccessCodeProfile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IEmployeeManager" binding="tns:NetTcpBinding_IEmployeeManager">
@@ -422,7 +394,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -431,7 +403,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -440,7 +412,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
