@@ -40,16 +40,16 @@
                 Grid.Row="1"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
 					<Button
                     Grid.Row="1"
                     x:Name="Home"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+					Height="85"
+					Width="323">
 
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
@@ -78,18 +78,18 @@
                 Grid.Row="2"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
-					<Button
+                    <Button
                     Grid.Row="1"
                     x:Name="Users"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+					Height="85"
+					Width="323">
 
-						<Button.Template>
+                        <Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Grid>
 									<!-- Fondo normal -->
@@ -116,18 +116,18 @@
                 Grid.Row="3"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
-					<Button
+                    <Button
                     Grid.Row="1"
                     x:Name="Report"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+					Height="85"
+					Width="323">
 
-						<Button.Template>
+                        <Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Grid>
 									<!-- Fondo normal -->
@@ -154,18 +154,18 @@
                 Grid.Row="4"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
-					<Button
+                    <Button
                     Grid.Row="1"
                     x:Name="Products"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+					Height="85"
+					Width="323">
 
-						<Button.Template>
+                        <Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Grid>
 									<!-- Fondo normal -->
@@ -193,16 +193,16 @@
                 Grid.Row="6"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
 					<Button
                     Grid.Row="1"
                     x:Name="LogOut"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258"
+					Height="85"
+					Width="323"
                     Click="LogOut_Click">
 
 						<Button.Template>

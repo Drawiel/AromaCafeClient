@@ -335,6 +335,25 @@
                         Width="465" 
                         Height="60"/>
 
+                </Grid>                
+                
+                <Grid
+                    Width="1530"
+                    Height="955"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                    <ComboBox
+                        x:Name="comboBoxGroup"
+                        Padding="10,0,10,0"
+                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                        HorizontalAlignment="Left"
+                        FontSize="40"
+                        Margin="387,709,0,0" 
+                        Text="" 
+                        VerticalAlignment="Top" 
+                        Width="465" 
+                        Height="60"/>
+
                 </Grid>
 
                 <Grid
