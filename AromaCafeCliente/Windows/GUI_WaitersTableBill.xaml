@@ -344,7 +344,7 @@
                         Grid.Column="1" 
                         HorizontalAlignment="Left" 
                         Height="146" 
-                        Margin="8,28,0,0" 
+                        Margin="8,243,0,0" 
                         VerticalAlignment="Top" 
                         Width="158">
                         <Button.Template>
