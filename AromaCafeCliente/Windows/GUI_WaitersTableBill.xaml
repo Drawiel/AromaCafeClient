@@ -428,7 +428,7 @@
                         Grid.Column="1" 
                         HorizontalAlignment="Left" 
                         Height="146" 
-                        Margin="8,78,0,0" 
+                        Margin="8,16,0,0" 
                         VerticalAlignment="Top" 
                         Width="158">
                         <Button.Template>
@@ -450,10 +450,37 @@
                         </Button.Template>
                     </Button>
 
+                    <Button
+                        x:Name="btnOrder"
+                        Grid.Column="1" 
+                        HorizontalAlignment="Left" 
+                        Height="146" 
+                        Margin="8,169,0,0" 
+                        VerticalAlignment="Top" 
+                        Width="158" Click="btnOrder_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="ButtonBackground" Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverOrdenar.png" Stretch="UniformToFill"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
                     <Button 
                         Grid.Column="1" 
                         HorizontalAlignment="Left" 
-                        Height="60" Margin="12,320,0,0" 
+                        Height="60" Margin="10,320,0,0" 
                         VerticalAlignment="Top" 
                         Width="155">
                         <Button.Template>

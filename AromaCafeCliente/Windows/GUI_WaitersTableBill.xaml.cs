@@ -21,5 +21,9 @@ namespace AromaCafeCliente.Windows {
         public GUI_WaitersTableBill() {
             InitializeComponent();
         }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
