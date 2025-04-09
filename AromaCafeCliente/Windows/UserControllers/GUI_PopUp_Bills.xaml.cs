@@ -26,13 +26,23 @@ namespace AromaCafeCliente.Windows.UserControllers {
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e) {
-
+        private void BtnCancel_Click(object sender, RoutedEventArgs e) {
+            
         }
 
-        private void btnAccept_Click(object sender, RoutedEventArgs e) {
-            if (!IsDecimal()) {
+        private void BtnAccept_Click(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtBoxCuantity.Text) && string.IsNullOrEmpty(txtBoxReason.Text)) {
+                MessageBox.Show("Se han encontrado campos vacios, favor de revisar");
+                return;
+            } else if (!IsDecimal()) {
                 MessageBox.Show("No se pudo ingresar el monto, compruebe el formato: ####.##");
+                return;
+            }
+
+            if (registerExpense(decimal.Parse(txtBoxCuantity.Text))) {
+                MessageBox.Show("Se ha registrado correctamente el gasto");
+            } else {
+                MessageBox.Show("Hubo un error inesperado al intentar registrar el gasto");
             }
         }
 
