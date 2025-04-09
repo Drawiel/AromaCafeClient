@@ -23,6 +23,8 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_EmployeeRegistration : Page {
         public GUI_EmployeeRegistration() {
             InitializeComponent();
+            LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
+            LogOutPopupControl.Cancelled += OnLogOutCancelled;
         }
 
         private bool ValidateAllFields()
@@ -102,37 +104,20 @@ namespace AromaCafeCliente.Windows {
                 NavigationService.Navigate(new GUI_ProductList());
             }
         }
-
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            this.ValidationPopup.Visibility = Visibility.Visible;
+            ValidationPopup.Visibility = Visibility.Visible;
         }
 
-        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        private void OnLogOutSuccess(object sender, EventArgs e)
         {
-            string password = pswdBoxEmployeePassword.Password;
-            if (password != string.Empty)
-            {
-                if (EmployeeManager.LogOut(password) == 1)
-                {
-                    if (this.NavigationService != null)
-                    {
-                        this.NavigationService.Navigate(new GUI_LogIn());
-                    }
-                }
-                else
-                {
-                    //Alert
-                }
-            }
-            else
-            {
-                //Alert
-            }
+            ValidationPopup.Visibility = Visibility.Hidden;
+            NavigationService?.Navigate(new GUI_LogIn());
         }
-        private void HideLogOut(object sender, RoutedEventArgs e)
+
+        private void OnLogOutCancelled(object sender, EventArgs e)
         {
-            this.ValidationPopup.Visibility = Visibility.Hidden;
+            ValidationPopup.Visibility = Visibility.Hidden;
         }
     }
 }

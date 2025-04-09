@@ -21,43 +21,27 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_HomeManager : Page {
         public GUI_HomeManager() {
             InitializeComponent();
+            LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
+            LogOutPopupControl.Cancelled += OnLogOutCancelled;
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e) {
-
+            ValidationPopup.Visibility = Visibility.Visible;
         }
-
-        /*private void LogOut_Click(object sender, RoutedEventArgs e)
+        
+        private void OnLogOutSuccess(object sender, EventArgs e)
         {
-            this.ValidationPopup.Visibility = Visibility.Visible;
-        }
+            ValidationPopup.Visibility = Visibility.Hidden;
 
-        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
-        {
-            string password = pswdBoxEmployeePassword.Password;
-            if (password != string.Empty)
+            if (NavigationService != null)
             {
-                if (EmployeeManager.LogOut(password) == 1)
-                {
-                    if (this.NavigationService != null)
-                    {
-                        this.NavigationService.Navigate(new GUI_LogIn());
-                    }
-                }
-                else
-                {
-                    //Alert
-                }
-            }
-            else
-            {
-                //Alert
+                NavigationService.Navigate(new GUI_LogIn());
             }
         }
 
-        private void HideLogOut(object sender, RoutedEventArgs e)
+        private void OnLogOutCancelled(object sender, EventArgs e)
         {
-            this.ValidationPopup.Visibility = Visibility.Hidden;
+            ValidationPopup.Visibility = Visibility.Hidden;
         }
         private void GoProductList(object sender, RoutedEventArgs e)
         {
@@ -68,6 +52,6 @@ namespace AromaCafeCliente.Windows {
         }
         private void UsersClick(object sender, RoutedEventArgs e) {
             this.NavigationService.Navigate(new GUI_Employees());
-        }*/
+        }
     }
 }

@@ -8,7 +8,7 @@
     
     <Grid Width="1000" Height="500">
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpCerrarSesión.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpCerrarSesion.png"/>
         </Grid.Background>
 
         <PasswordBox Name="pswdBoxEmployeePassword"

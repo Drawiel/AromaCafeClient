@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AromaCafeCliente.Windows"
+      xmlns:controls="clr-namespace:AromaCafeCliente.Windows.UserControllers"
       mc:Ignorable="d" 
       Title="GUI_Reports">
 
@@ -50,7 +51,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="ValidateUserLogOut">
+                >
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -81,7 +82,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="HideLogOut">
+                >
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -135,7 +136,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="ValidateUserLogOut">
+                >
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -166,7 +167,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="HideLogOut">
+                >
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -576,7 +577,21 @@
                 </Button>
 
             </Grid>
+            <!-- Popup de confirmación para cerrar sesión -->
+            <Border x:Name="ValidationPopup"
+        Grid.ColumnSpan="2"
+        Background="#80000000"
+        Visibility="Hidden"
+        VerticalAlignment="Stretch"
+        HorizontalAlignment="Stretch"
+        Panel.ZIndex="100">
 
+                <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
         </Grid>
     </Viewbox>
 </Page>

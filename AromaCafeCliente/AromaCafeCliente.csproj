@@ -408,7 +408,7 @@
     <Resource Include="Multimedia\HoverBack.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Multimedia\popUpCerrarSesión.png" />
+    <Resource Include="Multimedia\popUpCerrarSesion.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Multimedia\HoverChangeAccessKey.png" />
