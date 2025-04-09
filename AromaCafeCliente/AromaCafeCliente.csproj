@@ -462,6 +462,9 @@
     <Resource Include="Multimedia\popUpPaymentMethod.png" />
     <Resource Include="Multimedia\popUpPeriodo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_CuentaCajero.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

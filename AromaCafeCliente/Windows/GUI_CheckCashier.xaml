@@ -407,7 +407,8 @@
                     HorizontalAlignment="Left" 
                     Height="60" Margin="1279,869,0,0" 
                     VerticalAlignment="Top" 
-                    Width="172">
+                    Width="172"
+                    Click="btnCloseBill_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -508,9 +509,9 @@
                         FontSize="25">
                         
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="" Binding="{Binding LastName}" Width="770" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding Name}" Width="227" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding EmployeeType}" Width="212" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding ProductName}" Width="770" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Quantity}" Width="227" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Price}" Width="212" IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -530,6 +531,21 @@
                                VerticalAlignment="Center"
                                Width="1000"
                                Height="500"/>
+            </Border>
+
+            <Border x:Name="ExpensesPopUp"
+		Grid.ColumnSpan="2"
+		Background="#80000000"
+		Visibility="Hidden"
+		VerticalAlignment="Stretch"
+		HorizontalAlignment="Stretch"
+		Panel.ZIndex="100">
+
+                <controls:GUI_PopUp_Bills x:Name="ExpensesPopupControl"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Width="1000"
+       Height="500"/>
             </Border>
 
         </Grid>

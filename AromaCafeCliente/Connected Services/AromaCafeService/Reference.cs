@@ -388,6 +388,115 @@ namespace AromaCafeCliente.AromaCafeService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Charge", Namespace="http://schemas.datacontract.org/2004/07/AromaCafeService.Models")]
+    [System.SerializableAttribute()]
+    public partial class Charge : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ChargeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TableIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalChargeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypePaymentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ChargeId {
+            get {
+                return this.ChargeIdField;
+            }
+            set {
+                if ((this.ChargeIdField.Equals(value) != true)) {
+                    this.ChargeIdField = value;
+                    this.RaisePropertyChanged("ChargeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TableId {
+            get {
+                return this.TableIdField;
+            }
+            set {
+                if ((this.TableIdField.Equals(value) != true)) {
+                    this.TableIdField = value;
+                    this.RaisePropertyChanged("TableId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalCharge {
+            get {
+                return this.TotalChargeField;
+            }
+            set {
+                if ((this.TotalChargeField.Equals(value) != true)) {
+                    this.TotalChargeField = value;
+                    this.RaisePropertyChanged("TotalCharge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TypePayment {
+            get {
+                return this.TypePaymentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypePaymentField, value) != true)) {
+                    this.TypePaymentField = value;
+                    this.RaisePropertyChanged("TypePayment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.IEmployeeManager")]
     public interface IEmployeeManager {
@@ -727,6 +836,53 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<int> RegisterExpenseAsync(AromaCafeCliente.AromaCafeService.Expense expense) {
             return base.Channel.RegisterExpenseAsync(expense);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.ITableManager")]
+    public interface ITableManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/ChargeBill", ReplyAction="http://tempuri.org/ITableManager/ChargeBillResponse")]
+        int ChargeBill(AromaCafeCliente.AromaCafeService.Charge charge);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/ChargeBill", ReplyAction="http://tempuri.org/ITableManager/ChargeBillResponse")]
+        System.Threading.Tasks.Task<int> ChargeBillAsync(AromaCafeCliente.AromaCafeService.Charge charge);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ITableManagerChannel : AromaCafeCliente.AromaCafeService.ITableManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TableManagerClient : System.ServiceModel.ClientBase<AromaCafeCliente.AromaCafeService.ITableManager>, AromaCafeCliente.AromaCafeService.ITableManager {
+        
+        public TableManagerClient() {
+        }
+        
+        public TableManagerClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public TableManagerClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TableManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TableManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int ChargeBill(AromaCafeCliente.AromaCafeService.Charge charge) {
+            return base.Channel.ChargeBill(charge);
+        }
+        
+        public System.Threading.Tasks.Task<int> ChargeBillAsync(AromaCafeCliente.AromaCafeService.Charge charge) {
+            return base.Channel.ChargeBillAsync(charge);
         }
     }
 }
