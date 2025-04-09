@@ -102,6 +102,9 @@
     <Compile Include="Windows\GUI_TablesCashier.xaml.cs">
       <DependentUpon>GUI_TablesCashier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\GUI_WaitersTableBill.xaml.cs">
+      <DependentUpon>GUI_WaitersTableBill.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Bills.xaml.cs">
       <DependentUpon>GUI_PopUp_Bills.xaml</DependentUpon>
     </Compile>
@@ -216,6 +219,10 @@
       <DependentUpon>GUI_LogIn.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\GUI_WaitersTableBill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\UserControllers\GUI_PopUp_Bills.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -374,6 +381,23 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Multimedia\HoverChangeAccessKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_CuentaMesaMesero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverAlimentos.png" />
+    <Resource Include="Multimedia\HoverBebidasCalientes.png" />
+    <Resource Include="Multimedia\HoverBebidasFrias.png" />
+    <Resource Include="Multimedia\HoverEntradas.png" />
+    <Resource Include="Multimedia\HoverExtras.png" />
+    <Resource Include="Multimedia\HoverMixología.png" />
+    <Resource Include="Multimedia\HoverPostres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverAgregar.png" />
+    <Resource Include="Multimedia\HoverCerrar.png" />
+    <Resource Include="Multimedia\HoverRestar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
