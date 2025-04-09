@@ -38,6 +38,9 @@ namespace AromaCafeCliente.Windows
         {
             try
             {
+                EPPlusLicense ePPlusLicense = new EPPlusLicense();
+                ePPlusLicense.SetNonCommercialPersonal("Zaid Alexis Vazquez Ramirez");
+
                 var products = ProductManager.GetProductsList();
                 if (products == null || products.Count == 0)
                 {
@@ -72,7 +75,7 @@ namespace AromaCafeCliente.Windows
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
                     var downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
-                    var filePath = Path.Combine(downloadsFolder, "InventoryReport.xlsx");
+                    var filePath = Path.Combine(downloadsFolder, "InventoryReport"+DateTime.Today.ToString("ddMMyy")+".xlsx");
                     FileInfo excelFile = new FileInfo(filePath);
                     package.SaveAs(excelFile);
 
@@ -84,5 +87,6 @@ namespace AromaCafeCliente.Windows
                 MessageBox.Show("Error al generar el reporte: " + ex.Message);
             }
         }
+
     }
 }
