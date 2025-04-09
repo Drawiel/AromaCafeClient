@@ -27,6 +27,24 @@ namespace AromaCafeCliente.Windows {
         public GUI_ProductList() {
             InitializeComponent();
             LoadProducts();
+            LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
+            LogOutPopupControl.Cancelled += OnLogOutCancelled;
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void OnLogOutSuccess(object sender, EventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Hidden;
+            NavigationService?.Navigate(new GUI_LogIn());
+        }
+
+        private void OnLogOutCancelled(object sender, EventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Hidden;
         }
 
         private void LoadProducts()
@@ -73,10 +91,6 @@ namespace AromaCafeCliente.Windows {
             {
                 this.NavigationService.Navigate(new GUI_ProductDetails(selectedProduct.ProductId));
             }
-        }
-
-        private void LogOut_Click(object sender, RoutedEventArgs e) {
-
         }
     }
 }

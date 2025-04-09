@@ -31,6 +31,8 @@ namespace AromaCafeCliente.Windows {
         public GUI_Employees() {
             InitializeComponent();
             LoadEmployees();
+            LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
+            LogOutPopupControl.Cancelled += OnLogOutCancelled;
         }
 
         private void NavigateEmployeeRegistration(object sender, RoutedEventArgs e)
@@ -113,32 +115,19 @@ namespace AromaCafeCliente.Windows {
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            this.ValidationPopup.Visibility = Visibility.Visible;
+            ValidationPopup.Visibility = Visibility.Visible;
         }
 
-        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        private void OnLogOutSuccess(object sender, EventArgs e)
         {
-            string password = pswdBoxEmployeePassword.Password;
-            if (password != string.Empty)
-            {
-                if (EmployeeManager.LogOut(password) == 1)
-                {
-                    if (this.NavigationService != null)
-                    {
-                        this.NavigationService.Navigate(new GUI_LogIn());
-                    }
-                }
-                else
-                {
-                    //Alert
-                }
-            }
-            else
-            {
-                //Alert
-            }
+            ValidationPopup.Visibility = Visibility.Hidden;
+            NavigationService?.Navigate(new GUI_LogIn());
         }
 
+        private void OnLogOutCancelled(object sender, EventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Hidden;
+        }
         private void NavigateProductList(object sender, RoutedEventArgs e)
         {
             if (NavigationService != null)

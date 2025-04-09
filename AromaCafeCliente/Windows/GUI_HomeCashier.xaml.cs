@@ -20,10 +20,33 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_HomeCashier : Page {
         public GUI_HomeCashier() {
             InitializeComponent();
+            LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
+            LogOutPopupControl.Cancelled += OnLogOutCancelled;
         }
 
-        private void LogOut_Click(object sender, RoutedEventArgs e) {
+        private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void OnLogOutSuccess(object sender, EventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Hidden;
+
+            if (NavigationService != null)
+            {
+                NavigationService.Navigate(new GUI_LogIn());
+            }
+        }
+
+        private void OnLogOutCancelled(object sender, EventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Hidden;
         }
     }
 }
