@@ -21,5 +21,9 @@ namespace AromaCafeCliente.Windows {
         public GUI_HomeCashier() {
             InitializeComponent();
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

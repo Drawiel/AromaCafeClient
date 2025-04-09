@@ -74,5 +74,9 @@ namespace AromaCafeCliente.Windows {
                 this.NavigationService.Navigate(new GUI_ProductDetails(selectedProduct.ProductId));
             }
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

@@ -21,5 +21,17 @@ namespace AromaCafeCliente.Windows {
         public GUI_HomeWaitress() {
             InitializeComponent();
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnClickBefore(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnClickNext(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

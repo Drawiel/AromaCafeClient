@@ -21,5 +21,13 @@ namespace AromaCafeCliente.Windows {
         public GUI_CheckCashier() {
             InitializeComponent();
         }
+
+        private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
