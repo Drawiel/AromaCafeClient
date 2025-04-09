@@ -438,7 +438,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>DANIEL_PC\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -447,7 +447,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>DANIEL_PC\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -456,7 +456,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>DANIEL_PC\daur0</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

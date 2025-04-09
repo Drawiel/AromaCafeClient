@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 using AromaCafeCliente.AromaCafeService;
+using AromaCafeCliente.Managers;
 
 namespace AromaCafeCliente.Windows {
     /// <summary>
@@ -80,12 +81,13 @@ namespace AromaCafeCliente.Windows {
         private bool EmployeeFilter(object item) {
             if (string.IsNullOrEmpty(txtSearchBox.Text)) return true;
 
-            var employee = item as Employee;
+            var employee = item as EmployeeWithStatus;
             if (employee == null) return false;
             string searchText = txtSearchBox.Text.ToLower();
 
             return employee.LastName.ToLower().Contains(searchText) ||
                    employee.Name.ToLower().Contains(searchText) ||
+                   employee.Status.ToLower().Contains(searchText) ||
                    employee.EmployeeType.ToLower().Contains(searchText);
         }
 
@@ -94,6 +96,54 @@ namespace AromaCafeCliente.Windows {
 
             if (employeesView != null) {
                 this.NavigationService.Navigate(new GUI_EmployeeUpdate(selectedEmployee.EmployeeId));
+            }
+        }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                NavigationService.GoBack();
+            }
+        }
+        private void HideLogOut(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopup.Visibility = Visibility.Visible;
+        }
+
+        private void ValidateUserLogOut(object sender, RoutedEventArgs e)
+        {
+            string password = pswdBoxEmployeePassword.Password;
+            if (password != string.Empty)
+            {
+                if (EmployeeManager.LogOut(password) == 1)
+                {
+                    if (this.NavigationService != null)
+                    {
+                        this.NavigationService.Navigate(new GUI_LogIn());
+                    }
+                }
+                else
+                {
+                    //Alert
+                }
+            }
+            else
+            {
+                //Alert
+            }
+        }
+
+        private void NavigateProductList(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                NavigationService.Navigate(new GUI_ProductList());
             }
         }
 
