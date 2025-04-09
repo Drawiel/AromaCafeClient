@@ -492,7 +492,8 @@
                 Margin="113,678,0,0" 
                 VerticalAlignment="Top" 
                 Height="210" 
-                Width="399">
+                Width="399"
+                Click="GenerateInventoryReport">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
