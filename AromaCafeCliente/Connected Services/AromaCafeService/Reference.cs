@@ -311,6 +311,83 @@ namespace AromaCafeCliente.AromaCafeService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Expense", Namespace="http://schemas.datacontract.org/2004/07/AromaCafeService.Models")]
+    [System.SerializableAttribute()]
+    public partial class Expense : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ExpenseIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((this.AmountField.Equals(value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateTime {
+            get {
+                return this.DateTimeField;
+            }
+            set {
+                if ((this.DateTimeField.Equals(value) != true)) {
+                    this.DateTimeField = value;
+                    this.RaisePropertyChanged("DateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ExpenseId {
+            get {
+                return this.ExpenseIdField;
+            }
+            set {
+                if ((this.ExpenseIdField.Equals(value) != true)) {
+                    this.ExpenseIdField = value;
+                    this.RaisePropertyChanged("ExpenseId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.IEmployeeManager")]
     public interface IEmployeeManager {
@@ -603,6 +680,53 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.Product> GetProductAsync(int idProduct) {
             return base.Channel.GetProductAsync(idProduct);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.IExpenseManager")]
+    public interface IExpenseManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpenseManager/RegisterExpense", ReplyAction="http://tempuri.org/IExpenseManager/RegisterExpenseResponse")]
+        int RegisterExpense(AromaCafeCliente.AromaCafeService.Expense expense);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpenseManager/RegisterExpense", ReplyAction="http://tempuri.org/IExpenseManager/RegisterExpenseResponse")]
+        System.Threading.Tasks.Task<int> RegisterExpenseAsync(AromaCafeCliente.AromaCafeService.Expense expense);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IExpenseManagerChannel : AromaCafeCliente.AromaCafeService.IExpenseManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ExpenseManagerClient : System.ServiceModel.ClientBase<AromaCafeCliente.AromaCafeService.IExpenseManager>, AromaCafeCliente.AromaCafeService.IExpenseManager {
+        
+        public ExpenseManagerClient() {
+        }
+        
+        public ExpenseManagerClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ExpenseManagerClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ExpenseManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ExpenseManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int RegisterExpense(AromaCafeCliente.AromaCafeService.Expense expense) {
+            return base.Channel.RegisterExpense(expense);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegisterExpenseAsync(AromaCafeCliente.AromaCafeService.Expense expense) {
+            return base.Channel.RegisterExpenseAsync(expense);
         }
     }
 }

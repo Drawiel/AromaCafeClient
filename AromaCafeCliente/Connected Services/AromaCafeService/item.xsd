@@ -37,4 +37,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Expense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpenseId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expense" nillable="true" type="tns:Expense" />
 </xs:schema>

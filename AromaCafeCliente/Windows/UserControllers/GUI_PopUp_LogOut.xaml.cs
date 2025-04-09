@@ -21,5 +21,13 @@ namespace AromaCafeCliente.Windows.UserControllers {
         public GUI_PopUp_LogOut() {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btnAccept_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

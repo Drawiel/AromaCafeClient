@@ -15,18 +15,14 @@ using System.Windows.Shapes;
 
 namespace AromaCafeCliente.Windows {
     /// <summary>
-    /// Lógica de interacción para GUI_CheckCashier.xaml
+    /// Lógica de interacción para GUI_WaitersTableBill.xaml
     /// </summary>
-    public partial class GUI_CheckCashier : Page {
-        public GUI_CheckCashier() {
+    public partial class GUI_WaitersTableBill : Page {
+        public GUI_WaitersTableBill() {
             InitializeComponent();
         }
 
-        private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
-
-        }
-
-        private void LogOut_Click(object sender, RoutedEventArgs e) {
+        private void btnOrder_Click(object sender, RoutedEventArgs e) {
 
         }
     }

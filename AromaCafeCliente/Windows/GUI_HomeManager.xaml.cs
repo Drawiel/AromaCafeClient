@@ -23,7 +23,11 @@ namespace AromaCafeCliente.Windows {
             InitializeComponent();
         }
 
-        private void LogOut_Click(object sender, RoutedEventArgs e)
+        private void LogOut_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        /*private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             this.ValidationPopup.Visibility = Visibility.Visible;
         }
@@ -64,6 +68,6 @@ namespace AromaCafeCliente.Windows {
         }
         private void UsersClick(object sender, RoutedEventArgs e) {
             this.NavigationService.Navigate(new GUI_Employees());
-        }
+        }*/
     }
 }
