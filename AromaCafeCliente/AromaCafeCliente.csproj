@@ -139,6 +139,9 @@
     <Compile Include="Windows\UserControllers\GUI_PopUp_Bills.xaml.cs">
       <DependentUpon>GUI_PopUp_Bills.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserControllers\GUI_PopUp_ErrorMessage.xaml.cs">
+      <DependentUpon>GUI_PopUp_ErrorMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_LogOut.xaml.cs">
       <DependentUpon>GUI_PopUp_LogOut.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControllers\GUI_PopUp_Bills.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControllers\GUI_PopUp_ErrorMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
