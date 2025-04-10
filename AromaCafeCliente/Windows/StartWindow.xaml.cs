@@ -22,7 +22,7 @@ namespace AromaCafeCliente.Windows
         public StartWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new GUI_WaitersTableBill());
+            MainFrame.Navigate(new GUI_LogIn());
         }
     }
 }

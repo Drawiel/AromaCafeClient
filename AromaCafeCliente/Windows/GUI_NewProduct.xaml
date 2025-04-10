@@ -47,7 +47,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Home_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -85,7 +85,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Users_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -123,7 +123,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Report_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -161,7 +161,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Products_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -200,7 +200,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="LogOut_Click_1">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -334,7 +334,12 @@
                         Text="" 
                         VerticalAlignment="Top" 
                         Width="465" 
-                        Height="60"/>
+                        Height="60">
+
+
+                        <ComboBoxItem Content="Primario" Tag="Primario" />
+                        <ComboBoxItem Content="Carta"  Tag="Carta"/>
+                    </ComboBox>
 
                 </Grid>                
                 
@@ -353,7 +358,17 @@
                         Text="" 
                         VerticalAlignment="Top" 
                         Width="465" 
-                        Height="60"/>
+                        Height="60">
+
+
+                        <ComboBoxItem Content="Bebidas Frias" Tag="Primario" />
+                        <ComboBoxItem Content="Bebidas Calientes"  Tag="Carta"/>
+                        <ComboBoxItem Content="Postres" Tag="Primario" />
+                        <ComboBoxItem Content="Extras"  Tag="Carta"/>
+                        <ComboBoxItem Content="Alimentos" Tag="Primario" />
+                        <ComboBoxItem Content="Entradas"  Tag="Carta"/>
+                        <ComboBoxItem Content="Mixologia" Tag="Primario" />
+                    </ComboBox>
 
                 </Grid>
 

@@ -59,7 +59,7 @@
 
                 <!-- Botón Users -->
                 <Grid Grid.Row="2" Background="Transparent">
-                    <Button x:Name="Users" Height="85" Width="323">
+                    <Button x:Name="Users" Height="85" Width="323" Click="NavigateUsers">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>

@@ -93,7 +93,7 @@ namespace AromaCafeCliente.Windows {
                     ProductName = TxtBoxName.Text.Trim(),
                     Description = txtBoxDesciption.Text.Trim(),
                     Stock = string.IsNullOrWhiteSpace(txtBoxUnits.Text) ? null : (int?)int.Parse(txtBoxUnits.Text),
-                    ProductType = txtBoxNumber.SelectedValue?.ToString(),
+                    ProductType = txtBoxNumber.Text,
                 };
 
                 ProductManager.UpdateProduct(updatedProduct);
@@ -140,6 +140,7 @@ namespace AromaCafeCliente.Windows {
             if (int.TryParse(Cantidad.Text, out int cantidad))
             {
                 ProductManager.UpdateProductStock(productId, cantidad);
+                MessageBox.Show("Se ha actualizado con éxito el producto.");
                 validationPopup.Visibility = Visibility.Hidden;
             }
         }
@@ -147,6 +148,40 @@ namespace AromaCafeCliente.Windows {
         private void BtnCancelClick(object sender, RoutedEventArgs e)
         {
             validationPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void LogOut_Click_1(object sender, RoutedEventArgs e)
+        {
+            ValidationPopup.Visibility = Visibility.Visible;
+        }
+        private void Products_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_ProductList());
+            }
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.NavigationService.Navigate(new GUI_HomeManager());
+        }
+
+        private void Users_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_Employees());
+            }
+        }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_Reports());
+            }
         }
     }
 }

@@ -46,7 +46,7 @@
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch" 
             Height="67"
-            Width="258"
+            Width="258" Click="Home_Click"
             >
 
                     <Button.Template>
@@ -85,7 +85,7 @@
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch" 
             Height="67"
-            Width="258"
+            Width="258" Click="Users_Click"
             >
 
                     <Button.Template>
@@ -124,7 +124,7 @@
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch" 
             Height="67"
-            Width="258">
+            Width="258" Click="Report_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -157,12 +157,10 @@
         Width="258"
         Background="Transparent">
                 <Button
-            Grid.Row="1"
             x:Name="Products" 
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
+            VerticalAlignment="Top" 
             Height="67"
-            Width="258"
+            Width="258" Click="Products_Click"
             >
 
                     <Button.Template>
@@ -282,7 +280,7 @@
                         Margin="10,88,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" 
-                        Width="65"
+                        Width="65" Click="btnBack_Click"
                         >
 
                         <Button.Template>
@@ -369,4 +367,4 @@
                                Height="500"/>
         </Border>
     </Grid>
-    </Page>
+</Page>

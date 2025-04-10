@@ -9,9 +9,9 @@ namespace AromaCafeCliente.Managers
 {
     public class OrderManager
     {
-        public static List<Product> GetOrdersByTable()
+        /*public static List<Product> GetOrdersByTable()
         {
 
-        }
+        }*/
     }
 }

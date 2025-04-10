@@ -1,4 +1,4 @@
-﻿    <Page x:Class="AromaCafeCliente.Windows.GUI_ProductDetails"
+﻿<Page x:Class="AromaCafeCliente.Windows.GUI_ProductDetails"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -151,7 +151,7 @@ Width="137"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Home_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -189,7 +189,7 @@ Width="137"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Users_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -222,12 +222,10 @@ Width="137"
                 Width="258"
                 Background="Transparent">
                     <Button
-                    Grid.Row="1"
                     x:Name="Report" 
-                    HorizontalAlignment="Stretch" 
-                    VerticalAlignment="Stretch" 
+                    VerticalAlignment="Bottom" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Report_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -265,7 +263,7 @@ Width="137"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Products_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -304,7 +302,7 @@ Width="137"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="LogOut_Click_1">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -467,7 +465,17 @@ Width="137"
                         VerticalAlignment="Top" 
                         Width="465" 
                         Height="60"
-                        IsEditable="False"/>
+                        IsEditable="False">
+
+
+                            <ComboBoxItem Content="Bebidas Frias" Tag="Primario" />
+                            <ComboBoxItem Content="Bebidas Calientes"  Tag="Carta"/>
+                            <ComboBoxItem Content="Postres" Tag="Primario" />
+                            <ComboBoxItem Content="Extras"  Tag="Carta"/>
+                            <ComboBoxItem Content="Alimentos" Tag="Primario" />
+                            <ComboBoxItem Content="Entradas"  Tag="Carta"/>
+                            <ComboBoxItem Content="Mixologia" Tag="Primario" />
+                        </ComboBox>
 
                     </Grid>
 
