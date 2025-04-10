@@ -51,7 +51,19 @@ namespace AromaCafeCliente.Windows {
             }
         }
         private void UsersClick(object sender, RoutedEventArgs e) {
-            this.NavigationService.Navigate(new GUI_Employees());
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_Employees());
+            }
+        }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (this.NavigationService != null)
+            {
+                this.NavigationService.Navigate(new GUI_Reports());
+            }
         }
 
         private void NavigateReports(object sender, RoutedEventArgs e)
