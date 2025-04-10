@@ -63,7 +63,25 @@ namespace AromaCafeCliente.Windows {
         private void btnCloseBill_Click(object sender, RoutedEventArgs e) {
 
         }
-        
+
+        private void NavigateHome(object sender, RoutedEventArgs e) {
+            if(NavigationService != null) {
+                NavigationService.Navigate(new GUI_HomeCashier());
+            }
+        }
+
+        private void NavigateTables(object sender, RoutedEventArgs e) {
+            if(NavigationService != null) {
+                NavigationService.Navigate(new GUI_TablesCashier());
+            }
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e) {
+            if(NavigationService != null) {
+                NavigationService.Navigate(new GUI_TablesCashier());
+            }
+        }
+
 
         private decimal TotalSum() {
             decimal total = 0;

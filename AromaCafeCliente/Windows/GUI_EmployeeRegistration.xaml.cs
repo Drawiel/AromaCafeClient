@@ -89,6 +89,14 @@ namespace AromaCafeCliente.Windows {
             return employee;
         }
 
+        private void NavigateHome(object sender, RoutedEventArgs e) 
+            {
+            if(NavigationService != null) 
+                {
+                NavigationService.Navigate(new GUI_HomeManager());
+            }
+        }
+
         private void NavigateEmployees(object sender, RoutedEventArgs e)
         {
             if (this.NavigationService != null)
@@ -104,6 +112,15 @@ namespace AromaCafeCliente.Windows {
                 NavigationService.Navigate(new GUI_ProductList());
             }
         }
+
+        private void NavigateReports(object sender, RoutedEventArgs e) 
+            {
+            if(this.NavigationService != null) 
+                {
+                NavigationService.Navigate(new GUI_Reports());
+            }
+        }
+
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             ValidationPopup.Visibility = Visibility.Visible;

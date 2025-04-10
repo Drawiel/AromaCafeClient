@@ -57,5 +57,15 @@ namespace AromaCafeCliente.Windows {
         private void OnExpenseCancelled(object sender, EventArgs e) {
             ExpensesPopUp.Visibility = Visibility.Hidden;
         }
+
+        private void NavigateTablesCashier(object sender, RoutedEventArgs e) {
+            if(this.NavigationService != null) {
+                this.NavigationService.Navigate(new GUI_TablesCashier());
+            }
+        }
+
+        private void BtnCashCount_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

@@ -36,22 +36,21 @@
                     <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpPeriodo.png"/>
                 </Grid.Background>
                 <ComboBox
-                Name="comboBoxPeriod"
-                Padding="10,10,0,0"
-                HorizontalAlignment="Left" 
-                Margin="338,0,0,0" 
-                Width="548" Height="54"
-                FontSize="40"
-                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
+                    Name="comboBoxPeriod"
+                    Padding="10,10,0,0"
+                    HorizontalAlignment="Left" 
+                    Margin="338,0,0,0" 
+                    Width="548" Height="54"
+                    FontSize="40"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
                 <Button 
-                x:Name="btnAccept"
-                HorizontalAlignment="Left" 
-                Margin="830,405,0,0" 
-                VerticalAlignment="Top" 
-                Height="55" 
-                Width="136"
-                >
+                    x:Name="btnAccept"
+                    HorizontalAlignment="Left" 
+                    Margin="830,405,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="55" 
+                    Width="136">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -76,13 +75,12 @@
                 </Button>
 
                 <Button 
-                x:Name="btnCancel"
-                HorizontalAlignment="Left" 
-                Margin="673,405,0,0" 
-                VerticalAlignment="Top" 
-                Height="55" 
-                Width="136"
-                >
+                    x:Name="btnCancel"
+                    HorizontalAlignment="Left" 
+                    Margin="673,405,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="55" 
+                    Width="136">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -121,22 +119,21 @@
                     <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpFecha.png"/>
                 </Grid.Background>
                 <DatePicker
-                Name="datePicker"
-                Padding="10,10,0,0"
-                HorizontalAlignment="Left" 
-                Margin="338,0,0,0" 
-                Width="548" Height="54"
-                FontSize="40"
-                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
+                    Name="datePicker"
+                    Padding="10,10,0,0"
+                    HorizontalAlignment="Left" 
+                    Margin="338,0,0,0" 
+                    Width="548" Height="54"
+                    FontSize="40"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
                 <Button 
-                x:Name="btnAcceptDatePicker"
-                HorizontalAlignment="Left" 
-                Margin="830,405,0,0" 
-                VerticalAlignment="Top" 
-                Height="55" 
-                Width="136"
-                >
+                    x:Name="btnAcceptDatePicker"
+                    HorizontalAlignment="Left" 
+                    Margin="830,405,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="55" 
+                    Width="136">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -161,13 +158,12 @@
                 </Button>
 
                 <Button 
-                x:Name="btnCancelDatePicker"
-                HorizontalAlignment="Left" 
-                Margin="673,405,0,0" 
-                VerticalAlignment="Top" 
-                Height="55" 
-                Width="136"
-                >
+                    x:Name="btnCancelDatePicker"
+                    HorizontalAlignment="Left" 
+                    Margin="673,405,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="55" 
+                    Width="136">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -206,19 +202,20 @@
                 </Grid.RowDefinitions>
 
                 <Grid
-                Grid.Row="1"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
                     Grid.Row="1"
-                    x:Name="Home"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-					Height="85"
-					Width="323">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Home"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+					    Height="85"
+					    Width="323"
+                        Click="NavigateHome">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -244,19 +241,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="2"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Users"
+                    Grid.Row="2"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-					Height="85"
-					Width="323">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Users"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+					    Height="85"
+					    Width="323"
+                        Click="NavigateEmployees">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -282,19 +280,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="3"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Report"
+                    Grid.Row="3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-					Height="85"
-					Width="323">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Report"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+					    Height="85"
+					    Width="323"
+                        Click="NavigateReports">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -320,19 +319,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="4"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Products"
+                    Grid.Row="4"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-					Height="85"
-					Width="323">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Products"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+					    Height="85"
+					    Width="323"
+                        Click="NavigateProductList">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -359,20 +359,20 @@
 
 
                 <Grid
-                Grid.Row="6"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="LogOut"
+                    Grid.Row="6"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-					Height="85"
-					Width="323"
-                    Click="LogOut_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="LogOut"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+					    Height="85"
+					    Width="323"
+                        Click="LogOut_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -431,11 +431,11 @@
                 </Button>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="592,192,0,0" 
-                VerticalAlignment="Top" 
-                Height="210" 
-                Width="399">
+                    HorizontalAlignment="Left" 
+                    Margin="592,192,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="210" 
+                    Width="399">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -460,11 +460,11 @@
                 </Button>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="1072,192,0,0" 
-                VerticalAlignment="Top" 
-                Height="210" 
-                Width="399">
+                    HorizontalAlignment="Left" 
+                    Margin="1072,192,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="210" 
+                    Width="399">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -489,12 +489,12 @@
                 </Button>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="113,678,0,0" 
-                VerticalAlignment="Top" 
-                Height="210" 
-                Width="399"
-                Click="GenerateInventoryReport">
+                    HorizontalAlignment="Left" 
+                    Margin="113,678,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="210" 
+                    Width="399"
+                    Click="GenerateInventoryReport">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -519,11 +519,11 @@
                 </Button>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="592,678,0,0" 
-                VerticalAlignment="Top" 
-                Height="210" 
-                Width="399">
+                    HorizontalAlignment="Left" 
+                    Margin="592,678,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="210" 
+                    Width="399">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -548,11 +548,11 @@
                 </Button>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="1072,678,0,0" 
-                VerticalAlignment="Top" 
-                Height="210" 
-                Width="399">
+                    HorizontalAlignment="Left" 
+                    Margin="1072,678,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="210" 
+                    Width="399">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -579,12 +579,12 @@
             </Grid>
             <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
-        Grid.ColumnSpan="2"
-        Background="#80000000"
-        Visibility="Hidden"
-        VerticalAlignment="Stretch"
-        HorizontalAlignment="Stretch"
-        Panel.ZIndex="100">
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
                                HorizontalAlignment="Center"

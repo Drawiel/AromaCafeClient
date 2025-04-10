@@ -34,6 +34,38 @@ namespace AromaCafeCliente.Windows
             ValidationPopup.Visibility = Visibility.Hidden;
         }
 
+        private void NavigateHome(object sender, RoutedEventArgs e) 
+            {
+            if(NavigationService != null) 
+                {
+                NavigationService.Navigate(new GUI_HomeManager());
+            }
+        }
+
+        private void NavigateEmployees(object sender, RoutedEventArgs e) 
+            {
+            if(this.NavigationService != null) 
+                {
+                this.NavigationService.Navigate(new GUI_Employees());
+            }
+        }
+
+        private void NavigateProductList(object sender, RoutedEventArgs e) 
+            {
+            if(this.NavigationService != null) 
+                {
+                NavigationService.Navigate(new GUI_ProductList());
+            }
+        }
+
+        private void NavigateReports(object sender, RoutedEventArgs e) 
+            {
+            if(this.NavigationService != null) 
+                {
+                NavigationService.Navigate(new GUI_Reports());
+            }
+        }
+
         private void GenerateInventoryReport(object sender, RoutedEventArgs e)
         {
             try

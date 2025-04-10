@@ -43,5 +43,21 @@ namespace AromaCafeCliente.Windows {
         private void BtnClickBefore(object sender, RoutedEventArgs e) {
 
         }
+
+        private void NavigateHomeCashier(object sender, RoutedEventArgs e) {
+            if(this.NavigationService != null) {
+                this.NavigationService.Navigate(new GUI_HomeCashier());
+            }
+        }
+
+        private void NavigateTablesCashier(object sender, RoutedEventArgs e) {
+            if(this.NavigationService != null) {
+                this.NavigationService.Navigate(new GUI_TablesCashier());
+            }
+        }
+
+        private void BtnCashCount_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

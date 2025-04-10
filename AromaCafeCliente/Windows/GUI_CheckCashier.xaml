@@ -209,6 +209,7 @@
                 Width="323"
                 Background="Transparent">
                     <Button
+                    Click="NavigateHome"
                     Grid.Row="1"
                     x:Name="Home"
                     HorizontalAlignment="Stretch"
@@ -247,6 +248,7 @@
                 Width="323"
                 Background="Transparent">
                     <Button
+                    Click="NavigateTables"
                     Grid.Row="1"
                     x:Name="Users"
                     HorizontalAlignment="Stretch"
@@ -459,7 +461,8 @@
                     </Button.Template>
                 </Button>
 
-                <Button 
+                <Button
+                    Click="BtnGoBack_Click"
                     HorizontalAlignment="Left" 
                     Height="47" 
                     Margin="34,75,0,0" 

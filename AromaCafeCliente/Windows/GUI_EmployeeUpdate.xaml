@@ -26,40 +26,42 @@
             </Grid.ColumnDefinitions>
 
             <Grid
-            x:Name="validationPopup"
-            Width="1000"
-            Height="500"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Visibility="Collapsed"
-            Panel.ZIndex="2"
-            Margin="460,0,0,0" Grid.ColumnSpan="2" Cursor="">
+                x:Name="validationPopup"
+                Width="1000"
+                Height="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Visibility="Collapsed"
+                Panel.ZIndex="2"
+                Margin="460,0,0,0" 
+                Grid.ColumnSpan="2" 
+                Cursor="">
 
                 <Grid.Background>
                     <ImageBrush ImageSource="pack://application:,,,/Multimedia/Status.png"/>
                 </Grid.Background>
 
                 <TextBox
-                Padding="35,0,0,0"
-                HorizontalAlignment="Left" 
-                Margin="270,205,0,0" 
-                TextWrapping="Wrap" 
-                Text="" 
-                VerticalAlignment="Top" 
-                Width="696" Height="185"
-                FontSize="40"
-                FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                AcceptsReturn="True"
-                VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Disabled"/>
+                    Padding="35,0,0,0"
+                    HorizontalAlignment="Left" 
+                    Margin="270,205,0,0" 
+                    TextWrapping="Wrap" 
+                    Text="" 
+                    VerticalAlignment="Top" 
+                    Width="696" Height="185"
+                    FontSize="40"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled"/>
 
                 <Button 
-                HorizontalAlignment="Left" 
-                Margin="830,426,0,0" 
-                VerticalAlignment="Top" 
-                Height="48" 
-                Width="136"
-                Click="BtnAcceptClick">
+                    HorizontalAlignment="Left" 
+                    Margin="830,426,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="48" 
+                    Width="136"
+                    Click="BtnAcceptClick">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -84,12 +86,12 @@
                 </Button>
 
                 <Button 
-        x:Name="btnCancelStatus"
-        HorizontalAlignment="Left" 
-        Margin="673,426,0,0" 
-        VerticalAlignment="Top" 
-        Height="48" 
-        Width="137">
+                    x:Name="btnCancelStatus"
+                    HorizontalAlignment="Left" 
+                    Margin="673,426,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="48" 
+                    Width="137">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -113,12 +115,12 @@
 
                 </Button>
                 <ComboBox 
-                HorizontalAlignment="Left" 
-                Margin="270,131,0,0" 
-                VerticalAlignment="Top" 
-                Width="696" 
-                Height="49"
-                x:Name="comboBoxStatus">
+                    HorizontalAlignment="Left" 
+                    Margin="270,131,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="696" 
+                    Height="49"
+                    x:Name="comboBoxStatus">
                     <ComboBoxItem Content="Deshabilitado"/>
                     <ComboBoxItem Content="Habilitado"/>
                 </ComboBox>
@@ -140,19 +142,20 @@
                 </Grid.RowDefinitions>
 
                 <Grid
-                Grid.Row="1"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
                     Grid.Row="1"
-                    x:Name="Home" 
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Home" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323"
+                        Click="NavigateHome">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -178,20 +181,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="2"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Users" 
+                    Grid.Row="2"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258"
-                    Click="NavigateEmployees">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Users" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323"
+                        Click="NavigateEmployees">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -217,19 +220,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="3"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Report" 
+                    Grid.Row="3"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Report" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323"
+                        Click="NavigateReports">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -258,16 +262,16 @@
                 Grid.Row="4"
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
+                Height="85"
+                Width="323"
                 Background="Transparent">
                     <Button
                     Grid.Row="1"
                     x:Name="Products" 
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258"
+                    Height="85"
+                    Width="323"
                     Click="NavigateProductList">
 
                         <Button.Template>
@@ -295,20 +299,20 @@
 
 
                 <Grid
-                Grid.Row="6"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="LogOut" 
+                    Grid.Row="6"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258"
-                    Click="LogOut_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="LogOut" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323"
+                        Click="LogOut_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -336,19 +340,19 @@
 
             </Grid>
             <Viewbox
-            Grid.Column="1">
+                Grid.Column="1">
 
                 <Grid
-            Width="1597"
-            Height="1080"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-
-                    <Grid
-                    Width="1530"
-                    Height="955"
+                    Width="1597"
+                    Height="1080"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
+
+                    <Grid
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
                             x:Name="txtBoxName" 
                             IsEnabled="False"
@@ -366,123 +370,123 @@
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxLastName"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="310,259,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1099" 
-                        Height="60"/>
+                            x:Name="txtBoxLastName"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="310,259,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1099" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxEmail"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="310,349,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1099" 
-                        Height="60"/>
+                            x:Name="txtBoxEmail"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="310,349,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1099" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxUser"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="310,439,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1099" 
-                        Height="60"/>
+                            x:Name="txtBoxUser"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="310,439,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1099" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxStreet"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="309,529,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1099" 
-                        Height="60"/>
+                            x:Name="txtBoxStreet"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="309,529,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1099" 
+                            Height="60"/>
 
                     </Grid>
                     
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxCP"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="309,619,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1099" 
-                        Height="60"/>
+                            x:Name="txtBoxCP"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="309,619,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1099" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <Button 
-                        x:Name="btnSave"
-                        IsEnabled="False"
-                        HorizontalAlignment="Left" 
-                        Margin="1255,846,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="154" Click="BtnSaveClick">
+                            x:Name="btnSave"
+                            IsEnabled="False"
+                            HorizontalAlignment="Left" 
+                            Margin="1255,846,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="154" Click="BtnSaveClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -507,13 +511,13 @@
                         </Button>
 
                         <Button 
-                        IsEnabled="True"
-                        HorizontalAlignment="Left" 
-                        Margin="1076,846,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="155"
-                        Click="BtnCancelClick">
+                            IsEnabled="True"
+                            HorizontalAlignment="Left" 
+                            Margin="1076,846,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="155"
+                            Click="BtnCancelClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -538,14 +542,14 @@
                         </Button>
 
                         <Button 
-                        x:Name="btnChangePassKey"
-                        IsEnabled="True"
-                        HorizontalAlignment="Left" 
-                        Margin="107,846,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="454"
-                        Click="BtnChangeAccessCodeClick">
+                            x:Name="btnChangePassKey"
+                            IsEnabled="True"
+                            HorizontalAlignment="Left" 
+                            Margin="107,846,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="454"
+                            Click="BtnChangeAccessCodeClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -570,12 +574,12 @@
                         </Button>
 
                         <Button 
-                        x:Name="btnEdit"
-                        HorizontalAlignment="Left" 
-                        Margin="1249,55,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="154" Click="BtnEditClick">
+                            x:Name="btnEdit"
+                            HorizontalAlignment="Left" 
+                            Margin="1249,55,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="154" Click="BtnEditClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -600,12 +604,12 @@
                         </Button>
 
                         <Button 
-                        x:Name="btnStatus"
-                        HorizontalAlignment="Left" 
-                        Margin="1072,55,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="155" Click="BtnStatusClick">
+                            x:Name="btnStatus"
+                            HorizontalAlignment="Left" 
+                            Margin="1072,55,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="155" Click="BtnStatusClick">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -630,12 +634,12 @@
                         </Button>
 
                         <RadioButton 
-                        x:Name="radioButtonWaitress"
-                        HorizontalAlignment="Left" 
-                        Margin="387,722,0,0" 
-                        VerticalAlignment="Top"
-                        IsEnabled="False"
-                        Tag="Waitress">
+                            x:Name="radioButtonWaitress"
+                            HorizontalAlignment="Left" 
+                            Margin="387,722,0,0" 
+                            VerticalAlignment="Top"
+                            IsEnabled="False"
+                            Tag="Waitress">
                             <RadioButton.Template>
                                 <ControlTemplate TargetType="RadioButton">
                                     <StackPanel Orientation="Horizontal">
@@ -663,23 +667,24 @@
                         </RadioButton>
 
                         <RadioButton 
-                        x:Name="radioButtonCashier"
-                        HorizontalAlignment="Left" 
-                        Margin="609,722,0,0" 
-                        VerticalAlignment="Top"
-                        IsEnabled="False"
-                        Tag="Cajero">
+                            x:Name="radioButtonCashier"
+                            HorizontalAlignment="Left" 
+                            Margin="609,722,0,0" 
+                            VerticalAlignment="Top"
+                            IsEnabled="False"
+                            Tag="Cajero">
                             <RadioButton.Template>
                                 <ControlTemplate TargetType="RadioButton">
                                     <StackPanel Orientation="Horizontal">
-                                        <Border x:Name="Circle"
-                                        Width="41"
-                                        Height="41"
-                                        CornerRadius="20.5"                                      
-                                        BorderBrush="Transparent"
-                                        BorderThickness="2"
-                                        Background="Transparent"
-                        />
+                                        <Border 
+                                            x:Name="Circle"
+                                            Width="41"
+                                            Height="41"
+                                            CornerRadius="20.5"                                      
+                                            BorderBrush="Transparent"
+                                            BorderThickness="2"
+                                            Background="Transparent"
+                            />
                                         <!-- Contenido del CheckBox -->
                                         <ContentPresenter VerticalAlignment="Center" />
                                     </StackPanel>
@@ -696,22 +701,23 @@
                         </RadioButton>
 
                         <RadioButton 
-                        x:Name="radioButtonManager"
-                        HorizontalAlignment="Left" 
-                        Margin="812,722,0,0" 
-                        VerticalAlignment="Top"
-                        IsEnabled="False"
-                        Tag="Gerente">
+                            x:Name="radioButtonManager"
+                            HorizontalAlignment="Left" 
+                            Margin="812,722,0,0" 
+                            VerticalAlignment="Top"
+                            IsEnabled="False"
+                            Tag="Gerente">
                             <RadioButton.Template>
                                 <ControlTemplate TargetType="RadioButton">
                                     <StackPanel Orientation="Horizontal">
-                                        <Border x:Name="Circle"
-                                        Width="41"
-                                        Height="41"
-                                        CornerRadius="20.5"                                      
-                                        BorderBrush="Transparent"
-                                        BorderThickness="2"
-                                        Background="Transparent"
+                                        <Border 
+                                            x:Name="Circle"
+                                            Width="41"
+                                            Height="41"
+                                            CornerRadius="20.5"                                      
+                                            BorderBrush="Transparent"
+                                            BorderThickness="2"
+                                            Background="Transparent"
                         />
                                         <!-- Contenido del CheckBox -->
                                         <ContentPresenter VerticalAlignment="Center" />
@@ -733,7 +739,8 @@
                 </Grid>
             </Viewbox>
             <!-- Popup de confirmación para cerrar sesión -->
-            <Border x:Name="ValidationPopup"
+            <Border 
+                x:Name="ValidationPopup"
                 Grid.ColumnSpan="2"
                 Background="#80000000"
                 Visibility="Hidden"

@@ -34,19 +34,20 @@
             </Grid.RowDefinitions>
 
             <Grid
-        Grid.Row="1"
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Stretch" 
-        Height="67"
-        Width="258"
-        Background="Transparent">
+                Grid.Row="1"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="85"
+                Width="323"
+                Background="Transparent">
                 <Button
-            Grid.Row="1"
-            x:Name="Home" 
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
-            Height="67"
-            Width="258" Click="Home_Click"
+                    Grid.Row="1"
+                    x:Name="Home" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="85"
+                    Width="323" 
+                    Click="Home_Click"
             >
 
                     <Button.Template>
@@ -73,20 +74,20 @@
             </Grid>
 
             <Grid
-        Grid.Row="2"
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Stretch" 
-        Height="67"
-        Width="258"
-        Background="Transparent">
+                Grid.Row="2"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="85"
+                Width="323"
+                Background="Transparent">
                 <Button
-            Grid.Row="1"
-            x:Name="Users" 
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
-            Height="67"
-            Width="258" Click="Users_Click"
-            >
+                    Grid.Row="1"
+                    x:Name="Users" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="85"
+                    Width="323" 
+                    Click="Users_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -112,19 +113,20 @@
             </Grid>
 
             <Grid
-        Grid.Row="3"
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Stretch" 
-        Height="67"
-        Width="258"
-        Background="Transparent">
+                Grid.Row="3"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="85"
+                Width="323"
+                Background="Transparent">
                 <Button
-            Grid.Row="1"
-            x:Name="Report" 
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
-            Height="67"
-            Width="258" Click="Report_Click">
+                    Grid.Row="1"
+                    x:Name="Report" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="85"
+                    Width="323" 
+                    Click="Report_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -150,18 +152,18 @@
             </Grid>
 
             <Grid
-        Grid.Row="4"
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Stretch" 
-        Height="67"
-        Width="258"
-        Background="Transparent">
+                Grid.Row="4"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="85"
+                Width="323"
+                Background="Transparent">
                 <Button
-            x:Name="Products" 
-            VerticalAlignment="Top" 
-            Height="67"
-            Width="258" Click="Products_Click"
-            >
+                    x:Name="Products" 
+                    VerticalAlignment="Top" 
+                    Height="85"
+                    Width="323" 
+                    Click="Products_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -188,20 +190,20 @@
 
 
             <Grid
-        Grid.Row="6"
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Stretch" 
-        Height="67"
-        Width="258"
-        Background="Transparent">
+                Grid.Row="6"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Height="85"
+                Width="323"
+                Background="Transparent">
                 <Button
-            Grid.Row="1"
-            x:Name="LogOut" 
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
-            Height="67"
-            Width="258"
-            Click="LogOut_Click">
+                    Grid.Row="1"
+                    x:Name="LogOut" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="85"
+                    Width="323"
+                    Click="LogOut_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -233,10 +235,10 @@
             Grid.Column="1">
 
             <Grid
-            Width="1597"
-            Height="1080"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
+                Width="1597"
+                Height="1080"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
 
 
                 <Grid
@@ -251,7 +253,8 @@
                         Margin="1404,88,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" 
-                        Width="65" Click="btnAddProduct_Click">
+                        Width="65" 
+                        Click="btnAddProduct_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -280,8 +283,8 @@
                         Margin="10,88,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" 
-                        Width="65" Click="btnBack_Click"
-                        >
+                        Width="65" 
+                        Click="btnBack_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -325,12 +328,12 @@
 
                     <DataGrid 
                         x:Name="DataGridProducts"
-                      AutoGenerateColumns="False"
-                      CanUserAddRows="False"
-                      ItemsSource="{Binding Products}"
-                      ScrollViewer.CanContentScroll="True"
-                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        ItemsSource="{Binding Products}"
+                        ScrollViewer.CanContentScroll="True"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
                         ColumnHeaderHeight="61" 
                         GridLinesVisibility="All"
                         Background="Transparent"
@@ -353,12 +356,12 @@
         </Viewbox>
         <!-- Popup de confirmación para cerrar sesión -->
         <Border x:Name="ValidationPopup"
-        Grid.ColumnSpan="2"
-        Background="#80000000"
-        Visibility="Hidden"
-        VerticalAlignment="Stretch"
-        HorizontalAlignment="Stretch"
-        Panel.ZIndex="100">
+            Grid.ColumnSpan="2"
+            Background="#80000000"
+            Visibility="Hidden"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Panel.ZIndex="100">
 
             <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
                                HorizontalAlignment="Center"

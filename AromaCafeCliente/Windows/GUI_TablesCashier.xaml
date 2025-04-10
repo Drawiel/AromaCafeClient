@@ -36,19 +36,20 @@
                 </Grid.RowDefinitions>
 
                 <Grid
-                Grid.Row="1"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
                     Grid.Row="1"
-                    x:Name="Home"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Height="85"
-                    Width="323">
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Home"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Height="85"
+                        Width="323"
+                        Click="NavigateHomeCashier">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -63,44 +64,6 @@
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
                                                 <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverHome.png" Stretch="UniformToFill"/>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-
-                    </Button>
-                </Grid>
-
-                <Grid
-                Grid.Row="2"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Users"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Height="85"
-                    Width="323">
-
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <!-- Fondo normal -->
-                                    <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Grid>
-                                <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="ButtonBackground" Property="Background">
-                                            <Setter.Value>
-                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverTables.png" Stretch="UniformToFill"/>
                                             </Setter.Value>
                                         </Setter>
                                     </Trigger>
@@ -150,19 +113,20 @@
                 </Grid>
 
                 <Grid
-                Grid.Row="4"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Products"
+                    Grid.Row="4"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Height="85"
-                    Width="323">
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Products"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Height="85"
+                        Width="323"
+                        Click=" BtnCashCount_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -189,20 +153,20 @@
 
 
                 <Grid
-                Grid.Row="6"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="85"
-                Width="323"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="LogOut"
+                    Grid.Row="6"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258"
-                    Click="LogOut_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="LogOut"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Height="85"
+                        Width="323"
+                        Click="LogOut_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -231,16 +195,16 @@
             </Grid>
 
             <Grid
-    Grid.Column="1">
+                Grid.Column="1">
 
                 <Button 
-        x:Name="btnBefore"
-        Click="BtnClickBefore"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="134,98,0,0" 
-        VerticalAlignment="Top" 
-        Width="303">
+                    x:Name="btnBefore"
+                    Click="BtnClickBefore"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -264,15 +228,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable1"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="485,98,0,0" 
-        VerticalAlignment="Top" 
-        Width="303"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable1"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -298,15 +262,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable2"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="836,98,0,0" 
-        VerticalAlignment="Top" 
-        Width="303"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable2"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -332,15 +296,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable3"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="1187,98,0,0" 
-        VerticalAlignment="Top" 
-        Width="303"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable3"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,98,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -366,15 +330,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable4"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="134,331,0,0" 
-        VerticalAlignment="Top" 
-        Width="303"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable4"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -400,15 +364,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable5"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="485,331,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable5"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -434,15 +398,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable6"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="836,331,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable6"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -468,15 +432,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable7"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="1187,331,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable7"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,331,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -502,15 +466,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable8"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="134,564,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable8"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -536,15 +500,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable9"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="485,564,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable9"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -570,15 +534,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable10"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="836,564,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable10"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="836,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -604,15 +568,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable11"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="1187,564,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable11"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,564,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -638,15 +602,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable12"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="134,797,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable12"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="134,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -672,15 +636,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable13"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="485,797,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable13"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="485,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -706,15 +670,15 @@
                 </Button>
 
                 <Button 
-        x:Name="btnTable14"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="837,797,0,0" 
-        VerticalAlignment="Top" 
-        Width="302"
-        Content=""
-        Foreground="White"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    x:Name="btnTable14"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="837,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="302"
+                    Content=""
+                    Foreground="White"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -740,13 +704,13 @@
                 </Button>
 
                 <Button 
-        x:Name="btnNext"
-        Click="BtnClickBefore"
-        HorizontalAlignment="Left" 
-        Height="185" 
-        Margin="1187,797,0,0" 
-        VerticalAlignment="Top" 
-        Width="303">
+                    x:Name="btnNext"
+                    Click="BtnClickBefore"
+                    HorizontalAlignment="Left" 
+                    Height="185" 
+                    Margin="1187,797,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="303">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -772,12 +736,12 @@
             </Grid>
             <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
-        Grid.ColumnSpan="2"
-        Background="#80000000"
-        Visibility="Hidden"
-        VerticalAlignment="Stretch"
-        HorizontalAlignment="Stretch"
-        Panel.ZIndex="100">
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
                                HorizontalAlignment="Center"

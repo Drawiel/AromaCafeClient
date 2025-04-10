@@ -21,5 +21,11 @@ namespace AromaCafeCliente.Windows
         private void btnOrder_Click(object sender, RoutedEventArgs e) {
 
         }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e) {
+            if(this.NavigationService != null) {
+                this.NavigationService.Navigate(new GUI_HomeWaitress());
+            }
+        }
     }
 }

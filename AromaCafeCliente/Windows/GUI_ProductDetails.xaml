@@ -24,41 +24,42 @@
                 <ColumnDefinition Width="1597*"/>
             </Grid.ColumnDefinitions>
             <Grid
-    x:Name="validationPopup"
-    Width="1000"
-    Height="500"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    Visibility="Hidden"
-    Panel.ZIndex="2"
-    Margin="460,0,0,0" Grid.ColumnSpan="2" Cursor="">
+                x:Name="validationPopup"
+                Width="1000"
+                Height="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Visibility="Hidden"
+                Panel.ZIndex="2"
+                Margin="460,0,0,0" 
+                Grid.ColumnSpan="2" 
+                Cursor="">
 
                 <Grid.Background>
                     <ImageBrush ImageSource="pack://application:,,,/Multimedia/Stock.png"/>
                 </Grid.Background>
 
                 <TextBox
-
-        x:Name="Cantidad"
-        Padding="35,0,0,0"
-        HorizontalAlignment="Left" 
-        Margin="379,205,0,0" 
-        TextWrapping="Wrap" 
-        VerticalAlignment="Top" 
-        Width="587" Height="185"
-        FontSize="40"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-        AcceptsReturn="True"
-        VerticalScrollBarVisibility="Auto"
-        HorizontalScrollBarVisibility="Disabled"/>
+                    x:Name="Cantidad"
+                    Padding="35,0,0,0"
+                    HorizontalAlignment="Left" 
+                    Margin="379,205,0,0" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Top" 
+                    Width="587" Height="185"
+                    FontSize="40"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled"/>
 
                 <Button 
-        HorizontalAlignment="Left" 
-        Margin="830,426,0,0" 
-        VerticalAlignment="Top" 
-        Height="48" 
-        Width="136"
-        Click="BtnAcceptClick">
+                    HorizontalAlignment="Left" 
+                    Margin="830,426,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="48" 
+                    Width="136"
+                    Click="BtnAcceptClick">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -83,12 +84,12 @@
                 </Button>
 
                 <Button 
-x:Name="btnCancelStatus"
-HorizontalAlignment="Left" 
-Margin="673,426,0,0" 
-VerticalAlignment="Top" 
-Height="48" 
-Width="137"
+                    x:Name="btnCancelStatus"
+                    HorizontalAlignment="Left" 
+                    Margin="673,426,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="48" 
+                    Width="137"
                     Click="BtnCancelClick">
 
                     <Button.Template>
@@ -113,17 +114,16 @@ Width="137"
 
                 </Button>
                 <TextBlock 
-        HorizontalAlignment="Left" 
-        Margin="379,131,0,0" 
-        VerticalAlignment="Top" 
-        Width="587" 
-        Height="49"
-        x:Name="txtBlockActualCuantity">
-
+                    HorizontalAlignment="Left" 
+                    Margin="379,131,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="587" 
+                    Height="49"
+                    x:Name="txtBlockActualCuantity">
                 </TextBlock>
 
-
             </Grid>
+            
             <Grid
                 Background="Transparent">
                 <Grid.RowDefinitions>
@@ -136,22 +136,21 @@ Width="137"
                     <RowDefinition Height="85*"/>
                 </Grid.RowDefinitions>
 
-
-
                 <Grid
-                Grid.Row="1"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
                     Grid.Row="1"
-                    x:Name="Home" 
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258" Click="Home_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Home" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323" 
+                        Click="Home_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -177,19 +176,20 @@ Width="137"
                 </Grid>
 
                 <Grid
-                Grid.Row="2"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Users" 
+                    Grid.Row="2"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258" Click="Users_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Users" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323" 
+                        Click="Users_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -215,17 +215,18 @@ Width="137"
                 </Grid>
 
                 <Grid
-                Grid.Row="3"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
+                    Grid.Row="3"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
                     <Button
-                    x:Name="Report" 
-                    VerticalAlignment="Bottom" 
-                    Height="67"
-                    Width="258" Click="Report_Click">
+                        x:Name="Report" 
+                        VerticalAlignment="Bottom" 
+                        Height="85"
+                        Width="323" 
+                        Click="Report_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -251,19 +252,20 @@ Width="137"
                 </Grid>
 
                 <Grid
-                Grid.Row="4"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="Products" 
+                    Grid.Row="4"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258" Click="Products_Click">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="Products" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323" 
+                        Click="Products_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -290,19 +292,20 @@ Width="137"
 
 
                 <Grid
-                Grid.Row="6"
-                HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch" 
-                Height="67"
-                Width="258"
-                Background="Transparent">
-                    <Button
-                    Grid.Row="1"
-                    x:Name="LogOut" 
+                    Grid.Row="6"
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Height="67"
-                    Width="258" Click="LogOut_Click_1">
+                    Height="85"
+                    Width="323"
+                    Background="Transparent">
+                    <Button
+                        Grid.Row="1"
+                        x:Name="LogOut" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Height="85"
+                        Width="323" 
+                        Click="LogOut_Click_1">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -330,19 +333,19 @@ Width="137"
 
             </Grid>
             <Viewbox
-            Grid.Column="1">
+                Grid.Column="1">
 
                 <Grid
-            Width="1597"
-            Height="1080"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-
-                    <Grid
-                    Width="1530"
-                    Height="955"
+                    Width="1597"
+                    Height="1080"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
+
+                    <Grid
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
                             x:Name="TxtBoxName"
                             IsEnabled="False"
@@ -360,89 +363,89 @@ Width="137"
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxCode"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="389,259,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1020" 
-                        Height="60"/>
+                            x:Name="txtBoxCode"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="389,259,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1020" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxUnits"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="389,349,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1020" 
-                        Height="60"/>
+                            x:Name="txtBoxUnits"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="389,349,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1020" 
+                            Height="60"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <TextBox
-                        x:Name="txtBoxDesciption"
-                        IsEnabled="False"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="389,441,0,0" 
-                        TextWrapping="Wrap" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="1019" 
-                        Height="148"
-                        AcceptsReturn="True"
-                        VerticalScrollBarVisibility="Auto"
-                        HorizontalScrollBarVisibility="Disabled"/>
+                            x:Name="txtBoxDesciption"
+                            IsEnabled="False"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="389,441,0,0" 
+                            TextWrapping="Wrap" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="1019" 
+                            Height="148"
+                            AcceptsReturn="True"
+                            VerticalScrollBarVisibility="Auto"
+                            HorizontalScrollBarVisibility="Disabled"/>
 
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <ComboBox
-                        x:Name="txtBoxNumber"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="390,619,0,0" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="465" 
-                        IsEditable="False"
-                             IsEnabled="False"
-                        Height="60">
+                            x:Name="txtBoxNumber"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="390,619,0,0" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="465" 
+                            IsEditable="False"
+                            IsEnabled="False"
+                            Height="60">
 
                             <ComboBoxItem Content="Primario" Tag="Primario" />
                             <ComboBoxItem Content="Carta"  Tag="Carta"/>
@@ -450,23 +453,22 @@ Width="137"
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                         <ComboBox
-                        x:Name="comboBoxGroup"
-                        Padding="10,0,10,0"
-                        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                        HorizontalAlignment="Left"
-                        FontSize="40"
-                        Margin="387,709,0,0" 
-                        Text="" 
-                        VerticalAlignment="Top" 
-                        Width="465" 
-                        Height="60"
-                        IsEditable="False">
-
+                            x:Name="comboBoxGroup"
+                            Padding="10,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="387,709,0,0" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="465" 
+                            Height="60"
+                            IsEditable="False">
 
                             <ComboBoxItem Content="Bebidas Frias" Tag="Primario" />
                             <ComboBoxItem Content="Bebidas Calientes"  Tag="Carta"/>
@@ -480,19 +482,19 @@ Width="137"
                     </Grid>
 
                     <Grid
-                    Width="1530"
-                    Height="955"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left" Margin="57,49,0,0">
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" Margin="57,49,0,0">
 
                         <Button 
-                        x:Name="btnSave"
-                        IsEnabled="False"
-                        HorizontalAlignment="Left" 
-                        Margin="1230,860,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="154" Click="btnSave_Click">
+                            x:Name="btnSave"
+                            IsEnabled="False"
+                            HorizontalAlignment="Left" 
+                            Margin="1230,860,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="154" Click="btnSave_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -517,13 +519,13 @@ Width="137"
                         </Button>
 
                         <Button 
-                        x:Name="btnCancel"
-                        IsEnabled="False"
-                        HorizontalAlignment="Left" 
-                        Margin="1052,860,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="59" 
-                        Width="155" Click="btnCancel_Click">
+                            x:Name="btnCancel"
+                            IsEnabled="False"
+                            HorizontalAlignment="Left" 
+                            Margin="1052,860,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="59" 
+                            Width="155" Click="btnCancel_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -548,12 +550,12 @@ Width="137"
                         </Button>
 
                         <Button 
-                        x:Name="btnEdit"
-                        HorizontalAlignment="Left" 
-                        Margin="1225,30,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="60" 
-                        Width="154" Click="btnEdit_Click">
+                            x:Name="btnEdit"
+                            HorizontalAlignment="Left" 
+                            Margin="1225,30,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="60" 
+                            Width="154" Click="btnEdit_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -578,12 +580,12 @@ Width="137"
                         </Button>
 
                         <Button 
-                        x:Name="btnStock"
-                        HorizontalAlignment="Left" 
-                        Margin="1225,109,0,0" 
-                        VerticalAlignment="Top" 
-                        Height="60" 
-                        Width="154" Click="btnStock_Click">
+                            x:Name="btnStock"
+                            HorizontalAlignment="Left" 
+                            Margin="1225,109,0,0" 
+                            VerticalAlignment="Top" 
+                            Height="60" 
+                            Width="154" Click="btnStock_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -613,12 +615,12 @@ Width="137"
             </Viewbox>
             <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
-        Grid.ColumnSpan="2"
-        Background="#80000000"
-        Visibility="Hidden"
-        VerticalAlignment="Stretch"
-        HorizontalAlignment="Stretch"
-        Panel.ZIndex="100">
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
                                HorizontalAlignment="Center"

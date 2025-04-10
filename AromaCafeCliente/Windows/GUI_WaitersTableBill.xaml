@@ -482,7 +482,8 @@
                         HorizontalAlignment="Left" 
                         Height="60" Margin="10,320,0,0" 
                         VerticalAlignment="Top" 
-                        Width="155">
+                        Width="155"
+                        Click="BtnCancel_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>

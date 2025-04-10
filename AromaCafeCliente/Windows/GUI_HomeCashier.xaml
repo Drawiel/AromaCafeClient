@@ -38,19 +38,19 @@
 				</Grid.RowDefinitions>
 
 				<Grid
-                Grid.Row="1"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
-                Background="Transparent">
+					Grid.Row="1"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Height="85"
+					Width="323"
+					Background="Transparent">
 					<Button
-                    Grid.Row="1"
-                    x:Name="Home"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+						Grid.Row="1"
+						x:Name="Home"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Height="85"
+						Width="323">
 
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
@@ -76,19 +76,20 @@
 				</Grid>
 
 				<Grid
-                Grid.Row="2"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
-                Background="Transparent">
+					Grid.Row="2"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Height="85"
+					Width="323"
+					Background="Transparent">
 					<Button
-                    Grid.Row="1"
-                    x:Name="Users"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+						Grid.Row="1"
+						x:Name="TablesCashier"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Height="85"
+						Width="323"
+                        Click="NavigateTablesCashier">
 
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
@@ -114,19 +115,19 @@
 				</Grid>
 
 				<Grid
-                Grid.Row="3"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
-                Background="Transparent">
+					Grid.Row="3"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Height="85"
+					Width="323"
+					Background="Transparent">
 					<Button
 						Grid.Row="1"
 						x:Name="Expense"
 						HorizontalAlignment="Stretch"
 						VerticalAlignment="Stretch"
-						Height="67"
-						Width="258"
+						Height="85"
+						Width="323"
                         Click="BtnExpenses_Click">
 
 						<Button.Template>
@@ -153,19 +154,20 @@
 				</Grid>
 
 				<Grid
-                Grid.Row="4"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
-                Background="Transparent">
+					Grid.Row="4"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Height="85"
+					Width="323"
+					Background="Transparent">
 					<Button
-                    Grid.Row="1"
-                    x:Name="Products"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258">
+						Grid.Row="1"
+						x:Name="CashCount"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Height="85"
+						Width="323"
+                        Click="BtnCashCount_Click">
 
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
@@ -192,20 +194,20 @@
 
 
 				<Grid
-                Grid.Row="6"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Height="67"
-                Width="258"
-                Background="Transparent">
+					Grid.Row="6"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Height="85"
+					Width="323"
+					Background="Transparent">
 					<Button
-                    Grid.Row="1"
-                    x:Name="LogOut"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
-                    Height="67"
-                    Width="258"
-                    Click="LogOut_Click">
+						Grid.Row="1"
+						x:Name="LogOut"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Height="85"
+						Width="323"
+						Click="LogOut_Click">
 
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
