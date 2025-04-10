@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Managers\OrderManager.cs" />
     <Compile Include="Windows\GUI_CheckCashier.xaml.cs">
       <DependentUpon>GUI_CheckCashier.xaml</DependentUpon>
     </Compile>
@@ -439,6 +440,49 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Multimedia\HoverOrdenar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_Reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\popUpPeriodo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\popUpFecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverVentaPorPeriodo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverVentasPorMesero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\GUI_CuentaCajero.png" />
+    <Resource Include="Multimedia\GUI_InicioCajero.png" />
+    <Resource Include="Multimedia\GUI_InicioMesero.png" />
+    <Resource Include="Multimedia\GUI_MesasCajero.png" />
+    <Resource Include="Multimedia\HoverBefore.png" />
+    <Resource Include="Multimedia\HoverBills.png" />
+    <Resource Include="Multimedia\HoverCancelacionesPorMesa.png" />
+    <Resource Include="Multimedia\HoverCashOut.png" />
+    <Resource Include="Multimedia\HoverClose.png" />
+    <Resource Include="Multimedia\HoverGastosPorPeriodo.png" />
+    <Resource Include="Multimedia\HoverModify.png" />
+    <Resource Include="Multimedia\HoverNewMesero.png" />
+    <Resource Include="Multimedia\HoverNewTable.png" />
+    <Resource Include="Multimedia\HoverNext.png" />
+    <Resource Include="Multimedia\HoverPedidosPorMesa.png" />
+    <Resource Include="Multimedia\HoverReporteDeInventario.png" />
+    <Resource Include="Multimedia\HoverTable.png" />
+    <Resource Include="Multimedia\HoverTables.png" />
+    <Resource Include="Multimedia\popUpAbrirMesa.png" />
+    <Resource Include="Multimedia\popUpBills.png" />
+    <Resource Include="Multimedia\popUpModificarPedido.png" />
+    <Resource Include="Multimedia\popUpNewWaitress.png" />
+    <Resource Include="Multimedia\popUpPaymentMethod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="epplus.license.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

@@ -45,4 +45,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Expense" nillable="true" type="tns:Expense" />
+  <xs:complexType name="Charge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChargeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCharge" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypePayment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Charge" nillable="true" type="tns:Charge" />
 </xs:schema>

@@ -21,18 +21,32 @@ namespace AromaCafeCliente.Windows.UserControllers {
     /// </summary>
     public partial class GUI_PopUp_Bills : UserControl {
         private ExpenseManagerClient expenseManager;
+        public event EventHandler LogOutSuccess;
+        public event EventHandler Cancelled;
 
         public GUI_PopUp_Bills() {
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e) {
-
+        private void BtnCancel_Click(object sender, RoutedEventArgs e) {
+            Cancelled?.Invoke(this, EventArgs.Empty);
         }
 
-        private void btnAccept_Click(object sender, RoutedEventArgs e) {
-            if (!IsDecimal()) {
+        private void BtnAccept_Click(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtBoxCuantity.Text) && string.IsNullOrEmpty(txtBoxReason.Text)) {
+                MessageBox.Show("Se han encontrado campos vacios, favor de revisar");
+                return;
+            } 
+
+            try {
+                if (registerExpense(decimal.Parse(txtBoxCuantity.Text))) {
+                    MessageBox.Show("Se ha registrado correctamente el gasto");
+                } else {
+                    MessageBox.Show("Hubo un error inesperado al intentar registrar el gasto");
+                }
+            } catch (FormatException) {
                 MessageBox.Show("No se pudo ingresar el monto, compruebe el formato: ####.##");
+                return;
             }
         }
 
@@ -59,7 +73,7 @@ namespace AromaCafeCliente.Windows.UserControllers {
         }
 
         private bool IsDecimal() {
-            string decimalPattern = @"^\d+(\.\d{1,2})?$";
+            string decimalPattern = @"^\d*(\.\d{0,2})?";
             return Regex.IsMatch(decimalPattern, txtBoxCuantity.Text);
         }
     }

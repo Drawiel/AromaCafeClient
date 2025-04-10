@@ -33,7 +33,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="btnAccept_Click">
+                Click="BtnAccept_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
@@ -59,7 +59,7 @@
                 VerticalAlignment="Top" 
                 Height="55" 
                 Width="136"
-                Click="btnCancel_Click">
+                Click="BtnCancel_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>

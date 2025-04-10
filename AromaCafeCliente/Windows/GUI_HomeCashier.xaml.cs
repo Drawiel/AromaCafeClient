@@ -22,6 +22,7 @@ namespace AromaCafeCliente.Windows {
             InitializeComponent();
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
+            ExpensesPopupControl.Cancelled += OnExpenseCancelled;
         }
 
         private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,6 +48,14 @@ namespace AromaCafeCliente.Windows {
         private void OnLogOutCancelled(object sender, EventArgs e)
         {
             ValidationPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void BtnExpenses_Click(object sender, RoutedEventArgs e) {
+            ExpensesPopUp.Visibility = Visibility.Visible;
+        }
+
+        private void OnExpenseCancelled(object sender, EventArgs e) {
+            ExpensesPopUp.Visibility = Visibility.Hidden;
         }
     }
 }

@@ -24,6 +24,107 @@
                 <ColumnDefinition Width="1597*"/>
             </Grid.ColumnDefinitions>
             <Grid
+    x:Name="validationPopup"
+    Width="1000"
+    Height="500"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Visibility="Hidden"
+    Panel.ZIndex="2"
+    Margin="460,0,0,0" Grid.ColumnSpan="2" Cursor="">
+
+                <Grid.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/Stock.png"/>
+                </Grid.Background>
+
+                <TextBox
+
+        x:Name="Cantidad"
+        Padding="35,0,0,0"
+        HorizontalAlignment="Left" 
+        Margin="379,205,0,0" 
+        TextWrapping="Wrap" 
+        VerticalAlignment="Top" 
+        Width="587" Height="185"
+        FontSize="40"
+        FontFamily="pack://application:,,,/Font/#Architects Daughter"
+        AcceptsReturn="True"
+        VerticalScrollBarVisibility="Auto"
+        HorizontalScrollBarVisibility="Disabled"/>
+
+                <Button 
+        HorizontalAlignment="Left" 
+        Margin="830,426,0,0" 
+        VerticalAlignment="Top" 
+        Height="48" 
+        Width="136"
+        Click="BtnAcceptClick">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button 
+x:Name="btnCancelStatus"
+HorizontalAlignment="Left" 
+Margin="673,426,0,0" 
+VerticalAlignment="Top" 
+Height="48" 
+Width="137"
+                    Click="BtnCancelClick">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+                <TextBlock 
+        HorizontalAlignment="Left" 
+        Margin="379,131,0,0" 
+        VerticalAlignment="Top" 
+        Width="587" 
+        Height="49"
+        x:Name="txtBlockActualCuantity">
+
+                </TextBlock>
+
+
+            </Grid>
+            <Grid
                 Background="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="373*"/>
@@ -50,7 +151,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Home_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -88,7 +189,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Users_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -121,12 +222,10 @@
                 Width="258"
                 Background="Transparent">
                     <Button
-                    Grid.Row="1"
                     x:Name="Report" 
-                    HorizontalAlignment="Stretch" 
-                    VerticalAlignment="Stretch" 
+                    VerticalAlignment="Bottom" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Report_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -164,7 +263,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="Products_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -203,7 +302,7 @@
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
                     Height="67"
-                    Width="258">
+                    Width="258" Click="LogOut_Click_1">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -333,7 +432,6 @@
                     HorizontalAlignment="Center">
                         <ComboBox
                         x:Name="txtBoxNumber"
-                        IsEditable="False"
                         Padding="10,0,10,0"
                         FontFamily="pack://application:,,,/Font/#Architects Daughter"
                         HorizontalAlignment="Left"
@@ -342,8 +440,13 @@
                         Text="" 
                         VerticalAlignment="Top" 
                         Width="465" 
-                        Height="60"/>
+                        IsEditable="False"
+                             IsEnabled="False"
+                        Height="60">
 
+                            <ComboBoxItem Content="Primario" Tag="Primario" />
+                            <ComboBoxItem Content="Carta"  Tag="Carta"/>
+                        </ComboBox>
                     </Grid>
 
                     <Grid
@@ -361,7 +464,18 @@
                         Text="" 
                         VerticalAlignment="Top" 
                         Width="465" 
-                        Height="60"/>
+                        Height="60"
+                        IsEditable="False">
+
+
+                            <ComboBoxItem Content="Bebidas Frias" Tag="Primario" />
+                            <ComboBoxItem Content="Bebidas Calientes"  Tag="Carta"/>
+                            <ComboBoxItem Content="Postres" Tag="Primario" />
+                            <ComboBoxItem Content="Extras"  Tag="Carta"/>
+                            <ComboBoxItem Content="Alimentos" Tag="Primario" />
+                            <ComboBoxItem Content="Entradas"  Tag="Carta"/>
+                            <ComboBoxItem Content="Mixologia" Tag="Primario" />
+                        </ComboBox>
 
                     </Grid>
 
@@ -378,7 +492,7 @@
                         Margin="1230,860,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="154">
+                        Width="154" Click="btnSave_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -409,7 +523,7 @@
                         Margin="1052,860,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="155">
+                        Width="155" Click="btnCancel_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -439,7 +553,7 @@
                         Margin="1225,30,0,0" 
                         VerticalAlignment="Top" 
                         Height="60" 
-                        Width="154">
+                        Width="154" Click="btnEdit_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -469,7 +583,7 @@
                         Margin="1225,109,0,0" 
                         VerticalAlignment="Top" 
                         Height="60" 
-                        Width="154">
+                        Width="154" Click="btnStock_Click">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
