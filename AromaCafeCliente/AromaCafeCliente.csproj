@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Managers\OrderManager.cs" />
     <Compile Include="Windows\GUI_CheckCashier.xaml.cs">
       <DependentUpon>GUI_CheckCashier.xaml</DependentUpon>
     </Compile>
