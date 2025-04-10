@@ -369,7 +369,7 @@
                         Margin="1219,860,0,0" 
                         VerticalAlignment="Top" 
                         Height="59" 
-                        Width="165">
+                        Width="165" Click="btnRegister_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

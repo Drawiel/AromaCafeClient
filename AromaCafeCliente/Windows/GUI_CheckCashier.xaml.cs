@@ -60,9 +60,10 @@ namespace AromaCafeCliente.Windows {
             ExpensesPopUp.Visibility = Visibility.Hidden;
         }
 
-        private void BtnCloseBill_Click(object sender, RoutedEventArgs e) {
+        private void btnCloseBill_Click(object sender, RoutedEventArgs e) {
 
         }
+        
 
         private decimal TotalSum() {
             decimal total = 0;

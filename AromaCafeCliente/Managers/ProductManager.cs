@@ -58,5 +58,78 @@ namespace AromaCafeCliente.Managers
             }
             return product;
         }
+        public static int UpdateProduct(Product product)
+        {
+            int result;
+            try
+            {
+                using (var proxy = new AromaCafeService.ProductManagerClient())
+                {
+                    result = proxy.UpdateProduct(product);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return result;
+        }
+
+        public static int AddProduct(Product newProduct)
+        {
+            int result;
+            try
+            {
+                using (var proxy = new AromaCafeService.ProductManagerClient())
+                {
+                    result = proxy.AddProduct(newProduct);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return result;
+        }
+        public static int UpdateProductStock(int productId, int newStock)
+        {
+            int result;
+            try
+            {
+                using (var proxy = new AromaCafeService.ProductManagerClient())
+                {
+                    result = proxy.IncreaseStock(productId, newStock);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return result;
+        }
     }
 }

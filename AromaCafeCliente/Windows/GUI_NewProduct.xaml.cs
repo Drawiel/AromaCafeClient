@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AromaCafeCliente.AromaCafeService;
+using AromaCafeCliente.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +39,25 @@ namespace AromaCafeCliente.Windows {
         private void OnLogOutCancelled(object sender, EventArgs e)
         {
             ValidationPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Product updatedProduct = new Product
+            {
+                ProductId = int.Parse(txtBoxCode.Text),
+                ProductName = TxtBoxName.Text.Trim(),
+                Description = txtBoxDesciption.Text.Trim(),
+                Stock = string.IsNullOrWhiteSpace(txtBoxUnits.Text) ? null : (int?)int.Parse(txtBoxUnits.Text),
+                ProductType = txtBoxNumber.SelectedValue?.ToString(),
+            };
+
+            ProductManager.AddProduct(updatedProduct);
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+                this.NavigationService.Navigate(new GUI_ProductList());
         }
     }
 }

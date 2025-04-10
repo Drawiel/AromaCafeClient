@@ -92,5 +92,11 @@ namespace AromaCafeCliente.Windows {
                 this.NavigationService.Navigate(new GUI_ProductDetails(selectedProduct.ProductId));
             }
         }
+
+        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+                this.NavigationService.Navigate(new GUI_NewProduct());
+        }
     }
 }

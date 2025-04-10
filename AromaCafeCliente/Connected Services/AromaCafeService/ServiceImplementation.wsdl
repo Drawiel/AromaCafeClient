@@ -236,6 +236,12 @@
   <wsdl:message name="IProductManager_GetProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductManager_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductManager_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
   <wsdl:message name="IExpenseManager_RegisterExpense_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterExpense" />
   </wsdl:message>
@@ -308,6 +314,10 @@
     <wsdl:operation name="GetProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductManager/GetProduct" message="tns:IProductManager_GetProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductManager/GetProductResponse" message="tns:IProductManager_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductManager/UpdateProduct" message="tns:IProductManager_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductManager/UpdateProductResponse" message="tns:IProductManager_UpdateProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IExpenseManager">
@@ -459,6 +469,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductManager/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IExpenseManager" type="tns:IExpenseManager">
     <wsp:PolicyReference URI="#NetTcpBinding_IExpenseManager_policy" />
@@ -492,7 +511,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -501,7 +520,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -510,7 +529,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -519,7 +538,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ExpenseManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -528,7 +547,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/TableManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
