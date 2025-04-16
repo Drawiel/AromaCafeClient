@@ -137,8 +137,14 @@
     <Compile Include="Windows\GUI_WaitersTableBill.xaml.cs">
       <DependentUpon>GUI_WaitersTableBill.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserControllers\GUI_PopUp_AcceptanceMessage.xaml.cs">
+      <DependentUpon>GUI_PopUp_AcceptanceMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Bills.xaml.cs">
       <DependentUpon>GUI_PopUp_Bills.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControllers\GUI_PopUp_ConfirmationMessage.xaml.cs">
+      <DependentUpon>GUI_PopUp_ConfirmationMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_ErrorMessage.xaml.cs">
       <DependentUpon>GUI_PopUp_ErrorMessage.xaml</DependentUpon>
@@ -152,6 +158,9 @@
     </Compile>
     <Compile Include="Windows\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControllers\GUI_PopUP_PaymentMethod.xaml.cs">
+      <DependentUpon>GUI_PopUP_PaymentMethod.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControllers\GUI_PopUp_Stock.xaml.cs">
       <DependentUpon>GUI_PopUp_Stock.xaml</DependentUpon>
@@ -258,7 +267,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\UserControllers\GUI_PopUp_AcceptanceMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\UserControllers\GUI_PopUp_Bills.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControllers\GUI_PopUp_ConfirmationMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -271,6 +288,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\StartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControllers\GUI_PopUP_PaymentMethod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -483,6 +504,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="epplus.license.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\popUpConfirmationMessage.png" />
+    <Resource Include="Multimedia\popUpErrorMessage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverAcceptMessage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Multimedia\HoverCancelMessage.png" />
+    <Resource Include="Multimedia\popUpAcceptanceMessage - copia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

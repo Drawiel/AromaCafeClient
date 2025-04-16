@@ -8,6 +8,29 @@
       mc:Ignorable="d" 
       Title="GUI_Reports">
 
+    <Page.Resources>
+        <!-- Animación para mostrar -->
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation
+            Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="0"
+            To="1"
+            Duration="0:0:0.3"/>
+        </Storyboard>
+
+        <!-- Animación para ocultar -->
+        <Storyboard x:Key="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
+            <DoubleAnimation
+            Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="1"
+            To="0"
+            Duration="0:0:0.3"/>
+        </Storyboard>
+    </Page.Resources>
+
+
     <Page.Background>
         <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_Reportes.png"/>
     </Page.Background>
@@ -587,6 +610,22 @@
                 Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
+
+            <Border x:Name="ConfirmationPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ConfirmationMessage x:Name="ConfirmationMessagePopupControl"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="1000"

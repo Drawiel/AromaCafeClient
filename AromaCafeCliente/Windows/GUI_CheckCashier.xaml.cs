@@ -26,6 +26,7 @@ namespace AromaCafeCliente.Windows {
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
             ExpensesPopupControl.Cancelled += OnExpenseCancelled;
+            PaymentMethodPopupControl.Cancelled += OnPaymentCancelled;
         }
 
         private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -61,7 +62,11 @@ namespace AromaCafeCliente.Windows {
         }
 
         private void btnCloseBill_Click(object sender, RoutedEventArgs e) {
+            PaymentMethodPopup.Visibility = Visibility.Visible;
+        }
 
+        private void OnPaymentCancelled(object sender, EventArgs e) {
+            PaymentMethodPopup.Visibility= Visibility.Hidden;
         }
 
         private void NavigateHome(object sender, RoutedEventArgs e) {
@@ -95,6 +100,9 @@ namespace AromaCafeCliente.Windows {
             }
 
             return total;
+        }
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
         }
 
         private bool ChargeBill(string paymentType) { 

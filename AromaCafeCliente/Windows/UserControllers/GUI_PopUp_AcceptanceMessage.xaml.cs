@@ -16,22 +16,28 @@ using System.Windows.Shapes;
 
 namespace AromaCafeCliente.Windows.UserControllers {
     /// <summary>
-    /// Lógica de interacción para GUI_PopUp_ErrorMessage.xaml
+    /// Lógica de interacción para GUI_PopUp_AcceptanceMessage.xaml
     /// </summary>
-    public partial class GUI_PopUp_ErrorMessage : UserControl {
-        public GUI_PopUp_ErrorMessage() {
+    public partial class GUI_PopUp_AcceptanceMessage : UserControl {
+        public GUI_PopUp_AcceptanceMessage() {
             InitializeComponent();
         }
+
+        public void SetMessage(string message) {
+            txtBlockMessageAcceptance.Text = message;
+        }
+
         private void BtnAccept_Click(object sender, RoutedEventArgs e) {
-            // Usa animación de fade out
             var parent = this.Parent;
             while(parent != null && !(parent is Border)) {
                 parent = LogicalTreeHelper.GetParent(parent);
             }
 
             if(parent is Border border) {
-                Storyboard fadeOut = (Storyboard)Application.Current.MainWindow.FindResource("FadeOutStoryboard");
-                fadeOut.Begin();
+                var storyboard = border.TryFindResource("FadeOutStoryboard") as Storyboard;
+                if(storyboard != null) {
+                    storyboard.Begin();
+                }
             }
         }
     }

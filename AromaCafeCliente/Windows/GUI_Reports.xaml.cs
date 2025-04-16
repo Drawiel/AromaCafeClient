@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using OfficeOpenXml;
+using System.Windows.Media.Animation;
 
 
 namespace AromaCafeCliente.Windows
@@ -111,7 +112,13 @@ namespace AromaCafeCliente.Windows
                     FileInfo excelFile = new FileInfo(filePath);
                     package.SaveAs(excelFile);
 
-                    MessageBox.Show("Reporte de inventario generado en: " + filePath);
+                    ConfirmationMessagePopupControl.SetMessage("Reporte de inventario generado en:\n" + filePath);
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
+
+
                 }
             }
             catch (Exception ex)
@@ -119,6 +126,11 @@ namespace AromaCafeCliente.Windows
                 MessageBox.Show("Error al generar el reporte: " + ex.Message);
             }
         }
+
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
+        }
+
 
     }
 }

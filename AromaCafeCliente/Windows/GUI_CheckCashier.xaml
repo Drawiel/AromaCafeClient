@@ -8,6 +8,26 @@
       mc:Ignorable="d" 
       Title="GUI_CheckCashier">
 
+    <Page.Resources>
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation
+            Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="0"
+            To="1"
+            Duration="0:0:0.3"/>
+        </Storyboard>
+
+        <Storyboard x:Key="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
+            <DoubleAnimation
+            Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="1"
+            To="0"
+            Duration="0:0:0.3"/>
+        </Storyboard>
+    </Page.Resources>
+
     <Page.Background>
         <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_CuentaCajero.png"/>
     </Page.Background>
@@ -22,89 +42,6 @@
                 <ColumnDefinition Width="323*"/>
                 <ColumnDefinition Width="1597*"/>
             </Grid.ColumnDefinitions>
-
-            <Grid
-                x:Name="ValidationPopupPaymentMethod"
-                Width="1000"
-                Height="500"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Visibility="Hidden"
-                Panel.ZIndex="2"
-                Margin="460,0,0,0" Grid.ColumnSpan="2">
-                <Grid.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpPaymentMethod.png"/>
-                </Grid.Background>
-                <ComboBox
-                Name="comboBoxPaymentMethod"
-                Padding="10,10,0,0"
-                HorizontalAlignment="Left" 
-                Margin="319,0,0,0" 
-                Width="548" Height="54"
-                FontSize="40"
-                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
-
-                <Button 
-                x:Name="btnAcceptPaymentMethod"
-                HorizontalAlignment="Left" 
-                Margin="830,405,0,0" 
-                VerticalAlignment="Top" 
-                Height="55" 
-                Width="136">
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="ButtonBackground" Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-
-                </Button>
-
-                <Button 
-                    x:Name="btnCancelPaymentMethod"
-                    HorizontalAlignment="Left" 
-                    Margin="673,405,0,0" 
-                    VerticalAlignment="Top" 
-                    Height="55" 
-                    Width="136">
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="ButtonBackground" Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-
-                </Button>
-
-            </Grid>
 
             <Grid
                 x:Name="ValidationPopupModifyOrder"
@@ -522,12 +459,12 @@
             </Grid>
             <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
-        Grid.ColumnSpan="2"
-        Background="#80000000"
-        Visibility="Hidden"
-        VerticalAlignment="Stretch"
-        HorizontalAlignment="Stretch"
-        Panel.ZIndex="100">
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
                                HorizontalAlignment="Center"
@@ -537,18 +474,50 @@
             </Border>
 
             <Border x:Name="ExpensesPopUp"
-		Grid.ColumnSpan="2"
-		Background="#80000000"
-		Visibility="Hidden"
-		VerticalAlignment="Stretch"
-		HorizontalAlignment="Stretch"
-		Panel.ZIndex="100">
+		        Grid.ColumnSpan="2"
+		        Background="#80000000"
+		        Visibility="Hidden"
+		        VerticalAlignment="Stretch"
+		        HorizontalAlignment="Stretch"
+		        Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_Bills x:Name="ExpensesPopupControl"
-       HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Width="1000"
-       Height="500"/>
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="1000"
+                   Height="500"/>
+            </Border>
+
+            <Border x:Name="ConfirmationPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ConfirmationMessage x:Name="ConfirmationMessagePopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
+
+            <Border x:Name="PaymentMethodPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUP_PaymentMethod x:Name="PaymentMethodPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
             </Border>
 
         </Grid>

@@ -66,12 +66,10 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
                                 <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -96,12 +94,10 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
                                 <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -114,6 +110,7 @@
                     </Button.Template>
 
                 </Button>
+
                 <ComboBox 
                     HorizontalAlignment="Left" 
                     Margin="270,131,0,0" 
@@ -160,12 +157,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -199,12 +194,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -238,12 +231,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -277,12 +268,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -317,12 +306,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -452,7 +439,7 @@
                             Height="60"/>
 
                     </Grid>
-                    
+
                     <Grid
                         Width="1530"
                         Height="955"
@@ -491,12 +478,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -522,12 +507,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -554,12 +537,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -584,12 +565,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -614,12 +593,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -649,14 +626,11 @@
                                         CornerRadius="20.5"                                      
                                         BorderBrush="Transparent"
                                         BorderThickness="2"
-                                        Background="Transparent"
-                        />
-                                        <!-- Contenido del CheckBox -->
+                                        Background="Transparent"/>
                                         <ContentPresenter VerticalAlignment="Center" />
                                     </StackPanel>
 
                                     <ControlTemplate.Triggers>
-                                        <!-- Cuando el CheckBox está marcado -->
                                         <Trigger Property="IsChecked" Value="True">
                                             <Setter TargetName="Circle" Property="Background" Value="#683301" />
                                             <Setter TargetName="Circle" Property="BorderBrush" Value="#683301" />
@@ -683,14 +657,11 @@
                                             CornerRadius="20.5"                                      
                                             BorderBrush="Transparent"
                                             BorderThickness="2"
-                                            Background="Transparent"
-                            />
-                                        <!-- Contenido del CheckBox -->
+                                            Background="Transparent"/>
                                         <ContentPresenter VerticalAlignment="Center" />
                                     </StackPanel>
 
                                     <ControlTemplate.Triggers>
-                                        <!-- Cuando el CheckBox está marcado -->
                                         <Trigger Property="IsChecked" Value="True">
                                             <Setter TargetName="Circle" Property="Background" Value="#683301" />
                                             <Setter TargetName="Circle" Property="BorderBrush" Value="#683301" />
@@ -719,12 +690,10 @@
                                             BorderThickness="2"
                                             Background="Transparent"
                         />
-                                        <!-- Contenido del CheckBox -->
                                         <ContentPresenter VerticalAlignment="Center" />
                                     </StackPanel>
 
                                     <ControlTemplate.Triggers>
-                                        <!-- Cuando el CheckBox está marcado -->
                                         <Trigger Property="IsChecked" Value="True">
                                             <Setter TargetName="Circle" Property="Background" Value="#683301" />
                                             <Setter TargetName="Circle" Property="BorderBrush" Value="#683301" />
@@ -733,6 +702,32 @@
                                 </ControlTemplate>
                             </RadioButton.Template>
                         </RadioButton>
+                        <Button 
+                            Click="BtnGoBack_Click"
+                            HorizontalAlignment="Left" 
+                            Height="49" 
+                            Margin="34,51,0,0" 
+                            VerticalAlignment="Top" 
+                            Width="66">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+
+                                        <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="ButtonBackground" Property="Background">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverBack.png" Stretch="UniformToFill"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
                     </Grid>
 

@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -69,8 +70,16 @@ namespace AromaCafeCliente.Windows {
                 if (employeeRegistered != "error")
                 {
                     Console.WriteLine("Creado");
+                    ConfirmationMessagePopupControl.SetMessage("Empleado creado");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
+        }
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
         }
 
         private Employee CreateEmployee()

@@ -4,9 +4,102 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AromaCafeCliente.Windows.UserControllers"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             mc:Ignorable="d">
+    <Grid
+               x:Name="validationPopup"
+               Width="1000"
+               Height="500"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Visibility="Visible"
+               Cursor="">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Multimedia/Stock.png"/>
+        </Grid.Background>
+
+        <TextBox
+                   x:Name="Cantidad"
+                   Padding="35,0,0,0"
+                   HorizontalAlignment="Left" 
+                   Margin="379,205,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Width="587" Height="185"
+                   FontSize="40"
+                   FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                   AcceptsReturn="True"
+                   VerticalScrollBarVisibility="Auto"
+                   HorizontalScrollBarVisibility="Disabled"/>
+
+        <Button 
+                   HorizontalAlignment="Left" 
+                   Margin="830,426,0,0" 
+                   VerticalAlignment="Top" 
+                   Height="48" 
+                   Width="136"
+                   Click="BtnAcceptClick">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <!-- Fondo normal -->
+                        <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Cambiar fondo cuando el mouse esté encima -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBackground" Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+
+        <Button 
+                   x:Name="btnCancelStatus"
+                   HorizontalAlignment="Left" 
+                   Margin="673,426,0,0" 
+                   VerticalAlignment="Top" 
+                   Height="48" 
+                   Width="137"
+                   Click="BtnCancelClick">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <!-- Fondo normal -->
+                        <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Cambiar fondo cuando el mouse esté encima -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBackground" Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBox 
+                   HorizontalAlignment="Left" 
+                   Margin="379,131,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="587" 
+                   Height="49"
+                   x:Name="txtBlockActualCuantity">
+        </TextBox>
+
     </Grid>
 </UserControl>

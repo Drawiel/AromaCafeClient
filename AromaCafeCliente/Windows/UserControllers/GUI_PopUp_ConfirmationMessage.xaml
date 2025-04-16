@@ -1,17 +1,16 @@
-﻿<UserControl x:Class="AromaCafeCliente.Windows.UserControllers.GUI_PopUp_ErrorMessage"
+﻿<UserControl x:Class="AromaCafeCliente.Windows.UserControllers.GUI_PopUp_ConfirmationMessage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AromaCafeCliente.Windows.UserControllers"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" >
+             mc:Ignorable="d">
 
     <Grid
         Width="757"
         Height="480">
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpErrorMessage.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpConfirmationMessage.png"/>
         </Grid.Background>
         <Button 
             x:Name="btnAccept"
@@ -39,9 +38,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock 
+        <TextBlock
+            x:Name="txtBlockMessageConfirmation"
             HorizontalAlignment="Center" 
-            Height="84" Margin="0,310,0,0" 
+            Height="148" Margin="0,246,0,0" 
             TextWrapping="Wrap" 
             Text="TextBlock"
             FontSize="35"

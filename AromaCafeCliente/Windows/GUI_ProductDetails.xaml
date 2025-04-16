@@ -23,107 +23,7 @@
                 <ColumnDefinition Width="323*"/>
                 <ColumnDefinition Width="1597*"/>
             </Grid.ColumnDefinitions>
-            <Grid
-                x:Name="validationPopup"
-                Width="1000"
-                Height="500"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Visibility="Hidden"
-                Panel.ZIndex="2"
-                Margin="460,0,0,0" 
-                Grid.ColumnSpan="2" 
-                Cursor="">
 
-                <Grid.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/Stock.png"/>
-                </Grid.Background>
-
-                <TextBox
-                    x:Name="Cantidad"
-                    Padding="35,0,0,0"
-                    HorizontalAlignment="Left" 
-                    Margin="379,205,0,0" 
-                    TextWrapping="Wrap" 
-                    VerticalAlignment="Top" 
-                    Width="587" Height="185"
-                    FontSize="40"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
-                    AcceptsReturn="True"
-                    VerticalScrollBarVisibility="Auto"
-                    HorizontalScrollBarVisibility="Disabled"/>
-
-                <Button 
-                    HorizontalAlignment="Left" 
-                    Margin="830,426,0,0" 
-                    VerticalAlignment="Top" 
-                    Height="48" 
-                    Width="136"
-                    Click="BtnAcceptClick">
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="ButtonBackground" Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-
-                </Button>
-
-                <Button 
-                    x:Name="btnCancelStatus"
-                    HorizontalAlignment="Left" 
-                    Margin="673,426,0,0" 
-                    VerticalAlignment="Top" 
-                    Height="48" 
-                    Width="137"
-                    Click="BtnCancelClick">
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="ButtonBackground" Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-
-                </Button>
-                <TextBlock 
-                    HorizontalAlignment="Left" 
-                    Margin="379,131,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="587" 
-                    Height="49"
-                    x:Name="txtBlockActualCuantity">
-                </TextBlock>
-
-            </Grid>
-            
             <Grid
                 Background="Transparent">
                 <Grid.RowDefinitions>
@@ -155,12 +55,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -194,12 +92,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -231,12 +127,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -270,12 +164,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -310,12 +202,10 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
-                                    <!-- Fondo normal -->
                                     <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
-                                    <!-- Cambiar fondo cuando el mouse esté encima -->
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
@@ -499,12 +389,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -530,12 +418,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -560,12 +446,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -590,12 +474,10 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <!-- Fondo normal -->
                                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambiar fondo cuando el mouse esté encima -->
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="ButtonBackground" Property="Background">
                                                 <Setter.Value>
@@ -607,6 +489,31 @@
                                 </ControlTemplate>
                             </Button.Template>
 
+                        </Button>
+                        <Button 
+                            Click="BtnGoBack_Click"
+                            HorizontalAlignment="Left" 
+                            Height="48" 
+                            Margin="10,65,0,0" 
+                            VerticalAlignment="Top" 
+                            Width="67">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="ButtonBackground" Property="Background">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverBack.png" Stretch="UniformToFill"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
                         </Button>
 
                     </Grid>
@@ -623,6 +530,21 @@
                 Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_LogOut x:Name="LogOutPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
+
+            <Border x:Name="ValidationPopupStock"
+                Grid.ColumnSpan="3"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100">
+
+                <controls:GUI_PopUp_Stock x:Name="StockPopupControl"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="1000"

@@ -29,6 +29,8 @@ namespace AromaCafeCliente.Windows {
             LoadProductInfo(_productId);
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
+            StockPopupControl.Cancelled += OnUpdateStockCancelled;
+            StockPopupControl.Cancelled += OnUpdateStockSuccess;
         }
 
         private void LoadProductInfo(int productId)
@@ -66,6 +68,13 @@ namespace AromaCafeCliente.Windows {
 
         private void OnLogOutCancelled(object sender, EventArgs e)
         {
+            ValidationPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void OnUpdateStockCancelled(object sender, EventArgs e) {
+            ValidationPopupStock.Visibility = Visibility.Hidden;
+        }
+        private void OnUpdateStockSuccess(object sender, EventArgs e) {
             ValidationPopup.Visibility = Visibility.Hidden;
         }
 
@@ -130,26 +139,6 @@ namespace AromaCafeCliente.Windows {
             btnEdit.IsEnabled = true;
         }
 
-        private void btnStock_Click(object sender, RoutedEventArgs e)
-        {
-            validationPopup.Visibility = Visibility.Visible;
-        }
-
-        private void BtnAcceptClick(object sender, RoutedEventArgs e)
-        {
-            if (int.TryParse(Cantidad.Text, out int cantidad))
-            {
-                ProductManager.UpdateProductStock(productId, cantidad);
-                MessageBox.Show("Se ha actualizado con éxito el producto.");
-                validationPopup.Visibility = Visibility.Hidden;
-            }
-        }
-
-        private void BtnCancelClick(object sender, RoutedEventArgs e)
-        {
-            validationPopup.Visibility = Visibility.Hidden;
-        }
-
         private void LogOut_Click_1(object sender, RoutedEventArgs e)
         {
             ValidationPopup.Visibility = Visibility.Visible;
@@ -181,6 +170,16 @@ namespace AromaCafeCliente.Windows {
             if (this.NavigationService != null)
             {
                 this.NavigationService.Navigate(new GUI_Reports());
+            }
+        }
+
+        private void btnStock_Click(object sender, RoutedEventArgs e) {
+            ValidationPopupStock.Visibility = Visibility.Visible;
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e) {
+            if(NavigationService != null) {
+                NavigationService.Navigate(new GUI_ProductList());
             }
         }
     }

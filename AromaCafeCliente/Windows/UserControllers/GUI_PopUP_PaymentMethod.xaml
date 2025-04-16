@@ -1,53 +1,46 @@
-﻿<UserControl x:Class="AromaCafeCliente.Windows.UserControllers.GUI_PopUp_UserStatus"
+﻿<UserControl x:Class="AromaCafeCliente.Windows.UserControllers.GUI_PopUP_PaymentMethod"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AromaCafeCliente.Windows.UserControllers"
-             mc:Ignorable="d">
+             mc:Ignorable="d" >
     <Grid
-    x:Name="validationPopupUserStatus"
-    Width="1000"
-    Height="500"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    Visibility="Visible"
-    Grid.ColumnSpan="2" 
-    Cursor="">
-
+                Width="1000"
+                Height="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Visibility="Visible"
+                Panel.ZIndex="2">
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Multimedia/Status.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpPaymentMethod.png"/>
         </Grid.Background>
-
-        <TextBox
-        Padding="35,0,0,0"
-        HorizontalAlignment="Left" 
-        Margin="270,205,0,0" 
-        TextWrapping="Wrap" 
-        Text="" 
-        VerticalAlignment="Top" 
-        Width="696" Height="185"
-        FontSize="40"
-        FontFamily="pack://application:,,,/Font/#Architects Daughter"
-        AcceptsReturn="True"
-        VerticalScrollBarVisibility="Auto"
-        HorizontalScrollBarVisibility="Disabled"/>
+        <ComboBox
+                Name="comboBoxPaymentMethod"
+                Padding="10,10,0,0"
+                HorizontalAlignment="Left" 
+                Margin="319,0,0,0" 
+                Width="548" Height="54"
+                FontSize="40"
+                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
         <Button 
-        HorizontalAlignment="Left" 
-        Margin="830,426,0,0" 
-        VerticalAlignment="Top" 
-        Height="48" 
-        Width="136"
-        Click="BtnAcceptClick">
+                x:Name="btnAcceptPaymentMethod"
+                HorizontalAlignment="Left" 
+                Margin="830,405,0,0" 
+                VerticalAlignment="Top" 
+                Height="55" 
+                Width="136" Click="btnAcceptPaymentMethod_Click">
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
+                        <!-- Fondo normal -->
                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <!-- Cambiar fondo cuando el mouse esté encima -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="ButtonBackground" Property="Background">
                                 <Setter.Value>
@@ -62,20 +55,22 @@
         </Button>
 
         <Button 
-        x:Name="btnCancelStatus"
-        HorizontalAlignment="Left" 
-        Margin="673,426,0,0" 
-        VerticalAlignment="Top" 
-        Height="48" 
-        Width="137">
+                    x:Name="btnCancelPaymentMethod"
+                    HorizontalAlignment="Left" 
+                    Margin="673,405,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="55" 
+                    Width="136" Click="btnCancelPaymentMethod_Click">
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
+                        <!-- Fondo normal -->
                         <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <!-- Cambiar fondo cuando el mouse esté encima -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="ButtonBackground" Property="Background">
                                 <Setter.Value>
@@ -88,18 +83,6 @@
             </Button.Template>
 
         </Button>
-
-        <ComboBox 
-        HorizontalAlignment="Left" 
-        Margin="270,131,0,0" 
-        VerticalAlignment="Top" 
-        Width="696" 
-        Height="49"
-        x:Name="comboBoxStatus">
-            <ComboBoxItem Content="Deshabilitado"/>
-            <ComboBoxItem Content="Habilitado"/>
-        </ComboBox>
-
 
     </Grid>
 </UserControl>

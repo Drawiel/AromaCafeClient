@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AromaCafeCliente.AromaCafeService;
+using AromaCafeCliente.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,8 +20,22 @@ namespace AromaCafeCliente.Windows.UserControllers {
     /// Interaction logic for GUI_PopUp_Stock.xaml
     /// </summary>
     public partial class GUI_PopUp_Stock : UserControl {
+        int productId;
+        public event EventHandler Cancelled;
         public GUI_PopUp_Stock() {
             InitializeComponent();
         }
+        private void BtnAcceptClick(object sender, RoutedEventArgs e) {
+            if(int.TryParse(Cantidad.Text, out int cantidad)) {
+                ProductManager.UpdateProductStock(productId, cantidad);
+                MessageBox.Show("Se ha actualizado con éxito el producto.");
+                Cancelled?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private void BtnCancelClick(object sender, RoutedEventArgs e) {
+            Cancelled?.Invoke(this, EventArgs.Empty);
+        }
+
     }
 }

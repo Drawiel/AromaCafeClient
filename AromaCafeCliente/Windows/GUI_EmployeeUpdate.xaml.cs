@@ -260,5 +260,11 @@ namespace AromaCafeCliente.Windows {
                 NavigationService.Navigate(new GUI_Reports());
             }
         }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e) {
+            if(NavigationService != null) {
+                NavigationService.Navigate(new GUI_Employees());
+            }
+        }
     }
 }
