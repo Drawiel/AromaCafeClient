@@ -40,9 +40,18 @@ namespace AromaCafeCliente.Windows {
             radioButtonManager.Checked += RadioButtonCheckedChanged;
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
+            UserStatusPopupControl.Cancelled += OnStatusChange;
+            UserStatusPopupControl.StatusChanged += (s, e) =>
+            {
+                var status = UserStatusPopupControl.SelectedStatus;
+                // Haces lo que necesites
+            };
+        }
+        private void OnStatusChange(object sender, EventArgs e) {
+            ValidationPopupUserStatus.Visibility = Visibility.Hidden;
         }
 
-        private void RadioButtonCheckedChanged(object sender, EventArgs e) {
+    private void RadioButtonCheckedChanged(object sender, EventArgs e) {
             RadioButton radioButton = sender as RadioButton;
             employeeType = radioButton.Tag.ToString();
         }
@@ -155,7 +164,7 @@ namespace AromaCafeCliente.Windows {
         }
 
         private void SetEmployeeType() {
-            if (comboBoxStatus.Text == "Deshabilitado") {
+            if (UserStatusPopupControl.SelectedStatus == "Deshabilitado") {
                 employeeType = "Deshabilitado";
             } else if (radioButtonCashier.IsChecked == true) {
                 employeeType = "Cajero";
@@ -167,7 +176,7 @@ namespace AromaCafeCliente.Windows {
         }
 
         private void BtnStatusClick(object sender, RoutedEventArgs e) {
-            validationPopup.Visibility = Visibility.Visible;
+            ValidationPopupUserStatus.Visibility = Visibility.Visible;
         }
 
         private void BtnStatusCancelClick(object sender, RoutedEventArgs e) {

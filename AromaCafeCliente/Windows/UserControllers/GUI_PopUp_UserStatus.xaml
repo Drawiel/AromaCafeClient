@@ -67,7 +67,7 @@
         Margin="673,426,0,0" 
         VerticalAlignment="Top" 
         Height="48" 
-        Width="137">
+        Width="137" Click="btnCancelStatus_Click">
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">

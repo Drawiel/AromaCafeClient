@@ -18,8 +18,22 @@ namespace AromaCafeCliente.Windows.UserControllers {
     /// Interaction logic for GUI_PopUp_UserStatus.xaml
     /// </summary>
     public partial class GUI_PopUp_UserStatus : UserControl {
+        public event EventHandler Cancelled;
+        public event EventHandler StatusChanged;
         public GUI_PopUp_UserStatus() {
             InitializeComponent();
+        }
+        public string SelectedStatus {
+            get { return comboBoxStatus.Text; }  // O SelectedItem, dependiendo de tu binding
+        }
+
+        private void BtnAcceptClick(object sender, RoutedEventArgs e) {
+            StatusChanged?.Invoke(this, EventArgs.Empty);
+            Cancelled?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnCancelStatus_Click(object sender, RoutedEventArgs e) {
+            Cancelled?.Invoke(this, EventArgs.Empty);
         }
     }
 }
