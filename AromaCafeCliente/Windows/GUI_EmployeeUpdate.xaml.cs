@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -78,17 +79,30 @@ namespace AromaCafeCliente.Windows {
 
             bool updatedProfile = UpdateProfile(CreateEmployee());
             if (CheckAllFields() && updatedProfile) {
-                MessageBox.Show("Se ha actualizado correctamente la informacion del empleado");
+                ConfirmationMessagePopupControl.SetMessage("Se ha actualizado correctamente la informacion del empleado");
+                ConfirmationPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             } else if (!CheckAllFields() || !IsValidEmail()){
-                MessageBox.Show("Se han encontrado campos vacios o invalidos, favor de revisar");
+                ErrorMessagePopupControl.SetMessage("Se han encontrado campos vacios o invalidos, favor de revisar");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             } else if (!updatedProfile){
-                MessageBox.Show("Hubo un error al actualizar el empleado");
+                ErrorMessagePopupControl.SetMessage("Hubo un error al actualizar el empleado");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
 
             radioButtonCashier.IsEnabled = false;
             radioButtonWaitress.IsEnabled = false;
             radioButtonManager.IsEnabled = false;
             btnSave.IsEnabled = false;
+        }
+
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
         }
 
         private void BtnEditClick(object sender, RoutedEventArgs e) {

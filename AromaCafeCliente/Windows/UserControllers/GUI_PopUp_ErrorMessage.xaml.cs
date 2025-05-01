@@ -22,17 +22,22 @@ namespace AromaCafeCliente.Windows.UserControllers {
         public GUI_PopUp_ErrorMessage() {
             InitializeComponent();
         }
+        public void SetMessage(string message) {
+            txtBlockMessageError.Text = message;
+        }
         private void BtnAccept_Click(object sender, RoutedEventArgs e) {
-            // Usa animación de fade out
             var parent = this.Parent;
             while(parent != null && !(parent is Border)) {
                 parent = LogicalTreeHelper.GetParent(parent);
             }
 
             if(parent is Border border) {
-                Storyboard fadeOut = (Storyboard)Application.Current.MainWindow.FindResource("FadeOutStoryboard");
-                fadeOut.Begin();
+                var storyboard = border.TryFindResource("FadeOutStoryboard") as Storyboard;
+                if(storyboard != null) {
+                    storyboard.Begin();
+                }
             }
         }
     }
+
 }
