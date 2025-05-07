@@ -45,6 +45,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Expense" nillable="true" type="tns:Expense" />
+  <xs:complexType name="ArrayOfExpense">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expense" nillable="true" type="tns:Expense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpense" nillable="true" type="tns:ArrayOfExpense" />
   <xs:complexType name="Charge">
     <xs:sequence>
       <xs:element minOccurs="0" name="ChargeId" type="xs:int" />

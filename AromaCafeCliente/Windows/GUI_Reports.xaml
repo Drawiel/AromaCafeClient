@@ -156,7 +156,8 @@
                     Margin="830,405,0,0" 
                     VerticalAlignment="Top" 
                     Height="55" 
-                    Width="136">
+                    Width="136"
+                    Click="ExpensesPerDay_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -186,7 +187,8 @@
                     Margin="673,405,0,0" 
                     VerticalAlignment="Top" 
                     Height="55" 
-                    Width="136">
+                    Width="136"
+                    Click="DatePopupHidden_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -487,7 +489,8 @@
                     Margin="1072,192,0,0" 
                     VerticalAlignment="Top" 
                     Height="210" 
-                    Width="399">
+                    Width="399"
+                    Click="DatePopupVisible_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

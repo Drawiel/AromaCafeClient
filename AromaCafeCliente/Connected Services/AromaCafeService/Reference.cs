@@ -815,6 +815,12 @@ namespace AromaCafeCliente.AromaCafeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpenseManager/RegisterExpense", ReplyAction="http://tempuri.org/IExpenseManager/RegisterExpenseResponse")]
         System.Threading.Tasks.Task<int> RegisterExpenseAsync(AromaCafeCliente.AromaCafeService.Expense expense);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpenseManager/GetAllExpensesByDay", ReplyAction="http://tempuri.org/IExpenseManager/GetAllExpensesByDayResponse")]
+        AromaCafeCliente.AromaCafeService.Expense[] GetAllExpensesByDay(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpenseManager/GetAllExpensesByDay", ReplyAction="http://tempuri.org/IExpenseManager/GetAllExpensesByDayResponse")]
+        System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.Expense[]> GetAllExpensesByDayAsync(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -850,6 +856,14 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<int> RegisterExpenseAsync(AromaCafeCliente.AromaCafeService.Expense expense) {
             return base.Channel.RegisterExpenseAsync(expense);
+        }
+        
+        public AromaCafeCliente.AromaCafeService.Expense[] GetAllExpensesByDay(System.DateTime date) {
+            return base.Channel.GetAllExpensesByDay(date);
+        }
+        
+        public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.Expense[]> GetAllExpensesByDayAsync(System.DateTime date) {
+            return base.Channel.GetAllExpensesByDayAsync(date);
         }
     }
     

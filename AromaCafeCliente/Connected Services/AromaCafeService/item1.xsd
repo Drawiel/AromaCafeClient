@@ -223,10 +223,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllExpensesByDay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllExpensesByDayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetAllExpensesByDayResult" nillable="true" type="q13:ArrayOfExpense" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ChargeBill">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="charge" nillable="true" type="q13:Charge" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="charge" nillable="true" type="q14:Charge" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
