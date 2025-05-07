@@ -130,7 +130,75 @@ namespace AromaCafeCliente.Windows
         private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
             ConfirmationPopup.Visibility = Visibility.Hidden;
         }
+        private void DatePopupVisible_Click(object sender, EventArgs e)
+        {
+            this.ValidationPopupDate.Visibility = Visibility.Visible;
+        }
 
+        private void DatePopupHidden_Click(object sender, EventArgs e)
+        {
+            this.ValidationPopupDate.Visibility = Visibility.Hidden;
+        }
+
+        private void ExpensesPerDay_Click(object sender, RoutedEventArgs ev)
+        {
+            try
+            {
+                EPPlusLicense ePPlusLicense = new EPPlusLicense();
+                ePPlusLicense.SetNonCommercialPersonal("Zaid Alexis Vazquez Ramirez");
+
+                DateTime? selectedDate = datePicker.SelectedDate;
+                if (!selectedDate.HasValue)
+                {
+                    MessageBox.Show("Selecciona una fecha válida.");
+                    return;
+                }
+
+                var expenses = ExpenseManager.GetExpensesByDay(selectedDate.Value);
+
+                if (expenses == null || expenses.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron gastos para la fecha seleccionada.");
+                    return;
+                }
+
+                using (var package = new ExcelPackage())
+                {
+                    var worksheet = package.Workbook.Worksheets.Add("Gastos del Día");
+
+                    worksheet.Cells[1, 1].Value = "ID Gasto";
+                    worksheet.Cells[1, 2].Value = "Fecha";
+                    worksheet.Cells[1, 3].Value = "Monto";
+
+                    int row = 2;
+                    foreach (var e in expenses)
+                    {
+                        worksheet.Cells[row, 1].Value = e.ExpenseId;
+                        worksheet.Cells[row, 2].Value = e.DateTime.ToString("yyyy-MM-dd");
+                        worksheet.Cells[row, 3].Value = e.Amount;
+                        row++;
+                    }
+
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                    var downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                    var fileName = $"Gastos_{selectedDate.Value:ddMMyy}.xlsx";
+                    var filePath = Path.Combine(downloadsFolder, fileName);
+
+                    package.SaveAs(new FileInfo(filePath));
+
+                    ConfirmationMessagePopupControl.SetMessage("Reporte de gastos generado en:\n" + filePath);
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el reporte: " + ex.Message);
+            }
+        }
 
     }
 }

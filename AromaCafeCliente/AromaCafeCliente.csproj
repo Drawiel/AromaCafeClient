@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Managers\ExpenseManager.cs" />
     <Compile Include="Managers\OrderManager.cs" />
     <Compile Include="Windows\GUI_CancelledOrdersByTableReport.xaml.cs">
       <DependentUpon>GUI_CancelledOrdersByTableReport.xaml</DependentUpon>
@@ -347,6 +348,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Employee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Expense.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">

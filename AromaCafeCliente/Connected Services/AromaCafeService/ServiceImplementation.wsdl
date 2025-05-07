@@ -248,6 +248,12 @@
   <wsdl:message name="IExpenseManager_RegisterExpense_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterExpenseResponse" />
   </wsdl:message>
+  <wsdl:message name="IExpenseManager_GetAllExpensesByDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExpensesByDay" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseManager_GetAllExpensesByDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExpensesByDayResponse" />
+  </wsdl:message>
   <wsdl:message name="ITableManager_ChargeBill_InputMessage">
     <wsdl:part name="parameters" element="tns:ChargeBill" />
   </wsdl:message>
@@ -324,6 +330,10 @@
     <wsdl:operation name="RegisterExpense">
       <wsdl:input wsaw:Action="http://tempuri.org/IExpenseManager/RegisterExpense" message="tns:IExpenseManager_RegisterExpense_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IExpenseManager/RegisterExpenseResponse" message="tns:IExpenseManager_RegisterExpense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExpensesByDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseManager/GetAllExpensesByDay" message="tns:IExpenseManager_GetAllExpensesByDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseManager/GetAllExpensesByDayResponse" message="tns:IExpenseManager_GetAllExpensesByDay_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ITableManager">
@@ -484,6 +494,15 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="RegisterExpense">
       <soap12:operation soapAction="http://tempuri.org/IExpenseManager/RegisterExpense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExpensesByDay">
+      <soap12:operation soapAction="http://tempuri.org/IExpenseManager/GetAllExpensesByDay" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
