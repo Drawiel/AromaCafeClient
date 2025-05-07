@@ -22,6 +22,7 @@ namespace AromaCafeCliente.Windows {
             InitializeComponent();
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
+            ExpensesPopupControl.Cancelled += OnExpenseCancelled;
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,14 @@ namespace AromaCafeCliente.Windows {
 
         private void BtnCashCount_Click(object sender, RoutedEventArgs e) {
 
+        }
+
+        private void BtnExpenses_Click(object sender, RoutedEventArgs e) {
+            ExpensesPopUp.Visibility = Visibility.Visible;
+        }
+
+        private void OnExpenseCancelled(object sender, EventArgs e) {
+            ExpensesPopUp.Visibility = Visibility.Hidden;
         }
     }
 }
