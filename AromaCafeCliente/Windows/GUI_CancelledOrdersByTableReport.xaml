@@ -9,7 +9,40 @@
       xmlns:controls="clr-namespace:AromaCafeCliente.Windows.UserControllers"
       Title="GUI_CancelledOrdersByTableReport">
 
-        <Page.Background>
+    <Page.Resources>
+        <!-- Animación para mostrar -->
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="ConfirmationPopup"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.3"/>
+            <DoubleAnimation
+                Storyboard.TargetName="ErrorPopup"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.3"/>
+        </Storyboard>
+
+        <!-- Animación para ocultar -->
+        <Storyboard x:Key="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
+            <DoubleAnimation
+                Storyboard.TargetName="ConfirmationPopup"
+                Storyboard.TargetProperty="Opacity"
+                From="1"
+                To="0"
+                Duration="0:0:0.3"/>
+            <DoubleAnimation
+                Storyboard.TargetName="ErrorPopup"
+                Storyboard.TargetProperty="Opacity"
+                From="1"
+                To="0"
+                Duration="0:0:0.3"/>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Background>
             <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_PedidosCanceladosPorMesa.png"/>
         </Page.Background>
 
@@ -299,23 +332,22 @@
                         <Grid Margin="162,227,163,92">
 
                             <DataGrid 
-                        x:Name="dataGridUser"
-                        AutoGenerateColumns="False"
-                        CanUserAddRows="False"
-                        ItemsSource="{Binding Users}"
-                        ScrollViewer.CanContentScroll="True"
-                        ScrollViewer.VerticalScrollBarVisibility="Auto"
-                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                        ColumnHeaderHeight="61" 
-                        GridLinesVisibility="All"
-                        Background="Transparent"
-                        Margin="10"
-                        SelectionUnit="FullRow"
-                        SelectionMode="Single"
-                        Foreground="Black"
-                        FontSize="25"
-                        
-                        >
+                                x:Name="dataGridOrder"
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                ItemsSource="{Binding Users}"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                ColumnHeaderHeight="61" 
+                                GridLinesVisibility="All"
+                                Background="Transparent"
+                                Margin="10"
+                                SelectionChanged="DataGridUser_SelectionChanged"
+                                ColumnHeaderDragStarted="DataGridOrder_ColumnHeaderDragStarted"
+                                Foreground="Black"
+                                FontSize="25"
+                                >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="" Binding="{Binding LastName}" Width="90" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="" Binding="{Binding Name}" Width="223" IsReadOnly="True"/>
@@ -344,7 +376,39 @@
                                Height="500"/>
                 </Border>
 
-            </Grid>
+            <Border x:Name="ConfirmationPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ConfirmationMessage x:Name="ConfirmationMessagePopupControl"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="1000"
+                   Height="500"/>
+            </Border>
+
+            <Border x:Name="ErrorPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ErrorMessage x:Name="ErrorMessagePopupControl"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="1000"
+                   Height="500"/>
+            </Border>
+
+        </Grid>
         </Viewbox>
 </Page>
 

@@ -67,6 +67,18 @@ namespace AromaCafeCliente.Windows
             }
         }
 
+        private void NavigateCancelledOrdersByTableReport(object sender, RoutedEventArgs e) {
+            if (this.NavigationService != null) {
+                NavigationService.Navigate(new GUI_CancelledOrdersByTableReport());
+            }
+        }
+
+        private void NavigateOrdersPerTableReport(object sender, RoutedEventArgs e) {
+            if (this.NavigationService != null) {
+                NavigationService.Navigate(new GUI_OrdersPerTableReport());
+            }
+        }
+
         private void GenerateInventoryReport(object sender, RoutedEventArgs e)
         {
             try
