@@ -1,6 +1,9 @@
-﻿using Microsoft.Win32;
+﻿using AromaCafeCliente.AromaCafeService;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,10 +24,15 @@ namespace AromaCafeCliente.Windows {
     /// Lógica de interacción para GUI_CancelledOrdersByTableReport.xaml
     /// </summary>
     public partial class GUI_CancelledOrdersByTableReport : Page {
+
+        private ObservableCollection<OrdersCanceled> ordersList;
+        private ICollectionView orderView;
+
         public GUI_CancelledOrdersByTableReport() {
             InitializeComponent();
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
+            LoadOrder();
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e) {
@@ -75,6 +83,10 @@ namespace AromaCafeCliente.Windows {
             CreateTable();
         }
 
+        private object GetPropertyValue(object item, string propertyName) {
+            return item.GetType().GetProperty(propertyName)?.GetValue(item, null);
+        }
+
         public void CreateTable() {
             if (dataGridOrder.ItemsSource != null) {
                 var items = dataGridOrder.ItemsSource.Cast<object>().ToList();
@@ -116,6 +128,63 @@ namespace AromaCafeCliente.Windows {
                 Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
                 fadeIn.Begin();
             }
+
+
+        }
+
+        private void LoadOrder() {
+            try {
+                OrderManagerClient orderManager = new OrderManagerClient();
+                ProductManagerClient productManager = new ProductManagerClient();
+                Order[] orders = orderManager.GetAllCanceledOrders();
+                List<OrdersCanceled> ordersDelivered = new List<OrdersCanceled>();
+
+                foreach (var order in orders) {
+                    var oDelivered = new OrdersCanceled {
+                        IdOrder = order.IdOrder,
+                        IdTable = order.IdTable,
+                        ProductName = productManager.GetProduct(order.IdProduct).ProductName,
+                        Quantity = order.Quantity,
+                        Price = order.TotalOrder
+                    };
+                    ordersDelivered.Add(oDelivered);
+                }
+
+                ordersList = new ObservableCollection<OrdersCanceled>(ordersDelivered);
+                orderView = CollectionViewSource.GetDefaultView(ordersList);
+                orderView.Filter = OrderFilter;
+
+                dataGridOrder.ItemsSource = orderView;
+
+            } catch (Exception) {
+
+                ErrorMessagePopupControl.SetMessage("Ocurrio un error al recuperar las ordenes");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
+            }
+
+            
+        }
+
+        private bool OrderFilter(object item) {
+            if (string.IsNullOrEmpty(txtSearchBox.Text)) return true;
+
+            var order = item as OrdersCanceled;
+            if (order == null) return false;
+            string searchText = txtSearchBox.Text.ToLower();
+
+            return order.IdOrder.ToString().ToLower().Contains(searchText) || order.IdTable.ToString().ToLower().Contains(searchText)
+            || order.ProductName.ToLower().Contains(searchText) || order.Quantity.ToString().ToLower().Contains(searchText)
+            || order.Price.ToString().ToLower().Contains(searchText);
+        }
+
+        private class OrdersCanceled {
+            public int IdOrder { get; set; }
+            public int IdTable { get; set; }
+            public string ProductName { get; set; }
+            public int Quantity { get; set; }
+            public decimal Price { get; set; }
         }
     }
 }

@@ -352,11 +352,11 @@
                             FontSize="25"
                             >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="" Binding="{Binding LastName}" Width="90" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="" Binding="{Binding Name}" Width="223" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="" Binding="{Binding EmployeeType}" Width="566" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="" Binding="{Binding Status}" Width="192" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="" Binding="{Binding EmployeeId}" Width="*" IsReadOnly="True" Visibility="Collapsed"/>
+                                <DataGridTextColumn Header="" Binding="{Binding IdOrder}" Width="90" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="" Binding="{Binding IdTable}" Width="223" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="" Binding="{Binding ProductName}" Width="566" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="" Binding="{Binding Quantity}" Width="192" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="" Binding="{Binding Price}" Width="*" IsReadOnly="True"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

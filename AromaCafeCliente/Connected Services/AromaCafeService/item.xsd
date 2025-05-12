@@ -61,4 +61,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Charge" nillable="true" type="tns:Charge" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdEmployee" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProduct" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTable" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalOrder" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
 </xs:schema>
