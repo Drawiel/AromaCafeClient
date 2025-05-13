@@ -254,6 +254,18 @@
   <wsdl:message name="ITableManager_ChargeBill_OutputMessage">
     <wsdl:part name="parameters" element="tns:ChargeBillResponse" />
   </wsdl:message>
+  <wsdl:message name="ITableManager_NewTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTable" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_NewTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetActiveAndClosedTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAndClosedTables" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetActiveAndClosedTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAndClosedTablesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IEmployeeManager">
     <wsdl:operation name="UpdateProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeManager/UpdateProfile" message="tns:IEmployeeManager_UpdateProfile_InputMessage" />
@@ -330,6 +342,14 @@
     <wsdl:operation name="ChargeBill">
       <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/ChargeBill" message="tns:ITableManager_ChargeBill_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/ChargeBillResponse" message="tns:ITableManager_ChargeBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/NewTable" message="tns:ITableManager_NewTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/NewTableResponse" message="tns:ITableManager_NewTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAndClosedTables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables" message="tns:ITableManager_GetActiveAndClosedTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse" message="tns:ITableManager_GetActiveAndClosedTables_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IEmployeeManager" type="tns:IEmployeeManager">
@@ -497,6 +517,24 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="ChargeBill">
       <soap12:operation soapAction="http://tempuri.org/ITableManager/ChargeBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewTable">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/NewTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAndClosedTables">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/GetActiveAndClosedTables" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

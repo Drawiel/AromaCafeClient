@@ -55,4 +55,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Charge" nillable="true" type="tns:Charge" />
+  <xs:complexType name="TableCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumberPeople" type="xs:int" />
+      <xs:element minOccurs="0" name="TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TableCustomer" nillable="true" type="tns:TableCustomer" />
+  <xs:complexType name="ArrayOfTableCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TableCustomer" nillable="true" type="tns:TableCustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTableCustomer" nillable="true" type="tns:ArrayOfTableCustomer" />
 </xs:schema>

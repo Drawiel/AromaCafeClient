@@ -497,6 +497,99 @@ namespace AromaCafeCliente.AromaCafeService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TableCustomer", Namespace="http://schemas.datacontract.org/2004/07/AromaCafeService.Models")]
+    [System.SerializableAttribute()]
+    public partial class TableCustomer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberPeopleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TableIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TableNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TableStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NumberPeople {
+            get {
+                return this.NumberPeopleField;
+            }
+            set {
+                if ((this.NumberPeopleField.Equals(value) != true)) {
+                    this.NumberPeopleField = value;
+                    this.RaisePropertyChanged("NumberPeople");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TableId {
+            get {
+                return this.TableIdField;
+            }
+            set {
+                if ((this.TableIdField.Equals(value) != true)) {
+                    this.TableIdField = value;
+                    this.RaisePropertyChanged("TableId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName {
+            get {
+                return this.TableNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TableNameField, value) != true)) {
+                    this.TableNameField = value;
+                    this.RaisePropertyChanged("TableName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableStatus {
+            get {
+                return this.TableStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TableStatusField, value) != true)) {
+                    this.TableStatusField = value;
+                    this.RaisePropertyChanged("TableStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.IEmployeeManager")]
     public interface IEmployeeManager {
@@ -862,6 +955,18 @@ namespace AromaCafeCliente.AromaCafeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/ChargeBill", ReplyAction="http://tempuri.org/ITableManager/ChargeBillResponse")]
         System.Threading.Tasks.Task<int> ChargeBillAsync(AromaCafeCliente.AromaCafeService.Charge charge);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/NewTable", ReplyAction="http://tempuri.org/ITableManager/NewTableResponse")]
+        int NewTable(AromaCafeCliente.AromaCafeService.TableCustomer table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/NewTable", ReplyAction="http://tempuri.org/ITableManager/NewTableResponse")]
+        System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables", ReplyAction="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse")]
+        AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables", ReplyAction="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse")]
+        System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.TableCustomer[]> GetActiveAndClosedTablesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -897,6 +1002,22 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<int> ChargeBillAsync(AromaCafeCliente.AromaCafeService.Charge charge) {
             return base.Channel.ChargeBillAsync(charge);
+        }
+        
+        public int NewTable(AromaCafeCliente.AromaCafeService.TableCustomer table) {
+            return base.Channel.NewTable(table);
+        }
+        
+        public System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table) {
+            return base.Channel.NewTableAsync(table);
+        }
+        
+        public AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables() {
+            return base.Channel.GetActiveAndClosedTables();
+        }
+        
+        public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.TableCustomer[]> GetActiveAndClosedTablesAsync() {
+            return base.Channel.GetActiveAndClosedTablesAsync();
         }
     }
 }

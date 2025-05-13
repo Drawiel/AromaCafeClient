@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Helpers\TextValidator.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
+    <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Windows\GUI_CheckCashier.xaml.cs">
       <DependentUpon>GUI_CheckCashier.xaml</DependentUpon>
     </Compile>
@@ -300,6 +301,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.TableCustomer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\item.xsd">
