@@ -340,7 +340,7 @@
                 Height="955"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-                
+
                 <Button
                     x:Name="btnCloseBill"
                     HorizontalAlignment="Left" 
@@ -447,7 +447,7 @@
                         SelectionChanged="DataGridUserSelectionChanged"
                         Foreground="Black"
                         FontSize="25">
-                        
+
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="" Binding="{Binding ProductName}" Width="770" IsReadOnly="True"/>
                             <DataGridTextColumn Header="" Binding="{Binding Quantity}" Width="227" IsReadOnly="True"/>
@@ -455,6 +455,16 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
+                <Label 
+                    Content="{Binding Total}"
+                    HorizontalAlignment="Left" 
+                    Height="86" 
+                    Margin="327,856,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="559"
+                    Foreground="Black"
+                    FontSize="64"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
             </Grid>
             <!-- Popup de confirmación para cerrar sesión -->
