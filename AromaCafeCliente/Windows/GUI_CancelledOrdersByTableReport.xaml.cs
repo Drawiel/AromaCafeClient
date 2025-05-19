@@ -39,6 +39,7 @@ namespace AromaCafeCliente.Windows {
         private void OnLogOutCancelled(object sender, EventArgs e) {
             ValidationPopup.Visibility = Visibility.Hidden;
         }
+
         private void NavigateHome(object sender, RoutedEventArgs e) {
             if(NavigationService != null) {
                 NavigationService.Navigate(new GUI_HomeManager());
@@ -47,7 +48,7 @@ namespace AromaCafeCliente.Windows {
 
         private void NavigateEmployees(object sender, RoutedEventArgs e) {
             if(this.NavigationService != null) {
-                this.NavigationService.Navigate(new GUI_Employees());
+                NavigationService.Navigate(new GUI_Employees());
             }
         }
 
@@ -116,6 +117,9 @@ namespace AromaCafeCliente.Windows {
                 Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
                 fadeIn.Begin();
             }
+        }
+        private object GetPropertyValue(object item, string propertyName) {
+            return item.GetType().GetProperty(propertyName)?.GetValue(item, null);
         }
     }
 }

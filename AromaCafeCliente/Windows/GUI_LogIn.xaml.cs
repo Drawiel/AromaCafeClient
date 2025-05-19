@@ -35,12 +35,13 @@ namespace AromaCafeCliente {
                 Employee employee = EmployeeManager.ValidateCredentials(employeeNumber, employeePassword);
                 if (employee.EmployeeId > 0)
                 {
+                    Console.WriteLine(employee.EmployeeType);
                     switch (employee.EmployeeType)
                     {
                         case "Mesero":
                             if (this.NavigationService != null)
                             {
-                                this.NavigationService.Navigate(new GUI_Employees());
+                                this.NavigationService.Navigate(new GUI_HomeWaitress());
                             }
                             break;
                         case "Cajero":

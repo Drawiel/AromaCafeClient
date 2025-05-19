@@ -251,4 +251,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NewTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="table" nillable="true" type="q14:TableCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewTableResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveAndClosedTables">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveAndClosedTablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetActiveAndClosedTablesResult" nillable="true" type="q15:ArrayOfTableCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

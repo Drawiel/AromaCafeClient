@@ -378,6 +378,26 @@
                 </Grid>
 
                 <Grid
+                        Width="1530"
+                        Height="955"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                    <TextBox
+                            x:Name="txtBoxPrice"
+                            Padding="45,0,10,0"
+                            FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                            HorizontalAlignment="Left"
+                            FontSize="40"
+                            Margin="390,799,0,0" 
+                            Text="" 
+                            VerticalAlignment="Top" 
+                            Width="465"
+                            IsEnabled="True"
+                            Height="60">
+                    </TextBox>
+                </Grid>
+
+                <Grid
                     Width="1530"
                     Height="955"
                     VerticalAlignment="Top"
