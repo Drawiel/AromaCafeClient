@@ -7,7 +7,7 @@ namespace AromaCafeCliente.Windows
     /// Lógica de interacción para GUI_WaitersTableBill.xaml
     /// </summary>
     public partial class GUI_WaitersTableBill : Page {
-        public GUI_WaitersTableBill() {
+        public GUI_WaitersTableBill(int tableId) {
             InitializeComponent();
             LoadTableOrder();
         }

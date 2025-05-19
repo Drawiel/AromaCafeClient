@@ -272,7 +272,7 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Height="85"
-                    Width="323">
+                    Width="323" Click="BtnNewTable">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -411,12 +411,14 @@
 
                 <Button 
                     x:Name="btnTable1"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="485,98,0,0" 
                     VerticalAlignment="Top" 
                     Width="303"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -445,12 +447,14 @@
 
                 <Button 
                     x:Name="btnTable2"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="836,98,0,0" 
                     VerticalAlignment="Top" 
                     Width="303"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -479,12 +483,14 @@
 
                 <Button 
                     x:Name="btnTable3"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="1187,98,0,0" 
                     VerticalAlignment="Top" 
                     Width="303"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -513,12 +519,14 @@
 
                 <Button 
                     x:Name="btnTable4"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="134,331,0,0" 
                     VerticalAlignment="Top" 
                     Width="303"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -547,12 +555,14 @@
 
                 <Button 
                     x:Name="btnTable5"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="485,331,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -581,12 +591,14 @@
 
                 <Button 
                     x:Name="btnTable6"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="836,331,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -615,12 +627,14 @@
 
                 <Button 
                     x:Name="btnTable7"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="1187,331,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -649,12 +663,14 @@
 
                 <Button 
                     x:Name="btnTable8"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="134,564,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -683,12 +699,14 @@
 
                 <Button 
                     x:Name="btnTable9"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="485,564,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -717,12 +735,14 @@
 
                 <Button 
                     x:Name="btnTable10"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="836,564,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -751,12 +771,14 @@
 
                 <Button 
                     x:Name="btnTable11"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="1187,564,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -785,12 +807,14 @@
 
                 <Button 
                     x:Name="btnTable12"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="134,797,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -819,12 +843,14 @@
 
                 <Button 
                     x:Name="btnTable13"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="485,797,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
@@ -853,12 +879,14 @@
 
                 <Button 
                     x:Name="btnTable14"
+                    FontSize="24"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="837,797,0,0" 
                     VerticalAlignment="Top" 
                     Width="302"
                     Content=""
+                    Click="BtnTable_Click"
                     Foreground="White"
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 

@@ -126,6 +126,7 @@
     <Compile Include="Windows\GUI_CancelledOrdersByTableReport.xaml.cs">
       <DependentUpon>GUI_CancelledOrdersByTableReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Windows\GUI_CheckCashier.xaml.cs">
       <DependentUpon>GUI_CheckCashier.xaml</DependentUpon>
     </Compile>
@@ -354,6 +355,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.TableCustomer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\item.xsd">
