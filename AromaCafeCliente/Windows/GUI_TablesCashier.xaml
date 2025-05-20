@@ -705,7 +705,7 @@
 
                 <Button 
                     x:Name="btnNext"
-                    Click="BtnClickBefore"
+                    Click="BtnClickNext"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="1187,797,0,0" 

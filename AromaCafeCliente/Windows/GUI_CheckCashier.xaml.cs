@@ -1,4 +1,6 @@
 ﻿using AromaCafeCliente.AromaCafeService;
+using AromaCafeCliente.Helpers;
+using AromaCafeCliente.Managers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,8 +23,10 @@ namespace AromaCafeCliente.Windows {
     /// </summary>
     public partial class GUI_CheckCashier : Page {
         TableManagerClient tableManagerClient;
-        public GUI_CheckCashier() {
+        private int tableId;
+        public GUI_CheckCashier(int tableId) {
             InitializeComponent();
+            this.tableId = tableId;
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
             ExpensesPopupControl.Cancelled += OnExpenseCancelled;
@@ -129,6 +133,44 @@ namespace AromaCafeCliente.Windows {
 
             } catch (Exception) {
                 return false;
+            }
+        }
+
+        private void ModifyOrder_BtnClick(object sender, EventArgs e)
+        {
+            var selected = dataGridBill.SelectedItem as ProductOrderViewModel;
+
+            if (selected != null)
+            {
+                this.ValidationPopupModifyOrder.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void CloseModifyOrder(object sender, EventArgs e)
+        {
+            this.ValidationPopupModifyOrder.Visibility= Visibility.Hidden;
+        }
+
+        private void ModifyOrderQuantity(object sender, EventArgs e)
+        {
+            var selected = dataGridBill.SelectedItem as ProductOrderViewModel;
+            string productName = selected.Producto;
+            try
+            {
+                int quantity = int.Parse (txtBoxNewCuantity.Text);
+                int edited = OrderManager.EditOrderQuantity(tableId, productName, quantity);
+                if (edited == 1)
+                {
+                    //exito
+                }
+            }
+            catch (FormatException formatException)
+            {
+                //error message jeje
+            }
+            catch (ArgumentNullException  argumentNullException)
+            {
+                // error message
             }
         }
     }

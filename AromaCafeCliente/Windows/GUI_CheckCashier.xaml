@@ -70,7 +70,8 @@
                 Margin="830,405,0,0" 
                 VerticalAlignment="Top" 
                 Height="55" 
-                Width="136">
+                Width="136"
+                Click="ModifyOrderQuantity">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -100,7 +101,8 @@
                     Margin="673,405,0,0" 
                     VerticalAlignment="Top" 
                     Height="55" 
-                    Width="136">
+                    Width="136"
+                    Click="CloseModifyOrder">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -375,7 +377,8 @@
                     HorizontalAlignment="Left" 
                     Height="60" Margin="1068,869,0,0" 
                     VerticalAlignment="Top" 
-                    Width="172">
+                    Width="172"
+                    Click="ModifyOrder_BtnClick">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

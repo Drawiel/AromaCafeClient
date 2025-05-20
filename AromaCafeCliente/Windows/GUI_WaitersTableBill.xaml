@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AromaCafeCliente.Windows"
+      xmlns:controls="clr-namespace:AromaCafeCliente.Windows.UserControllers"
       mc:Ignorable="d" 
       Title="GUI_WaitersTableBill">
 
@@ -65,7 +66,7 @@
                         <DataGridTemplateColumn Header="" Width="92">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Seleccionado}"/>
+                                    <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Seleccionado, Mode=TwoWay}" Checked="OrderMarkedAsDelivered" Unchecked="OrderMarkedAsRequested"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -83,11 +84,13 @@
 
                 <Button 
                     x:Name="btnEntry"
+                    Tag="Entrada"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="23,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -108,11 +111,13 @@
                 </Button>
                 <Button 
                     x:Name="btnFood"
+                    Tag="Comida"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="188,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -123,7 +128,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAlimentos.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -134,11 +139,13 @@
 
                 <Button 
                     x:Name="btnHootDrinks"
+                    Tag="Bebidas calientes"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="353,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -149,7 +156,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverBebidasCalientes.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -160,11 +167,13 @@
 
                 <Button 
                     x:Name="btnColdDrinks"
+                    Tag="Bebidas frias"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="518,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -175,7 +184,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverBebidasFrias.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -186,11 +195,13 @@
 
                 <Button 
                     x:Name="btnDesserts"
+                    Tag="Postres"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="682,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -201,7 +212,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverPostres.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -212,11 +223,13 @@
 
                 <Button 
                     x:Name="btnMixology"
+                    Tag="Mixologia"
                     HorizontalAlignment="Left" 
                     Height="97" 
                     Margin="847,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -227,7 +240,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverMixologia.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -238,11 +251,13 @@
 
                 <Button 
                     x:Name="btnExtras"
+                    Tag="Extras"
                     HorizontalAlignment="Left" 
                     Height="97" 
-                    Margin="847,84,0,0" 
+                    Margin="1013,84,0,0" 
                     VerticalAlignment="Top" 
-                    Width="158">
+                    Width="158"
+                    Click="BtnFilter_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -253,7 +268,7 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverEntradas.png" Stretch="UniformToFill"/>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverExtras.png" Stretch="UniformToFill"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
@@ -305,7 +320,7 @@
                                         IsReadOnly="True"/>
 
                                 <DataGridTextColumn 
-                                    Binding="{Binding Cantidad}" 
+                                    Binding="{Binding Precio}" 
                                     Width="149" 
                                     IsReadOnly="True"/>
                             </DataGrid.Columns>
@@ -319,7 +334,8 @@
                         Height="146" 
                         Margin="8,28,0,0" 
                         VerticalAlignment="Top" 
-                        Width="158">
+                        Width="158"
+                        Click="AddProductToOrder">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -346,7 +362,8 @@
                         Height="146" 
                         Margin="8,243,0,0" 
                         VerticalAlignment="Top" 
-                        Width="158">
+                        Width="158"
+                        Click="SubstractItemBeforeOrdering">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -357,7 +374,7 @@
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter TargetName="ButtonBackground" Property="Background">
                                             <Setter.Value>
-                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAgregar.png" Stretch="UniformToFill"/>
+                                                <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverRestar.png" Stretch="UniformToFill"/>
                                             </Setter.Value>
                                         </Setter>
                                     </Trigger>
@@ -416,7 +433,7 @@
                                         IsReadOnly="True"/>
 
                                 <DataGridTextColumn 
-                                    Binding="{Binding Precio}" 
+                                    Binding="{Binding PrecioTotal}" 
                                     Width="149" 
                                     IsReadOnly="True"/>
                             </DataGrid.Columns>
@@ -430,7 +447,8 @@
                         Height="146" 
                         Margin="8,16,0,0" 
                         VerticalAlignment="Top" 
-                        Width="158">
+                        Width="158"
+                        Click="CloseTable_BtnClick">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -506,12 +524,6 @@
                 </Grid>
 
             </Grid>
-
-
-
-
         </Grid>
-
     </Viewbox>
-
 </Page>
