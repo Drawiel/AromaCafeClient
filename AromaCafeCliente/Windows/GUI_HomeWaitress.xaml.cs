@@ -157,21 +157,18 @@ namespace AromaCafeCliente.Windows {
                     btn.Content = $"{table.TableName}\n({table.NumberPeople} pers.)";
                     btn.Tag = table;
                     btn.Visibility = Visibility.Visible;
-                    btn.ClearValue(Button.StyleProperty);
-                    btn.Background = Brushes.LightGreen;
-                    btn.BorderBrush = Brushes.DarkGreen;
 
                     if (table.TableStatus == "Cerrada")
-                    {
-                        btn.Background = Brushes.Gray;
-                        btn.BorderBrush = Brushes.DarkGray;
+                    { 
+                        btn.Style = (Style)FindResource("ClosedTableStyle");
+                        btn.Opacity = 0.3;
                     }
                 }
                 else
                 {
-                    btn.Content = $"Mesa {index + 1}\n(Disponible)";
+                    btn.Content = "";
                     btn.Tag = null;
-                    btn.Visibility = Visibility.Hidden;
+                    btn.Visibility = Visibility.Collapsed;
                 }
             }
         }
