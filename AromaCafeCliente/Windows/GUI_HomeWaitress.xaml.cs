@@ -197,4 +197,5 @@ namespace AromaCafeCliente.Windows {
             btnCancelOpenTable.Click -= BtnCancelOpenTable_Click;
         }
     }
+
 }
