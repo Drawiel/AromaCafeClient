@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace AromaCafeCliente.Windows
 {
@@ -127,7 +128,10 @@ namespace AromaCafeCliente.Windows
             int closed = TableManager.CloseTable(tableId);
             if (closed == 1)
             {
-                //mensaje de confirmacion mesa cerrada con exito
+                ConfirmationMessagePopupControl.SetMessage("Mesa cerrada con exito.");
+                ConfirmationPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
                 if (NavigationService != null)
                 {
                     NavigationService.Navigate(new GUI_HomeWaitress());
@@ -135,9 +139,18 @@ namespace AromaCafeCliente.Windows
             }
             else
             {
-                //mensaje de error no se pudo cerrar la mesa
+                ErrorMessagePopupControl.SetMessage("No se pudo cerrar la mesa.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
+
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
+        }
+
 
         private void OrderMarkedAsDelivered(object sender, RoutedEventArgs e)
         {
@@ -153,11 +166,17 @@ namespace AromaCafeCliente.Windows
                 int marked = OrderManager.MarkOrderAsDelivered(productOrderName, tableId);
                 if (marked == 1)
                 {
-                    //confirmationmessage pedido entregado
+                    ConfirmationMessagePopupControl.SetMessage("Pedido entregado.");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
                 else
                 {
-                    //mensaje de error error al entregar pedido
+                    ErrorMessagePopupControl.SetMessage("Error al entregar pedido.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
         }
@@ -176,11 +195,17 @@ namespace AromaCafeCliente.Windows
                 int marked = OrderManager.MarkOrderAsRequested(productOrderName, tableId);
                 if (marked == 1)
                 {
-                    //confirmationmessage pedido solicitado
+                    ConfirmationMessagePopupControl.SetMessage("Pedido solicitado con éxito.");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
                 else
                 {
-                    //mensaje de error error al solicitar el pedido
+                    ErrorMessagePopupControl.SetMessage("Error al solicitar pedido.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
         }

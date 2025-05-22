@@ -14,6 +14,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -179,17 +180,28 @@ namespace AromaCafeCliente.Windows {
                 int edited = OrderManager.EditOrderQuantity(tableId, productName, quantity);
                 if (edited == 1)
                 {
-                    //exito cantidad de pedido modificada
+                    ConfirmationMessagePopupControl.SetMessage("Pedido modificado con éxito.");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                     CloseModifyOrder(sender, e);
                 }
             }
             catch (FormatException formatException)
             {
                 //error message cantidad no se pudo modificar
+                ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
             catch (ArgumentNullException  argumentNullException)
             {
                 // error message igual que el de arriba
+                ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
     }

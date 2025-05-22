@@ -8,10 +8,17 @@
       mc:Ignorable="d" 
       Title="GUI_CheckCashier">
 
+
     <Page.Resources>
         <Storyboard x:Key="FadeInStoryboard">
             <DoubleAnimation
             Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="0"
+            To="1"
+            Duration="0:0:0.3"/>
+            <DoubleAnimation
+            Storyboard.TargetName="ErrorPopup"
             Storyboard.TargetProperty="Opacity"
             From="0"
             To="1"
@@ -21,6 +28,12 @@
         <Storyboard x:Key="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
             <DoubleAnimation
             Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="1"
+            To="0"
+            Duration="0:0:0.3"/>
+            <DoubleAnimation
+            Storyboard.TargetName="ErrorPopup"
             Storyboard.TargetProperty="Opacity"
             From="1"
             To="0"
@@ -527,6 +540,22 @@
                 Opacity="0">
 
                 <controls:GUI_PopUP_PaymentMethod x:Name="PaymentMethodPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
+
+            <Border x:Name="ErrorPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ErrorMessage x:Name="ErrorMessagePopupControl"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="1000"

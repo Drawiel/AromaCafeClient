@@ -103,6 +103,7 @@ namespace AromaCafeCliente.Windows {
 
         private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
             ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
 
         private void BtnEditClick(object sender, RoutedEventArgs e) {
