@@ -126,6 +126,7 @@
     <Compile Include="Managers\EmployeeManager.cs" />
     <Compile Include="Managers\ExpenseManager.cs" />
     <Compile Include="Managers\OrderManager.cs" />
+    <Compile Include="Managers\SalesManager.cs" />
     <Compile Include="Windows\GUI_CancelledOrdersByTableReport.xaml.cs">
       <DependentUpon>GUI_CancelledOrdersByTableReport.xaml</DependentUpon>
     </Compile>
@@ -357,10 +358,19 @@
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Expense.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.FinancialMovement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.ProductOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.SaleByWaiterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.SalesData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.TableCustomer.datasource">
@@ -373,6 +383,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AromaCafeService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AromaCafeService\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AromaCafeService\ServiceImplementation.wsdl" />

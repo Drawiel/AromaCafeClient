@@ -12,7 +12,7 @@
 		<ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_InicioCajero.png"/>
 	</Page.Background>
 
-	<Viewbox
+    <Viewbox
         Stretch="Uniform">
 
 		<Grid
@@ -259,6 +259,21 @@
 					Panel.ZIndex="100">
 
                 <controls:GUI_PopUp_Bills x:Name="ExpensesPopupControl"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="1000"
+                   Height="500"/>
+            </Border>
+            <Border x:Name="ConfirmationPopup"
+    Grid.ColumnSpan="2"
+    Background="#80000000"
+    Visibility="Hidden"
+    VerticalAlignment="Stretch"
+    HorizontalAlignment="Stretch"
+    Panel.ZIndex="100"
+    Opacity="1">
+
+                <controls:GUI_PopUp_ConfirmationMessage x:Name="ConfirmationMessagePopupControl"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Width="1000"
