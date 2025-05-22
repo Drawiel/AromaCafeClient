@@ -84,6 +84,8 @@ namespace AromaCafeCliente.Windows
             MessageBox.Show("Se ha realizado el pedido con  éxito.");
             orderItems = new ObservableCollection<OrderItemViewModel>();
             PaintNewProducts();
+            LoadProductList();
+            PaintTableOrder();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e) {
@@ -118,10 +120,12 @@ namespace AromaCafeCliente.Windows
         {
             var selected = dataGridNewProducts.SelectedItem as OrderItemViewModel;
             if (selected == null) return;
+            string productName = selected.Producto;
 
             if (selected.Cantidad == 1)
             {
                 orderItems.Remove(selected);
+                int marked = OrderManager.MarkOrderAsCancelled(productName, tableId);
             }
             else
             {

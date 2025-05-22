@@ -353,6 +353,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="MarkOrderAsCancelled">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableId" type="xs:int" />
+        <xs:element minOccurs="0" name="productOrderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkOrderAsCancelledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkOrderAsCancelledResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EditOrderQuantity">
     <xs:complexType>
       <xs:sequence>
@@ -396,6 +411,30 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetOrdersByTableResult" nillable="true" type="q21:ArrayOfProductOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDeliveredOrders">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDeliveredOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetAllDeliveredOrdersResult" nillable="true" type="q22:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCanceledOrders">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCanceledOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetAllCanceledOrdersResult" nillable="true" type="q23:ArrayOfOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

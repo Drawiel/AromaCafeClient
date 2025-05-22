@@ -22,7 +22,10 @@
                 Margin="319,0,0,0" 
                 Width="548" Height="54"
                 FontSize="40"
-                FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
+                FontFamily="pack://application:,,,/Font/#Architects Daughter">
+            <ComboBoxItem Content="Tarjeta" Tag="Tarjeta"/>
+            <ComboBoxItem Content="Efectivo" Tag="Efectivo"/>
+        </ComboBox>
 
         <Button 
                 x:Name="btnAcceptPaymentMethod"

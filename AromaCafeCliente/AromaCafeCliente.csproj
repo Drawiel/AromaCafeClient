@@ -361,6 +361,9 @@
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.FinancialMovement.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\AromaCafeService\AromaCafeCliente.AromaCafeService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -472,6 +472,7 @@
                     </DataGrid>
                 </Grid>
                 <Label 
+                    x:Name="totalLbl"
                     Content="{Binding Total}"
                     HorizontalAlignment="Left" 
                     Height="86" 
@@ -535,8 +536,7 @@
                 Visibility="Hidden"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
-                Panel.ZIndex="100"
-                Opacity="0">
+                Panel.ZIndex="100">
 
                 <controls:GUI_PopUP_PaymentMethod x:Name="PaymentMethodPopupControl"
                                HorizontalAlignment="Center"

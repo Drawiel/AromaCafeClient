@@ -19,12 +19,13 @@ namespace AromaCafeCliente.Windows.UserControllers {
     /// </summary>
     public partial class GUI_PopUP_PaymentMethod : UserControl {
         public event EventHandler Cancelled;
+        public event EventHandler AcceptsPayment;
         public GUI_PopUP_PaymentMethod() {
             InitializeComponent();
         }
 
         private void btnAcceptPaymentMethod_Click(object sender, RoutedEventArgs e) {
-
+            AcceptsPayment?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnCancelPaymentMethod_Click(object sender, RoutedEventArgs e) {

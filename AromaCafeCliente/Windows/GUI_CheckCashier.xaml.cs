@@ -34,6 +34,7 @@ namespace AromaCafeCliente.Windows {
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
             ExpensesPopupControl.Cancelled += OnExpenseCancelled;
             PaymentMethodPopupControl.Cancelled += OnPaymentCancelled;
+            PaymentMethodPopupControl.AcceptsPayment += OnAcceptPayment;
             LoadDataGridBill();
         }
 
@@ -50,6 +51,14 @@ namespace AromaCafeCliente.Windows {
                 .ToList();
                 this.dataGridBill.ItemsSource = new ObservableCollection<ProductOrderViewModel>(gridItems);
             }
+            decimal total = 0;
+            foreach (var item in dataGridBill.Items)
+            {
+                var row = item as ProductOrderViewModel;
+                total += row.Precio;
+            }
+            this.totalLbl.Content = total.ToString();
+
         }
 
         private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -81,6 +90,12 @@ namespace AromaCafeCliente.Windows {
         }
 
         private void OnExpenseCancelled(object sender, EventArgs e) {
+            ExpensesPopUp.Visibility = Visibility.Hidden;
+        }
+
+        private void OnAcceptPayment(object sender, EventArgs e)
+        {
+            ChargeBill("tarjeta");
             ExpensesPopUp.Visibility = Visibility.Hidden;
         }
 
@@ -133,7 +148,7 @@ namespace AromaCafeCliente.Windows {
             tableManagerClient = new TableManagerClient();
             DateTime dateTime = DateTime.Now;
             decimal total = TotalSum();
-            int tableId = 1;
+            
 
             var newCharge = new Charge {
                 Date = dateTime,

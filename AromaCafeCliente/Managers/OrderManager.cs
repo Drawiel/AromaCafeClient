@@ -113,6 +113,31 @@ namespace AromaCafeCliente.Managers
             return marked;
         }
 
+        internal static int MarkOrderAsCancelled(string productOrderName, int tableId)
+        {
+            int marked = 0;
+            try
+            {
+                using (var proxy = new AromaCafeService.OrderManagerClient())
+                {
+                    marked = proxy.MarkOrderAsCancelled(tableId, productOrderName);
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
+            return marked;
+        }
+
         public static void SendOrder(int tableId, List<ProductOrder> productsOrdered)
         {
             try

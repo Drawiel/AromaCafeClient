@@ -332,6 +332,12 @@
   <wsdl:message name="IOrderManager_MarkOrderAsRequested_OutputMessage">
     <wsdl:part name="parameters" element="tns:MarkOrderAsRequestedResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrderManager_MarkOrderAsCancelled_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkOrderAsCancelled" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_MarkOrderAsCancelled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkOrderAsCancelledResponse" />
+  </wsdl:message>
   <wsdl:message name="IOrderManager_EditOrderQuantity_InputMessage">
     <wsdl:part name="parameters" element="tns:EditOrderQuantity" />
   </wsdl:message>
@@ -349,6 +355,18 @@
   </wsdl:message>
   <wsdl:message name="IOrderManager_GetOrdersByTable_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrdersByTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_GetAllDeliveredOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveredOrders" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_GetAllDeliveredOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveredOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_GetAllCanceledOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCanceledOrders" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_GetAllCanceledOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCanceledOrdersResponse" />
   </wsdl:message>
   <wsdl:portType name="IEmployeeManager">
     <wsdl:operation name="UpdateProfile">
@@ -461,6 +479,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsRequested" message="tns:IOrderManager_MarkOrderAsRequested_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsRequestedResponse" message="tns:IOrderManager_MarkOrderAsRequested_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MarkOrderAsCancelled">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsCancelled" message="tns:IOrderManager_MarkOrderAsCancelled_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsCancelledResponse" message="tns:IOrderManager_MarkOrderAsCancelled_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EditOrderQuantity">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/EditOrderQuantity" message="tns:IOrderManager_EditOrderQuantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/EditOrderQuantityResponse" message="tns:IOrderManager_EditOrderQuantity_OutputMessage" />
@@ -472,6 +494,14 @@
     <wsdl:operation name="GetOrdersByTable">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetOrdersByTable" message="tns:IOrderManager_GetOrdersByTable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetOrdersByTableResponse" message="tns:IOrderManager_GetOrdersByTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveredOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetAllDeliveredOrders" message="tns:IOrderManager_GetAllDeliveredOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetAllDeliveredOrdersResponse" message="tns:IOrderManager_GetAllDeliveredOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCanceledOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetAllCanceledOrders" message="tns:IOrderManager_GetAllCanceledOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetAllCanceledOrdersResponse" message="tns:IOrderManager_GetAllCanceledOrders_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IEmployeeManager" type="tns:IEmployeeManager">
@@ -722,6 +752,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MarkOrderAsCancelled">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/MarkOrderAsCancelled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EditOrderQuantity">
       <soap12:operation soapAction="http://tempuri.org/IOrderManager/EditOrderQuantity" style="document" />
       <wsdl:input>
@@ -749,6 +788,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveredOrders">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/GetAllDeliveredOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCanceledOrders">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/GetAllCanceledOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IEmployeeManager" binding="tns:NetTcpBinding_IEmployeeManager">
@@ -756,7 +813,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -765,7 +822,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -774,7 +831,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -783,7 +840,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ExpenseManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -792,7 +849,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/TableManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -801,7 +858,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/OrderManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOPTLAPA\chuch</Upn>
+          <Upn>ZAIDPC\zaido</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
