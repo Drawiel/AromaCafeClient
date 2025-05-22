@@ -185,6 +185,7 @@ namespace AromaCafeCliente.Windows {
                     Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
                     fadeIn.Begin();
                     CloseModifyOrder(sender, e);
+                    LoadDataGridBill();
                 }
             }
             catch (FormatException formatException)
