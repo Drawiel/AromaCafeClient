@@ -126,6 +126,7 @@ namespace AromaCafeCliente.Windows {
         }
         private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
             ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
 
         private bool ChargeBill(string paymentType) { 
@@ -189,7 +190,6 @@ namespace AromaCafeCliente.Windows {
             }
             catch (FormatException formatException)
             {
-                //error message cantidad no se pudo modificar
                 ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
                 ErrorPopup.Visibility = Visibility.Visible;
                 Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
@@ -197,7 +197,6 @@ namespace AromaCafeCliente.Windows {
             }
             catch (ArgumentNullException  argumentNullException)
             {
-                // error message igual que el de arriba
                 ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
                 ErrorPopup.Visibility = Visibility.Visible;
                 Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");

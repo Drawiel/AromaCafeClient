@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -70,7 +71,10 @@ namespace AromaCafeCliente.Windows {
                 dataGridUser.ItemsSource = employeesView;
                  
             } catch (Exception){
-                MessageBox.Show("Ocurrio un error recuperando los empleados");
+                ErrorMessagePopupControl.SetMessage("Ocurrio un error recuperando los empleados.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
 
@@ -159,6 +163,10 @@ namespace AromaCafeCliente.Windows {
             public string LastName { get; set; }
             public string EmployeeType { get ; set ; }
             public string Status { get ; set ; }
+        }
+
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
     }
 }

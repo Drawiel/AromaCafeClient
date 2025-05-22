@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -53,8 +54,15 @@ namespace AromaCafeCliente.Windows {
             };
 
             ProductManager.AddProduct(updatedProduct);
-            MessageBox.Show("Se ha registrado con éxito el nuevo producto.");
+            ConfirmationMessagePopupControl.SetMessage("Se ha registrado con éxito el nuevo producto.");
+            ConfirmationPopup.Visibility = Visibility.Visible;
+            Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+            fadeIn.Begin();
             this.NavigationService.Navigate(new GUI_ProductList());
+        }
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

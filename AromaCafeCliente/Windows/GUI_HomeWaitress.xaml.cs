@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -89,13 +90,20 @@ namespace AromaCafeCliente.Windows {
                 if (string.IsNullOrWhiteSpace(txtBoxTableName.Text) ||
                     string.IsNullOrWhiteSpace(txtBoxNumPersons.Text))
                 {
-                    MessageBox.Show("Por favor complete todos los campos");
+                    ErrorMessagePopupControl.SetMessage("Por favor complete todos los camposo.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                     return;
                 }
 
                 if (!int.TryParse(txtBoxNumPersons.Text, out int numPersons) || numPersons <= 0)
                 {
-                    MessageBox.Show("Por favor ingrese un número válido de personas");
+                    ErrorMessagePopupControl.SetMessage("Por favor ingrese un número válido de persona.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
+
                     return;
                 }
 
@@ -109,18 +117,27 @@ namespace AromaCafeCliente.Windows {
 
                 if (resultado > 0) 
                 {
-                    MessageBox.Show("Mesa creada exitosamente");
+                    ConfirmationMessagePopupControl.SetMessage("Mesa creada exitosamente.");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                     ValidationPopupOpenTable.Visibility = Visibility.Hidden;
                     LoadCustomerTables();
                 }
                 else
                 {
-                    MessageBox.Show("Error al crear la mesa");
+                    ErrorMessagePopupControl.SetMessage("Error al crear la mesa.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                ErrorMessagePopupControl.SetMessage($"Error: {ex.Message}");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
             finally
             {
@@ -138,7 +155,10 @@ namespace AromaCafeCliente.Windows {
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar mesas: {ex.Message}");
+                ErrorMessagePopupControl.SetMessage($"Error al cargar mesas: {ex.Message}");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
 
@@ -183,7 +203,10 @@ namespace AromaCafeCliente.Windows {
                 }
                 else
                 {
-                    MessageBox.Show("La mesa está cerrada y no se puede acceder.");
+                    ErrorMessagePopupControl.SetMessage("La mesa está cerrada y no se puede acceder.");
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
         }
@@ -195,6 +218,10 @@ namespace AromaCafeCliente.Windows {
 
             btnAcceptOpenTable.Click -= BtnAcceptOpenTable_Click;
             btnCancelOpenTable.Click -= BtnCancelOpenTable_Click;
+        }
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
     }
 

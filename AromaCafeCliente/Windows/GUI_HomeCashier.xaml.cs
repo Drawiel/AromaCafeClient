@@ -75,6 +75,11 @@ namespace AromaCafeCliente.Windows
             }
         }
 
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
+            ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
+        }
+
         private void BtnCashCount_Click(object sender, RoutedEventArgs e)
         {
             {
@@ -86,7 +91,10 @@ namespace AromaCafeCliente.Windows
                     var products = SalesManager.GetFinancialReportByRange();
                     if (products == null || products.Count == 0)
                     {
-                        MessageBox.Show("No se encontraron gastos ni ingresos para generar el reporte.");
+                        ErrorMessagePopupControl.SetMessage("No se encontraron gastos ni ingresos para generar el reporte.");
+                        ErrorPopup.Visibility = Visibility.Visible;
+                        Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                        fadeIn.Begin();
                         return;
                     }
 
@@ -115,13 +123,17 @@ namespace AromaCafeCliente.Windows
                         package.SaveAs(excelFile);
 
                         ConfirmationMessagePopupControl.SetMessage("Corte generado en:\n" + filePath);
-
-                        MessageBox.Show("Corte generado en:\n" + filePath);
+                        ConfirmationPopup.Visibility = Visibility.Visible;
+                        Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                        fadeIn.Begin();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al generar el reporte: " + ex.Message);
+                    ErrorMessagePopupControl.SetMessage("Error al generar el reporte: " + ex.Message);
+                    ErrorPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
                 }
             }
         }

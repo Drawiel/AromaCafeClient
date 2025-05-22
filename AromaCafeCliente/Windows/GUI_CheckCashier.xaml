@@ -483,7 +483,6 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
             </Grid>
-            <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
                 Grid.ColumnSpan="2"
                 Background="#80000000"
