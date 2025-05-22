@@ -124,7 +124,19 @@ namespace AromaCafeCliente.Windows
 
         private void CloseTable_BtnClick(object sender, RoutedEventArgs e)
         {
-            
+            int closed = TableManager.CloseTable(tableId);
+            if (closed == 1)
+            {
+                //mensaje de confirmacion mesa cerrada con exito
+                if (NavigationService != null)
+                {
+                    NavigationService.Navigate(new GUI_HomeWaitress());
+                }
+            }
+            else
+            {
+                //mensaje de error no se pudo cerrar la mesa
+            }
         }
 
         private void OrderMarkedAsDelivered(object sender, RoutedEventArgs e)
@@ -141,7 +153,11 @@ namespace AromaCafeCliente.Windows
                 int marked = OrderManager.MarkOrderAsDelivered(productOrderName, tableId);
                 if (marked == 1)
                 {
-                    //confirmationmessage
+                    //confirmationmessage pedido entregado
+                }
+                else
+                {
+                    //mensaje de error error al entregar pedido
                 }
             }
         }
@@ -160,7 +176,11 @@ namespace AromaCafeCliente.Windows
                 int marked = OrderManager.MarkOrderAsRequested(productOrderName, tableId);
                 if (marked == 1)
                 {
-                    //confirmationmessage
+                    //confirmationmessage pedido solicitado
+                }
+                else
+                {
+                    //mensaje de error error al solicitar el pedido
                 }
             }
         }

@@ -1085,6 +1085,12 @@ namespace AromaCafeCliente.AromaCafeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/NewTable", ReplyAction="http://tempuri.org/ITableManager/NewTableResponse")]
         System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
+        int CloseTable(int tableId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
+        System.Threading.Tasks.Task<int> CloseTableAsync(int tableId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables", ReplyAction="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse")]
         AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables();
         
@@ -1135,6 +1141,14 @@ namespace AromaCafeCliente.AromaCafeService {
             return base.Channel.NewTableAsync(table);
         }
         
+        public int CloseTable(int tableId) {
+            return base.Channel.CloseTable(tableId);
+        }
+        
+        public System.Threading.Tasks.Task<int> CloseTableAsync(int tableId) {
+            return base.Channel.CloseTableAsync(tableId);
+        }
+        
         public AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables() {
             return base.Channel.GetActiveAndClosedTables();
         }
@@ -1161,10 +1175,10 @@ namespace AromaCafeCliente.AromaCafeService {
         System.Threading.Tasks.Task<int> MarkOrderAsRequestedAsync(int tableId, string productOrderName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/EditOrderQuantity", ReplyAction="http://tempuri.org/IOrderManager/EditOrderQuantityResponse")]
-        bool EditOrderQuantity(int idOrder, int quantity);
+        int EditOrderQuantity(int tableId, string productOrderName, int quantity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/EditOrderQuantity", ReplyAction="http://tempuri.org/IOrderManager/EditOrderQuantityResponse")]
-        System.Threading.Tasks.Task<bool> EditOrderQuantityAsync(int idOrder, int quantity);
+        System.Threading.Tasks.Task<int> EditOrderQuantityAsync(int tableId, string productOrderName, int quantity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/RegisterOrder", ReplyAction="http://tempuri.org/IOrderManager/RegisterOrderResponse")]
         int RegisterOrder(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType);
@@ -1222,12 +1236,12 @@ namespace AromaCafeCliente.AromaCafeService {
             return base.Channel.MarkOrderAsRequestedAsync(tableId, productOrderName);
         }
         
-        public bool EditOrderQuantity(int idOrder, int quantity) {
-            return base.Channel.EditOrderQuantity(idOrder, quantity);
+        public int EditOrderQuantity(int tableId, string productOrderName, int quantity) {
+            return base.Channel.EditOrderQuantity(tableId, productOrderName, quantity);
         }
         
-        public System.Threading.Tasks.Task<bool> EditOrderQuantityAsync(int idOrder, int quantity) {
-            return base.Channel.EditOrderQuantityAsync(idOrder, quantity);
+        public System.Threading.Tasks.Task<int> EditOrderQuantityAsync(int tableId, string productOrderName, int quantity) {
+            return base.Channel.EditOrderQuantityAsync(tableId, productOrderName, quantity);
         }
         
         public int RegisterOrder(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType) {

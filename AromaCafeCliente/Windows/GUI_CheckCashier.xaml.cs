@@ -3,6 +3,7 @@ using AromaCafeCliente.Helpers;
 using AromaCafeCliente.Managers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace AromaCafeCliente.Windows {
     public partial class GUI_CheckCashier : Page {
         TableManagerClient tableManagerClient;
         private int tableId;
+        private List<ProductOrder> productsOrdered;
         public GUI_CheckCashier(int tableId) {
             InitializeComponent();
             this.tableId = tableId;
@@ -31,6 +33,22 @@ namespace AromaCafeCliente.Windows {
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
             ExpensesPopupControl.Cancelled += OnExpenseCancelled;
             PaymentMethodPopupControl.Cancelled += OnPaymentCancelled;
+            LoadDataGridBill();
+        }
+
+        private void LoadDataGridBill()
+        {
+            productsOrdered = OrderManager.GetOrdersByTable(tableId);
+            if (productsOrdered != null)
+            {
+                var gridItems = productsOrdered.Select(p => new ProductOrderViewModel(
+                    p.ProductName,
+                    p.Quantity,
+                    p.Price
+                    ))
+                .ToList();
+                this.dataGridBill.ItemsSource = new ObservableCollection<ProductOrderViewModel>(gridItems);
+            }
         }
 
         private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -65,7 +83,7 @@ namespace AromaCafeCliente.Windows {
             ExpensesPopUp.Visibility = Visibility.Hidden;
         }
 
-        private void btnCloseBill_Click(object sender, RoutedEventArgs e) {
+        private void BtnCloseBill_Click(object sender, RoutedEventArgs e) {
             PaymentMethodPopup.Visibility = Visibility.Visible;
         }
 
@@ -161,16 +179,17 @@ namespace AromaCafeCliente.Windows {
                 int edited = OrderManager.EditOrderQuantity(tableId, productName, quantity);
                 if (edited == 1)
                 {
-                    //exito
+                    //exito cantidad de pedido modificada
+                    CloseModifyOrder(sender, e);
                 }
             }
             catch (FormatException formatException)
             {
-                //error message jeje
+                //error message cantidad no se pudo modificar
             }
             catch (ArgumentNullException  argumentNullException)
             {
-                // error message
+                // error message igual que el de arriba
             }
         }
     }

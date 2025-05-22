@@ -349,7 +349,7 @@
                     Height="60" Margin="1279,869,0,0" 
                     VerticalAlignment="Top" 
                     Width="172"
-                    Click="btnCloseBill_Click">
+                    Click="BtnCloseBill_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -452,9 +452,9 @@
                         FontSize="25">
                         
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="" Binding="{Binding ProductName}" Width="770" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding Quantity}" Width="227" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding Price}" Width="212" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Producto}" Width="770" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Cantidad}" Width="227" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Precio}" Width="212" IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

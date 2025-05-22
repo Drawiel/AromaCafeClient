@@ -295,6 +295,12 @@
   <wsdl:message name="ITableManager_NewTable_OutputMessage">
     <wsdl:part name="parameters" element="tns:NewTableResponse" />
   </wsdl:message>
+  <wsdl:message name="ITableManager_CloseTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseTable" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_CloseTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseTableResponse" />
+  </wsdl:message>
   <wsdl:message name="ITableManager_GetActiveAndClosedTables_InputMessage">
     <wsdl:part name="parameters" element="tns:GetActiveAndClosedTables" />
   </wsdl:message>
@@ -415,6 +421,10 @@
     <wsdl:operation name="NewTable">
       <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/NewTable" message="tns:ITableManager_NewTable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/NewTableResponse" message="tns:ITableManager_NewTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/CloseTable" message="tns:ITableManager_CloseTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/CloseTableResponse" message="tns:ITableManager_CloseTable_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetActiveAndClosedTables">
       <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables" message="tns:ITableManager_GetActiveAndClosedTables_InputMessage" />
@@ -626,6 +636,15 @@
     </wsdl:operation>
     <wsdl:operation name="NewTable">
       <soap12:operation soapAction="http://tempuri.org/ITableManager/NewTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseTable">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/CloseTable" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
