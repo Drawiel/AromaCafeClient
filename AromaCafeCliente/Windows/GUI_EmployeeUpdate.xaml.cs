@@ -209,7 +209,7 @@ namespace AromaCafeCliente.Windows {
         private void BtnChangeAccessCodeClick(object sender, RoutedEventArgs e) {
             bool updatedAccessCodeProfile = UpdateAccessCodeProfile(CreateNewAccessCode());
             if (updatedAccessCodeProfile) {
-                ConfirmationMessagePopupControl.SetMessage("Se ha creado correctamente la nueva clave de acceso: " + newAccessCode));
+                ConfirmationMessagePopupControl.SetMessage("Se ha creado correctamente la nueva clave de acceso: " + newAccessCode);
                 ConfirmationPopup.Visibility = Visibility.Visible;
                 Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
                 fadeIn.Begin();

@@ -86,7 +86,7 @@ namespace AromaCafeCliente.Managers
             }
             return marked;
         }
-    }
+    
 
         internal static int MarkOrderAsRequested(string productOrderName, int tableId)
         {
@@ -111,6 +111,29 @@ namespace AromaCafeCliente.Managers
                 throw timeoutException;
             }
             return marked;
+        }
+
+        public static void SendOrder(int tableId, List<ProductOrder> productsOrdered)
+        {
+            try
+            {
+                using (var proxy = new AromaCafeService.OrderManagerClient())
+                {
+                    proxy.RegisterOrder(productsOrdered.ToArray(), tableId, "Local");
+                }
+            }
+            catch (FaultException faultException)
+            {
+                throw faultException;
+            }
+            catch (CommunicationException communicationException)
+            {
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                throw timeoutException;
+            }
         }
     }
 }

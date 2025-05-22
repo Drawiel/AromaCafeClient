@@ -87,12 +87,12 @@ namespace AromaCafeCliente.Managers
 
         public static int CloseTable(int tableId)
         {
-            int result;
+            int result = 0;
             try
             {
                 using (var proxy = new AromaCafeService.TableManagerClient())
                 {
-                    result = proxy.CloseTable(tableId);
+                    //result = proxy.CloseTable(tableId);
                 }
             }
             catch (FaultException faultException)

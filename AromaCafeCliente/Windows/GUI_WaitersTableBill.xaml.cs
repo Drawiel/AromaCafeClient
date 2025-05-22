@@ -75,8 +75,15 @@ namespace AromaCafeCliente.Windows
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-
-
+            List<ProductOrder> completeOrder = orderItems.Select(o => new ProductOrder
+            {
+                ProductName = o.Producto,
+                Quantity = o.Cantidad
+            }).ToList();
+            OrderManager.SendOrder(tableId, completeOrder);
+            MessageBox.Show("Se ha realizado el pedido con  éxito.");
+            orderItems = new ObservableCollection<OrderItemViewModel>();
+            PaintNewProducts();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e) {

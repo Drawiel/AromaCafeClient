@@ -1380,12 +1380,6 @@ namespace AromaCafeCliente.AromaCafeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/NewTable", ReplyAction="http://tempuri.org/ITableManager/NewTableResponse")]
         System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
-        int CloseTable(int tableId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
-        System.Threading.Tasks.Task<int> CloseTableAsync(int tableId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables", ReplyAction="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse")]
         AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables();
         
@@ -1452,14 +1446,6 @@ namespace AromaCafeCliente.AromaCafeService {
         
         public System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table) {
             return base.Channel.NewTableAsync(table);
-        }
-        
-        public int CloseTable(int tableId) {
-            return base.Channel.CloseTable(tableId);
-        }
-        
-        public System.Threading.Tasks.Task<int> CloseTableAsync(int tableId) {
-            return base.Channel.CloseTableAsync(tableId);
         }
         
         public AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables() {
