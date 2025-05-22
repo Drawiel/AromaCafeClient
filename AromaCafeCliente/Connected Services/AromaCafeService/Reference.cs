@@ -196,6 +196,9 @@ namespace AromaCafeCliente.AromaCafeService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -220,6 +223,19 @@ namespace AromaCafeCliente.AromaCafeService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
             }
         }
         
@@ -576,6 +592,99 @@ namespace AromaCafeCliente.AromaCafeService {
                 if ((object.ReferenceEquals(this.TableStatusField, value) != true)) {
                     this.TableStatusField = value;
                     this.RaisePropertyChanged("TableStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOrder", Namespace="http://schemas.datacontract.org/2004/07/AromaCafeService.Models")]
+    [System.SerializableAttribute()]
+    public partial class ProductOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderState {
+            get {
+                return this.OrderStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderStateField, value) != true)) {
+                    this.OrderStateField = value;
+                    this.RaisePropertyChanged("OrderState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
                 }
             }
         }
@@ -976,6 +1085,12 @@ namespace AromaCafeCliente.AromaCafeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/NewTable", ReplyAction="http://tempuri.org/ITableManager/NewTableResponse")]
         System.Threading.Tasks.Task<int> NewTableAsync(AromaCafeCliente.AromaCafeService.TableCustomer table);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
+        int CloseTable(int tableId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/CloseTable", ReplyAction="http://tempuri.org/ITableManager/CloseTableResponse")]
+        System.Threading.Tasks.Task<int> CloseTableAsync(int tableId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables", ReplyAction="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse")]
         AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables();
         
@@ -1026,12 +1141,123 @@ namespace AromaCafeCliente.AromaCafeService {
             return base.Channel.NewTableAsync(table);
         }
         
+        public int CloseTable(int tableId) {
+            return base.Channel.CloseTable(tableId);
+        }
+        
+        public System.Threading.Tasks.Task<int> CloseTableAsync(int tableId) {
+            return base.Channel.CloseTableAsync(tableId);
+        }
+        
         public AromaCafeCliente.AromaCafeService.TableCustomer[] GetActiveAndClosedTables() {
             return base.Channel.GetActiveAndClosedTables();
         }
         
         public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.TableCustomer[]> GetActiveAndClosedTablesAsync() {
             return base.Channel.GetActiveAndClosedTablesAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AromaCafeService.IOrderManager")]
+    public interface IOrderManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/MarkOrderAsDelivered", ReplyAction="http://tempuri.org/IOrderManager/MarkOrderAsDeliveredResponse")]
+        int MarkOrderAsDelivered(int tableId, string productOrderName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/MarkOrderAsDelivered", ReplyAction="http://tempuri.org/IOrderManager/MarkOrderAsDeliveredResponse")]
+        System.Threading.Tasks.Task<int> MarkOrderAsDeliveredAsync(int tableId, string productOrderName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/MarkOrderAsRequested", ReplyAction="http://tempuri.org/IOrderManager/MarkOrderAsRequestedResponse")]
+        int MarkOrderAsRequested(int tableId, string productOrderName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/MarkOrderAsRequested", ReplyAction="http://tempuri.org/IOrderManager/MarkOrderAsRequestedResponse")]
+        System.Threading.Tasks.Task<int> MarkOrderAsRequestedAsync(int tableId, string productOrderName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/EditOrderQuantity", ReplyAction="http://tempuri.org/IOrderManager/EditOrderQuantityResponse")]
+        int EditOrderQuantity(int tableId, string productOrderName, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/EditOrderQuantity", ReplyAction="http://tempuri.org/IOrderManager/EditOrderQuantityResponse")]
+        System.Threading.Tasks.Task<int> EditOrderQuantityAsync(int tableId, string productOrderName, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/RegisterOrder", ReplyAction="http://tempuri.org/IOrderManager/RegisterOrderResponse")]
+        int RegisterOrder(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/RegisterOrder", ReplyAction="http://tempuri.org/IOrderManager/RegisterOrderResponse")]
+        System.Threading.Tasks.Task<int> RegisterOrderAsync(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/GetOrdersByTable", ReplyAction="http://tempuri.org/IOrderManager/GetOrdersByTableResponse")]
+        AromaCafeCliente.AromaCafeService.ProductOrder[] GetOrdersByTable(int idTable);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderManager/GetOrdersByTable", ReplyAction="http://tempuri.org/IOrderManager/GetOrdersByTableResponse")]
+        System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.ProductOrder[]> GetOrdersByTableAsync(int idTable);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOrderManagerChannel : AromaCafeCliente.AromaCafeService.IOrderManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OrderManagerClient : System.ServiceModel.ClientBase<AromaCafeCliente.AromaCafeService.IOrderManager>, AromaCafeCliente.AromaCafeService.IOrderManager {
+        
+        public OrderManagerClient() {
+        }
+        
+        public OrderManagerClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OrderManagerClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int MarkOrderAsDelivered(int tableId, string productOrderName) {
+            return base.Channel.MarkOrderAsDelivered(tableId, productOrderName);
+        }
+        
+        public System.Threading.Tasks.Task<int> MarkOrderAsDeliveredAsync(int tableId, string productOrderName) {
+            return base.Channel.MarkOrderAsDeliveredAsync(tableId, productOrderName);
+        }
+        
+        public int MarkOrderAsRequested(int tableId, string productOrderName) {
+            return base.Channel.MarkOrderAsRequested(tableId, productOrderName);
+        }
+        
+        public System.Threading.Tasks.Task<int> MarkOrderAsRequestedAsync(int tableId, string productOrderName) {
+            return base.Channel.MarkOrderAsRequestedAsync(tableId, productOrderName);
+        }
+        
+        public int EditOrderQuantity(int tableId, string productOrderName, int quantity) {
+            return base.Channel.EditOrderQuantity(tableId, productOrderName, quantity);
+        }
+        
+        public System.Threading.Tasks.Task<int> EditOrderQuantityAsync(int tableId, string productOrderName, int quantity) {
+            return base.Channel.EditOrderQuantityAsync(tableId, productOrderName, quantity);
+        }
+        
+        public int RegisterOrder(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType) {
+            return base.Channel.RegisterOrder(productsOrdered, idTable, orderType);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegisterOrderAsync(AromaCafeCliente.AromaCafeService.ProductOrder[] productsOrdered, int idTable, string orderType) {
+            return base.Channel.RegisterOrderAsync(productsOrdered, idTable, orderType);
+        }
+        
+        public AromaCafeCliente.AromaCafeService.ProductOrder[] GetOrdersByTable(int idTable) {
+            return base.Channel.GetOrdersByTable(idTable);
+        }
+        
+        public System.Threading.Tasks.Task<AromaCafeCliente.AromaCafeService.ProductOrder[]> GetOrdersByTableAsync(int idTable) {
+            return base.Channel.GetOrdersByTableAsync(idTable);
         }
     }
 }

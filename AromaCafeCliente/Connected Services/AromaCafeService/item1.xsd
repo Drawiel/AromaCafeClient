@@ -254,7 +254,7 @@
   <xs:element name="NewTable">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="table" nillable="true" type="q14:TableCustomer" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="table" nillable="true" type="q15:TableCustomer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -262,6 +262,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="NewTableResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloseTableResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -273,7 +287,83 @@
   <xs:element name="GetActiveAndClosedTablesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetActiveAndClosedTablesResult" nillable="true" type="q15:ArrayOfTableCustomer" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetActiveAndClosedTablesResult" nillable="true" type="q16:ArrayOfTableCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkOrderAsDelivered">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableId" type="xs:int" />
+        <xs:element minOccurs="0" name="productOrderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkOrderAsDeliveredResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkOrderAsDeliveredResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkOrderAsRequested">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableId" type="xs:int" />
+        <xs:element minOccurs="0" name="productOrderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkOrderAsRequestedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkOrderAsRequestedResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditOrderQuantity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableId" type="xs:int" />
+        <xs:element minOccurs="0" name="productOrderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditOrderQuantityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditOrderQuantityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="productsOrdered" nillable="true" type="q17:ArrayOfProductOrder" />
+        <xs:element minOccurs="0" name="idTable" type="xs:int" />
+        <xs:element minOccurs="0" name="orderType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTable" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" minOccurs="0" name="GetOrdersByTableResult" nillable="true" type="q18:ArrayOfProductOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
