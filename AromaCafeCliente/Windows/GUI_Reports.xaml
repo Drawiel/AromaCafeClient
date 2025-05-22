@@ -130,6 +130,206 @@
             </Grid>
 
             <Grid
+    x:Name="ValidationPopupWaiterPeriod"
+    Width="1000"
+    Height="500"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Visibility="Hidden"
+    Panel.ZIndex="2"
+    Margin="460,0,0,0" Grid.ColumnSpan="2">
+                <Grid.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpPeriodo.png"/>
+                </Grid.Background>
+                <ComboBox
+                    Name="PeriodWaiterComboBox"
+                    FontSize="32"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Width="545"
+                    Height="54"
+                    Margin="338,0,0,0"
+                    HorizontalAlignment="Left"
+                    Padding="10,5,0,0"
+                    SelectedIndex="0">
+
+                    <ComboBoxItem Content="Hoy" />
+                    <ComboBoxItem Content="Últimos 3 días" />
+                    <ComboBoxItem Content="Últimos 7 días" />
+                    <ComboBoxItem Content="Últimas 2 semanas" />
+                    <ComboBoxItem Content="Último mes" />
+                    <ComboBoxItem Content="Últimos 2 meses" />
+
+                </ComboBox>
+
+                <Button 
+        x:Name="btnWaiterAccept"
+        HorizontalAlignment="Left" 
+        Margin="830,405,0,0" 
+        VerticalAlignment="Top" 
+        Height="55" 
+        Width="136" Click="btnWaiterAccept_Click">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button 
+        x:Name="btnWaiterCancel"
+        HorizontalAlignment="Left" 
+        Margin="673,405,0,0" 
+        VerticalAlignment="Top" 
+        Height="55" 
+        Width="136" Click="btnWaiterCancel_Click">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!-- Fondo normal -->
+                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Cambiar fondo cuando el mouse esté encima -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+            </Grid>
+
+            <Grid
+    x:Name="ValidationPopupPeriodo"
+    Width="1000"
+    Height="500"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Visibility="Hidden"
+    Panel.ZIndex="2"
+    Margin="460,0,0,0"
+    Grid.ColumnSpan="2"
+    Cursor="">
+
+                <Grid.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Multimedia/popUpPeriodo.png"/>
+                </Grid.Background>
+
+                <!-- ComboBox con las opciones de período -->
+                <ComboBox
+        Name="PeriodComboBox"
+        FontSize="32"
+        FontFamily="pack://application:,,,/Font/#Architects Daughter"
+        Width="545"
+        Height="54"
+        Margin="338,0,0,0"
+        HorizontalAlignment="Left"
+        Padding="10,5,0,0"
+        SelectedIndex="0">
+
+                    <ComboBoxItem Content="Hoy" />
+                    <ComboBoxItem Content="Últimos 3 días" />
+                    <ComboBoxItem Content="Últimos 7 días" />
+                    <ComboBoxItem Content="Últimas 2 semanas" />
+                    <ComboBoxItem Content="Último mes" />
+                    <ComboBoxItem Content="Últimos 2 meses" />
+
+                </ComboBox>
+
+                <!-- Botón Aceptar -->
+                <Button 
+        x:Name="btnAcceptPeriod"
+        HorizontalAlignment="Left" 
+        Margin="830,405,0,0" 
+        VerticalAlignment="Top" 
+        Height="55" 
+        Width="136"
+        Click="GenerateSalesReportByPeriod_Click">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="ButtonBackground" Background="Transparent"
+                            Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                            VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverAccept.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <!-- Botón Cancelar -->
+                <Button 
+        x:Name="btnCancelPeriod"
+        HorizontalAlignment="Left" 
+        Margin="673,405,0,0" 
+        VerticalAlignment="Top" 
+        Height="55" 
+        Width="136"
+        Click="PeriodPopupHidden_Click">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="ButtonBackground" Background="Transparent"
+                            Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                            VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ButtonBackground" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="pack://application:,,,/Multimedia/HoverCancel.png" Stretch="UniformToFill"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+            </Grid>
+
+
+
+
+            <Grid
                 x:Name="ValidationPopupDate"
                 Width="1000"
                 Height="500"
@@ -431,7 +631,7 @@
                     Margin="113,192,0,0" 
                     VerticalAlignment="Top" 
                     Height="210" 
-                    Width="399">
+                    Width="399" Click="Button_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -460,7 +660,7 @@
                     Margin="592,192,0,0" 
                     VerticalAlignment="Top" 
                     Height="210" 
-                    Width="399">
+                    Width="399" Click="Button_Click_1">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

@@ -11,6 +11,22 @@
         <ImageBrush ImageSource="pack://application:,,,/Multimedia/GUI_InicioMesero.png"/>
     </Page.Background>
 
+    <Page.Resources>
+        <Style x:Key="ClosedTableStyle" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="DarkRed" Opacity="0.6"/>
+                    <!-- 60% de opacidad -->
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <SolidColorBrush Color="DarkRed" Opacity="0.6"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Viewbox
         Stretch="Uniform">
 
@@ -425,13 +441,17 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -442,6 +462,7 @@
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
+
                     </Button.Template>
                 </Button>
 
@@ -459,15 +480,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -495,15 +521,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -531,15 +562,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -567,15 +603,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -603,15 +644,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -639,15 +685,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -675,15 +726,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -711,15 +767,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -747,15 +808,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -783,15 +849,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -819,15 +890,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -855,15 +931,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>
@@ -891,15 +972,20 @@
                     FontFamily="pack://application:,,,/Font/#Architects Daughter">
 
                     <Button.Template>
+
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <!-- Fondo normal -->
-                                <Border x:Name="ButtonBackground" Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                <!-- Usamos TemplateBinding para permitir cambios de Background desde el código -->
+                                <Border x:Name="ButtonBackground" 
+                        Background="Transparent" 
+                        Width="{TemplateBinding Width}" 
+                        Height="{TemplateBinding Height}" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" />
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <ContentPresenter x:Name="ButtonContent" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
-                                <!-- Cambiar fondo cuando el mouse esté encima -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ButtonBackground" Property="Background">
                                         <Setter.Value>

@@ -212,5 +212,201 @@ namespace AromaCafeCliente.Windows
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopupPeriodo.Visibility = Visibility.Visible;
+        }
+
+        private void GenerateSalesReportByPeriod_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EPPlusLicense ePPlusLicense = new EPPlusLicense();
+                ePPlusLicense.SetNonCommercialPersonal("Zaid Alexis Vazquez Ramirez");
+
+                if (PeriodComboBox.SelectedItem is ComboBoxItem selectedItem)
+                {
+                    string period = selectedItem.Content.ToString();
+                    DateTime endDate = DateTime.Today;
+                    DateTime startDate;
+
+                    switch (period)
+                    {
+                        case "Hoy":
+                            startDate = endDate;
+                            break;
+                        case "Últimos 3 días":
+                            startDate = endDate.AddDays(-2);
+                            break;
+                        case "Últimos 7 días":
+                            startDate = endDate.AddDays(-6);
+                            break;
+                        case "Últimas 2 semanas":
+                            startDate = endDate.AddDays(-13);
+                            break;
+                        case "Último mes":
+                            startDate = endDate.AddMonths(-1).AddDays(1);
+                            break;
+                        case "Últimos 2 meses":
+                            startDate = endDate.AddMonths(-2).AddDays(1);
+                            break;
+                        default:
+                            MessageBox.Show("Selecciona un período válido.");
+                            return;
+                    }
+
+                    var sales = SalesManager.GetSalesByDateRange(startDate, endDate);
+
+                    if (sales == null || sales.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron ventas en el período seleccionado.");
+                        return;
+                    }
+
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Reporte de Ventas");
+
+                        worksheet.Cells[1, 1].Value = "Índice";
+                        worksheet.Cells[1, 2].Value = "Nombre mesa";
+                        worksheet.Cells[1, 3].Value = "Número de personas";
+                        worksheet.Cells[1, 4].Value = "Total";
+                        worksheet.Cells[1, 5].Value = "Tipo de cobro";
+                        worksheet.Cells[1, 6].Value = "Fecha";
+
+                        int row = 2;
+                        int index = 1;
+                        foreach (var sale in sales)
+                        {
+                            worksheet.Cells[row, 1].Value = index++;
+                            worksheet.Cells[row, 2].Value = sale.TableName;
+                            worksheet.Cells[row, 3].Value = sale.PeopleCount;
+                            worksheet.Cells[row, 4].Value = sale.Total;
+                            worksheet.Cells[row, 5].Value = sale.PaymentMethod; 
+                            worksheet.Cells[row, 6].Value = sale.SaleDate;
+
+                            row++;
+                        }
+
+                        worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                        var downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                        var filePath = Path.Combine(downloadsFolder, "SalesReport_" + DateTime.Today.ToString("ddMMyy") + ".xlsx");
+                        FileInfo excelFile = new FileInfo(filePath);
+                        package.SaveAs(excelFile);
+
+                        ConfirmationMessagePopupControl.SetMessage("Reporte de ventas generado en:\n" + filePath);
+                        ConfirmationPopup.Visibility = Visibility.Visible;
+
+                        Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                        fadeIn.Begin();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el reporte de ventas: " + ex.Message);
+            }
+        }
+
+        private void PeriodPopupHidden_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopupPeriodo.Visibility = Visibility.Hidden;
+        }
+
+        private void btnWaiterCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopupWaiterPeriod.Visibility = Visibility.Hidden;
+        }
+
+        private void btnWaiterAccept_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EPPlusLicense ePPlusLicense = new EPPlusLicense();
+                ePPlusLicense.SetNonCommercialPersonal("Zaid Alexis Vazquez Ramirez");
+
+                if (PeriodComboBox.SelectedItem is ComboBoxItem selectedItem)
+                {
+                    string period = selectedItem.Content.ToString();
+                    DateTime endDate = DateTime.Today;
+                    DateTime startDate;
+
+                    switch (period)
+                    {
+                        case "Hoy":
+                            startDate = endDate;
+                            break;
+                        case "Últimos 3 días":
+                            startDate = endDate.AddDays(-2);
+                            break;
+                        case "Últimos 7 días":
+                            startDate = endDate.AddDays(-6);
+                            break;
+                        case "Últimas 2 semanas":
+                            startDate = endDate.AddDays(-13);
+                            break;
+                        case "Último mes":
+                            startDate = endDate.AddMonths(-1).AddDays(1);
+                            break;
+                        case "Últimos 2 meses":
+                            startDate = endDate.AddMonths(-2).AddDays(1);
+                            break;
+                        default:
+                            MessageBox.Show("Selecciona un período válido.");
+                            return;
+                    }
+
+                    var sales = SalesManager.GetSalesByWWaiterAndDateRange(startDate, endDate);
+
+                    if (sales == null || sales.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron ventas en el período seleccionado.");
+                        return;
+                    }
+
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Reporte de Ventas");
+
+                        worksheet.Cells[1, 1].Value = "Nombre Completo";
+                        worksheet.Cells[1, 2].Value = "Total de Ventas";
+
+                        int row = 2;
+                        int index = 1;
+                        foreach (var sale in sales)
+                        {
+                            worksheet.Cells[row, 1].Value = index++;
+                            worksheet.Cells[row, 2].Value = sale.FullName;
+                            worksheet.Cells[row, 3].Value = sale.TotalSale;
+
+                            row++;
+                        }
+
+                        worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                        var downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                        var filePath = Path.Combine(downloadsFolder, "SalesByWaiterReport_" + DateTime.Today.ToString("ddMMyy") + ".xlsx");
+                        FileInfo excelFile = new FileInfo(filePath);
+                        package.SaveAs(excelFile);
+
+                        ConfirmationMessagePopupControl.SetMessage("Reporte de ventas generado en:\n" + filePath);
+                        ConfirmationPopup.Visibility = Visibility.Visible;
+
+                        Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                        fadeIn.Begin();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el reporte de ventas: " + ex.Message);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.ValidationPopupWaiterPeriod.Visibility = Visibility.Visible;
+        }
     }
 }

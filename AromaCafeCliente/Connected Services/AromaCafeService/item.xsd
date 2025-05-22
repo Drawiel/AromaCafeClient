@@ -77,6 +77,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTableCustomer" nillable="true" type="tns:ArrayOfTableCustomer" />
+  <xs:complexType name="ArrayOfSalesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesData" nillable="true" type="tns:SalesData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesData" nillable="true" type="tns:ArrayOfSalesData" />
+  <xs:complexType name="SalesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PeopleCount" type="xs:int" />
+      <xs:element minOccurs="0" name="SaleDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesData" nillable="true" type="tns:SalesData" />
+  <xs:complexType name="ArrayOfSaleByWaiterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaleByWaiterData" nillable="true" type="tns:SaleByWaiterData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaleByWaiterData" nillable="true" type="tns:ArrayOfSaleByWaiterData" />
+  <xs:complexType name="SaleByWaiterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSale" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaleByWaiterData" nillable="true" type="tns:SaleByWaiterData" />
   <xs:complexType name="ArrayOfProductOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductOrder" nillable="true" type="tns:ProductOrder" />
