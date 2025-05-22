@@ -86,6 +86,7 @@ namespace AromaCafeCliente.Windows {
             txtBoxDesciption.IsEnabled = true;
             txtBoxUnits.IsEnabled = true;
             txtBoxCode.IsEnabled = true;
+            txtBoxPrice.IsEnabled = true;
 
             btnCancel.IsEnabled = true;
             btnSave.IsEnabled = true;
@@ -112,6 +113,7 @@ namespace AromaCafeCliente.Windows {
             txtBoxDesciption.IsEnabled = false;
             txtBoxUnits.IsEnabled = false;
             txtBoxCode.IsEnabled = false;
+            txtBoxPrice.IsEnabled = false;
 
             btnCancel.IsEnabled = false;
             btnSave.IsEnabled = false;
@@ -129,6 +131,7 @@ namespace AromaCafeCliente.Windows {
             txtBoxDesciption.IsEnabled = false;
             txtBoxUnits.IsEnabled = false;
             txtBoxCode.IsEnabled = false;
+            txtBoxPrice.IsEnabled = false;
 
             LoadProductInfo(productId);
 

@@ -179,6 +179,7 @@
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AromaCafeService.Models" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IEmployeeManager_UpdateProfile_InputMessage">
@@ -289,11 +290,47 @@
   <wsdl:message name="ITableManager_ChargeBill_OutputMessage">
     <wsdl:part name="parameters" element="tns:ChargeBillResponse" />
   </wsdl:message>
+  <wsdl:message name="ITableManager_NewTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTable" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_NewTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetActiveAndClosedTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAndClosedTables" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetActiveAndClosedTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAndClosedTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetSalesReportByRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesReportByRange" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetSalesReportByRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesReportByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetSalesReportByWaiterRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesReportByWaiterRange" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetSalesReportByWaiterRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesReportByWaiterRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetFinancialReportByRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialReportByRange" />
+  </wsdl:message>
+  <wsdl:message name="ITableManager_GetFinancialReportByRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialReportByRangeResponse" />
+  </wsdl:message>
   <wsdl:message name="IOrderManager_MarkOrderAsDelivered_InputMessage">
     <wsdl:part name="parameters" element="tns:MarkOrderAsDelivered" />
   </wsdl:message>
   <wsdl:message name="IOrderManager_MarkOrderAsDelivered_OutputMessage">
     <wsdl:part name="parameters" element="tns:MarkOrderAsDeliveredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_MarkOrderAsRequested_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkOrderAsRequested" />
+  </wsdl:message>
+  <wsdl:message name="IOrderManager_MarkOrderAsRequested_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkOrderAsRequestedResponse" />
   </wsdl:message>
   <wsdl:message name="IOrderManager_EditOrderQuantity_InputMessage">
     <wsdl:part name="parameters" element="tns:EditOrderQuantity" />
@@ -301,17 +338,17 @@
   <wsdl:message name="IOrderManager_EditOrderQuantity_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditOrderQuantityResponse" />
   </wsdl:message>
-  <wsdl:message name="IOrderManager_GetAllDeliveredOrders_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllDeliveredOrders" />
+  <wsdl:message name="IOrderManager_RegisterOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterOrder" />
   </wsdl:message>
-  <wsdl:message name="IOrderManager_GetAllDeliveredOrders_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllDeliveredOrdersResponse" />
+  <wsdl:message name="IOrderManager_RegisterOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterOrderResponse" />
   </wsdl:message>
-  <wsdl:message name="IOrderManager_GetAllCanceledOrders_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCanceledOrders" />
+  <wsdl:message name="IOrderManager_GetOrdersByTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByTable" />
   </wsdl:message>
-  <wsdl:message name="IOrderManager_GetAllCanceledOrders_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCanceledOrdersResponse" />
+  <wsdl:message name="IOrderManager_GetOrdersByTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByTableResponse" />
   </wsdl:message>
   <wsdl:portType name="IEmployeeManager">
     <wsdl:operation name="UpdateProfile">
@@ -394,23 +431,47 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/ChargeBill" message="tns:ITableManager_ChargeBill_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/ChargeBillResponse" message="tns:ITableManager_ChargeBill_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="NewTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/NewTable" message="tns:ITableManager_NewTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/NewTableResponse" message="tns:ITableManager_NewTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAndClosedTables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetActiveAndClosedTables" message="tns:ITableManager_GetActiveAndClosedTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/GetActiveAndClosedTablesResponse" message="tns:ITableManager_GetActiveAndClosedTables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReportByRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetSalesReportByRange" message="tns:ITableManager_GetSalesReportByRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/GetSalesReportByRangeResponse" message="tns:ITableManager_GetSalesReportByRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReportByWaiterRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetSalesReportByWaiterRange" message="tns:ITableManager_GetSalesReportByWaiterRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/GetSalesReportByWaiterRangeResponse" message="tns:ITableManager_GetSalesReportByWaiterRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialReportByRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITableManager/GetFinancialReportByRange" message="tns:ITableManager_GetFinancialReportByRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITableManager/GetFinancialReportByRangeResponse" message="tns:ITableManager_GetFinancialReportByRange_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOrderManager">
     <wsdl:operation name="MarkOrderAsDelivered">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsDelivered" message="tns:IOrderManager_MarkOrderAsDelivered_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsDeliveredResponse" message="tns:IOrderManager_MarkOrderAsDelivered_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MarkOrderAsRequested">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsRequested" message="tns:IOrderManager_MarkOrderAsRequested_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/MarkOrderAsRequestedResponse" message="tns:IOrderManager_MarkOrderAsRequested_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EditOrderQuantity">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/EditOrderQuantity" message="tns:IOrderManager_EditOrderQuantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/EditOrderQuantityResponse" message="tns:IOrderManager_EditOrderQuantity_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllDeliveredOrders">
-      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetAllDeliveredOrders" message="tns:IOrderManager_GetAllDeliveredOrders_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetAllDeliveredOrdersResponse" message="tns:IOrderManager_GetAllDeliveredOrders_OutputMessage" />
+    <wsdl:operation name="RegisterOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/RegisterOrder" message="tns:IOrderManager_RegisterOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/RegisterOrderResponse" message="tns:IOrderManager_RegisterOrder_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllCanceledOrders">
-      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetAllCanceledOrders" message="tns:IOrderManager_GetAllCanceledOrders_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetAllCanceledOrdersResponse" message="tns:IOrderManager_GetAllCanceledOrders_OutputMessage" />
+    <wsdl:operation name="GetOrdersByTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderManager/GetOrdersByTable" message="tns:IOrderManager_GetOrdersByTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderManager/GetOrdersByTableResponse" message="tns:IOrderManager_GetOrdersByTable_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IEmployeeManager" type="tns:IEmployeeManager">
@@ -594,12 +655,66 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NewTable">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/NewTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAndClosedTables">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/GetActiveAndClosedTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReportByRange">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/GetSalesReportByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReportByWaiterRange">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/GetSalesReportByWaiterRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialReportByRange">
+      <soap12:operation soapAction="http://tempuri.org/ITableManager/GetFinancialReportByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IOrderManager" type="tns:IOrderManager">
     <wsp:PolicyReference URI="#NetTcpBinding_IOrderManager_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="MarkOrderAsDelivered">
       <soap12:operation soapAction="http://tempuri.org/IOrderManager/MarkOrderAsDelivered" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkOrderAsRequested">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/MarkOrderAsRequested" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -616,8 +731,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllDeliveredOrders">
-      <soap12:operation soapAction="http://tempuri.org/IOrderManager/GetAllDeliveredOrders" style="document" />
+    <wsdl:operation name="RegisterOrder">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/RegisterOrder" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -625,8 +740,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllCanceledOrders">
-      <soap12:operation soapAction="http://tempuri.org/IOrderManager/GetAllCanceledOrders" style="document" />
+    <wsdl:operation name="GetOrdersByTable">
+      <soap12:operation soapAction="http://tempuri.org/IOrderManager/GetOrdersByTable" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -641,7 +756,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/EmployeeManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -650,7 +765,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/LogInManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -659,7 +774,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ProductManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -668,7 +783,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ExpenseManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -677,7 +792,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/TableManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -686,7 +801,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/OrderManager</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>VICTUS-DUAA\daur0</Upn>
+          <Upn>LAPTOPTLAPA\chuch</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

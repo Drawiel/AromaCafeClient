@@ -1,24 +1,23 @@
 ﻿using AromaCafeCliente.AromaCafeService;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
 namespace AromaCafeCliente.Managers
 {
-    public class OrderManager
+    public class TableManager
     {
-        public static List<ProductOrder> GetOrdersByTable(int idTable)
+        public static List<TableCustomer> GetActiveAndClosedTables()
         {
-            var orders = new List<ProductOrder>();
+            List<TableCustomer> tables = new List<TableCustomer>();
             try
             {
-                using(var proxy = new AromaCafeService.OrderManagerClient())
+                using (var proxy = new AromaCafeService.TableManagerClient())
                 {
-                    orders = proxy.GetOrdersByTable(idTable).ToList();
+                    tables = new List<TableCustomer>(proxy.GetActiveAndClosedTables());
                 }
             }
             catch (FaultException faultException)
@@ -33,17 +32,17 @@ namespace AromaCafeCliente.Managers
             {
                 throw timeoutException;
             }
-            return orders;
+            return tables;
         }
 
-        public static int MarkOrderAsDelivered(string productOrderName, int tableId)
+        public static int CreateNewTable(TableCustomer table)
         {
-            int marked = 0;
+            int result;
             try
             {
-                using (var proxy = new AromaCafeService.OrderManagerClient())
+                using (var proxy = new AromaCafeService.TableManagerClient())
                 {
-                    marked = proxy.MarkOrderAsDelivered(tableId, productOrderName);
+                    result = proxy.NewTable(table);
                 }
             }
             catch (FaultException faultException)
@@ -58,18 +57,17 @@ namespace AromaCafeCliente.Managers
             {
                 throw timeoutException;
             }
-            return marked;
-
+            return result;
         }
 
-        internal static int EditOrderQuantity(int tableId, string productName, int quantity)
+        public static int ChargeTableBill(Charge charge)
         {
-            int marked = 0;
+            int result;
             try
             {
-                using (var proxy = new AromaCafeService.OrderManagerClient())
+                using (var proxy = new AromaCafeService.TableManagerClient())
                 {
-                    marked = proxy.EditOrderQuantity(tableId, productName, quantity);
+                    result = proxy.ChargeBill(charge);
                 }
             }
             catch (FaultException faultException)
@@ -84,42 +82,17 @@ namespace AromaCafeCliente.Managers
             {
                 throw timeoutException;
             }
-            return marked;
-        }
-    
-
-        internal static int MarkOrderAsRequested(string productOrderName, int tableId)
-        {
-            int marked = 0;
-            try
-            {
-                using (var proxy = new AromaCafeService.OrderManagerClient())
-                {
-                    marked = proxy.MarkOrderAsRequested(tableId, productOrderName);
-                }
-            }
-            catch (FaultException faultException)
-            {
-                throw faultException;
-            }
-            catch (CommunicationException communicationException)
-            {
-                throw communicationException;
-            }
-            catch (TimeoutException timeoutException)
-            {
-                throw timeoutException;
-            }
-            return marked;
+            return result;
         }
 
-        public static void SendOrder(int tableId, List<ProductOrder> productsOrdered)
+        public static int CloseTable(int tableId)
         {
+            int result = 0;
             try
             {
-                using (var proxy = new AromaCafeService.OrderManagerClient())
+                using (var proxy = new AromaCafeService.TableManagerClient())
                 {
-                    proxy.RegisterOrder(productsOrdered.ToArray(), tableId, "Local");
+                    //result = proxy.CloseTable(tableId);
                 }
             }
             catch (FaultException faultException)
@@ -134,6 +107,7 @@ namespace AromaCafeCliente.Managers
             {
                 throw timeoutException;
             }
+            return result;
         }
     }
 }

@@ -103,6 +103,7 @@ namespace AromaCafeCliente.Windows {
 
         private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
             ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
 
         private void BtnEditClick(object sender, RoutedEventArgs e) {
@@ -208,11 +209,18 @@ namespace AromaCafeCliente.Windows {
         private void BtnChangeAccessCodeClick(object sender, RoutedEventArgs e) {
             bool updatedAccessCodeProfile = UpdateAccessCodeProfile(CreateNewAccessCode());
             if (updatedAccessCodeProfile) {
-                MessageBox.Show("Se ha creado correctamente la nueva clave de acceso: "+ newAccessCode);
+                ConfirmationMessagePopupControl.SetMessage("Se ha creado correctamente la nueva clave de acceso: " + newAccessCode);
+                ConfirmationPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             } else if (!updatedAccessCodeProfile) {
-                MessageBox.Show("Hubo un error al crear el codigo de acceso del empleado");
+                ErrorMessagePopupControl.SetMessage("Hubo un error al crear el codigo de acceso del empleado");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
+
 
         private bool UpdateAccessCodeProfile(Employee employee) {
             employeeManagerClient = new EmployeeManagerClient();

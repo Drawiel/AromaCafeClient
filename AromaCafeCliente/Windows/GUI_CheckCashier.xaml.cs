@@ -1,6 +1,9 @@
 ﻿using AromaCafeCliente.AromaCafeService;
+using AromaCafeCliente.Helpers;
+using AromaCafeCliente.Managers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,6 +14,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,12 +25,31 @@ namespace AromaCafeCliente.Windows {
     /// </summary>
     public partial class GUI_CheckCashier : Page {
         TableManagerClient tableManagerClient;
-        public GUI_CheckCashier() {
+        private int tableId;
+        private List<ProductOrder> productsOrdered;
+        public GUI_CheckCashier(int tableId) {
             InitializeComponent();
+            this.tableId = tableId;
             LogOutPopupControl.LogOutSuccess += OnLogOutSuccess;
             LogOutPopupControl.Cancelled += OnLogOutCancelled;
             ExpensesPopupControl.Cancelled += OnExpenseCancelled;
             PaymentMethodPopupControl.Cancelled += OnPaymentCancelled;
+            LoadDataGridBill();
+        }
+
+        private void LoadDataGridBill()
+        {
+            productsOrdered = OrderManager.GetOrdersByTable(tableId);
+            if (productsOrdered != null)
+            {
+                var gridItems = productsOrdered.Select(p => new ProductOrderViewModel(
+                    p.ProductName,
+                    p.Quantity,
+                    p.Price
+                    ))
+                .ToList();
+                this.dataGridBill.ItemsSource = new ObservableCollection<ProductOrderViewModel>(gridItems);
+            }
         }
 
         private void DataGridUserSelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -61,7 +84,7 @@ namespace AromaCafeCliente.Windows {
             ExpensesPopUp.Visibility = Visibility.Hidden;
         }
 
-        private void btnCloseBill_Click(object sender, RoutedEventArgs e) {
+        private void BtnCloseBill_Click(object sender, RoutedEventArgs e) {
             PaymentMethodPopup.Visibility = Visibility.Visible;
         }
 
@@ -103,6 +126,7 @@ namespace AromaCafeCliente.Windows {
         }
         private void FadeOutStoryboard_Completed(object sender, EventArgs e) {
             ConfirmationPopup.Visibility = Visibility.Hidden;
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
 
         private bool ChargeBill(string paymentType) { 
@@ -129,6 +153,55 @@ namespace AromaCafeCliente.Windows {
 
             } catch (Exception) {
                 return false;
+            }
+        }
+
+        private void ModifyOrder_BtnClick(object sender, EventArgs e)
+        {
+            var selected = dataGridBill.SelectedItem as ProductOrderViewModel;
+
+            if (selected != null)
+            {
+                this.ValidationPopupModifyOrder.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void CloseModifyOrder(object sender, EventArgs e)
+        {
+            this.ValidationPopupModifyOrder.Visibility= Visibility.Hidden;
+        }
+
+        private void ModifyOrderQuantity(object sender, EventArgs e)
+        {
+            var selected = dataGridBill.SelectedItem as ProductOrderViewModel;
+            string productName = selected.Producto;
+            try
+            {
+                int quantity = int.Parse (txtBoxNewCuantity.Text);
+                int edited = OrderManager.EditOrderQuantity(tableId, productName, quantity);
+                if (edited == 1)
+                {
+                    ConfirmationMessagePopupControl.SetMessage("Pedido modificado con éxito.");
+                    ConfirmationPopup.Visibility = Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
+                    CloseModifyOrder(sender, e);
+                    LoadDataGridBill();
+                }
+            }
+            catch (FormatException formatException)
+            {
+                ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
+            }
+            catch (ArgumentNullException  argumentNullException)
+            {
+                ErrorMessagePopupControl.SetMessage("Error al modificar el pedido.");
+                ErrorPopup.Visibility = Visibility.Visible;
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                fadeIn.Begin();
             }
         }
     }

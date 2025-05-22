@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFinancialMovement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialMovement" nillable="true" type="tns:FinancialMovement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFinancialMovement" nillable="true" type="tns:ArrayOfFinancialMovement" />
+  <xs:complexType name="FinancialMovement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:float" />
+      <xs:element minOccurs="0" name="Movimiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinancialMovement" nillable="true" type="tns:FinancialMovement" />
+</xs:schema>

@@ -8,10 +8,17 @@
       mc:Ignorable="d" 
       Title="GUI_CheckCashier">
 
+
     <Page.Resources>
         <Storyboard x:Key="FadeInStoryboard">
             <DoubleAnimation
             Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="0"
+            To="1"
+            Duration="0:0:0.3"/>
+            <DoubleAnimation
+            Storyboard.TargetName="ErrorPopup"
             Storyboard.TargetProperty="Opacity"
             From="0"
             To="1"
@@ -21,6 +28,12 @@
         <Storyboard x:Key="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
             <DoubleAnimation
             Storyboard.TargetName="ConfirmationPopup"
+            Storyboard.TargetProperty="Opacity"
+            From="1"
+            To="0"
+            Duration="0:0:0.3"/>
+            <DoubleAnimation
+            Storyboard.TargetName="ErrorPopup"
             Storyboard.TargetProperty="Opacity"
             From="1"
             To="0"
@@ -70,7 +83,8 @@
                 Margin="830,405,0,0" 
                 VerticalAlignment="Top" 
                 Height="55" 
-                Width="136">
+                Width="136"
+                Click="ModifyOrderQuantity">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -100,7 +114,8 @@
                     Margin="673,405,0,0" 
                     VerticalAlignment="Top" 
                     Height="55" 
-                    Width="136">
+                    Width="136"
+                    Click="CloseModifyOrder">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -340,14 +355,14 @@
                 Height="955"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-                
+
                 <Button
                     x:Name="btnCloseBill"
                     HorizontalAlignment="Left" 
                     Height="60" Margin="1279,869,0,0" 
                     VerticalAlignment="Top" 
                     Width="172"
-                    Click="btnCloseBill_Click">
+                    Click="BtnCloseBill_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -375,7 +390,8 @@
                     HorizontalAlignment="Left" 
                     Height="60" Margin="1068,869,0,0" 
                     VerticalAlignment="Top" 
-                    Width="172">
+                    Width="172"
+                    Click="ModifyOrder_BtnClick">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -447,17 +463,26 @@
                         SelectionChanged="DataGridUserSelectionChanged"
                         Foreground="Black"
                         FontSize="25">
-                        
+
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="" Binding="{Binding ProductName}" Width="770" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding Quantity}" Width="227" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="" Binding="{Binding Price}" Width="212" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Producto}" Width="770" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Cantidad}" Width="227" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="" Binding="{Binding Precio}" Width="212" IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
+                <Label 
+                    Content="{Binding Total}"
+                    HorizontalAlignment="Left" 
+                    Height="86" 
+                    Margin="327,856,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="559"
+                    Foreground="Black"
+                    FontSize="64"
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"/>
 
             </Grid>
-            <!-- Popup de confirmación para cerrar sesión -->
             <Border x:Name="ValidationPopup"
                 Grid.ColumnSpan="2"
                 Background="#80000000"
@@ -514,6 +539,22 @@
                 Opacity="0">
 
                 <controls:GUI_PopUP_PaymentMethod x:Name="PaymentMethodPopupControl"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="1000"
+                               Height="500"/>
+            </Border>
+
+            <Border x:Name="ErrorPopup"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="Hidden"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="100"
+                Opacity="0">
+
+                <controls:GUI_PopUp_ErrorMessage x:Name="ErrorMessagePopupControl"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="1000"

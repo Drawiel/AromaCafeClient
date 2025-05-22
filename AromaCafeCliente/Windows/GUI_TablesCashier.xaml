@@ -237,7 +237,8 @@
                     Width="303"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -271,7 +272,8 @@
                     Width="303"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -305,7 +307,8 @@
                     Width="303"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -339,7 +342,8 @@
                     Width="303"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -373,7 +377,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -407,7 +412,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -441,7 +447,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -475,7 +482,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -509,7 +517,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -543,7 +552,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -577,7 +587,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -611,7 +622,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -645,7 +657,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -679,7 +692,8 @@
                     Width="302"
                     Content=""
                     Foreground="White"
-                    FontFamily="pack://application:,,,/Font/#Architects Daughter">
+                    FontFamily="pack://application:,,,/Font/#Architects Daughter"
+                    Click="BtnTable_Click">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -706,7 +720,7 @@
 
                 <Button 
                     x:Name="btnNext"
-                    Click="BtnClickBefore"
+                    Click="BtnClickNext"
                     HorizontalAlignment="Left" 
                     Height="185" 
                     Margin="1187,797,0,0" 

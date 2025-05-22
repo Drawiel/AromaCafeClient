@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -33,14 +34,22 @@ namespace AromaCafeCliente {
             if (!string.IsNullOrEmpty(employeeNumber) && !string.IsNullOrEmpty(employeePassword))
             {
                 Employee employee = EmployeeManager.ValidateCredentials(employeeNumber, employeePassword);
+                if (employee.EmployeeId == -2)
+                {
+                    ErrorMessagePopupControl.SetMessage("Usuario y/o contraseña incorrecta");
+                    ErrorPopup.Visibility= Visibility.Visible;
+                    Storyboard fadeIn = (Storyboard)FindResource("FadeInStoryboard");
+                    fadeIn.Begin();
+                }
                 if (employee.EmployeeId > 0)
                 {
+                    Console.WriteLine(employee.EmployeeType);
                     switch (employee.EmployeeType)
                     {
                         case "Mesero":
                             if (this.NavigationService != null)
                             {
-                                this.NavigationService.Navigate(new GUI_Employees());
+                                this.NavigationService.Navigate(new GUI_HomeWaitress());
                             }
                             break;
                         case "Cajero":
@@ -66,6 +75,10 @@ namespace AromaCafeCliente {
         {
             this.txtBoxEmployeeNumber.Text = string.Empty;
             this.txtBoxEmployeePassword.Password = string.Empty;
+        }
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e)
+        {
+            ErrorPopup.Visibility = Visibility.Hidden;
         }
     }
 }
